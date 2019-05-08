@@ -3,56 +3,55 @@ var gulp = require("gulp");
 var ejs = require("gulp-ejs"),
     sass = require("gulp-ruby-sass"),
     pleeease = require("gulp-pleeease"),
+    plumber = require('gulp-plumber'),
+    imagemin = require("gulp-imagemin"),
+    pngquant = require('imagemin-pngquant'),
+    mozjpeg = require('imagemin-mozjpeg'),
     browser = require("browser-sync");
 
-var DEV = "app/dev",
-    PUBLIC = "app/public";
+var DEV = "src",
+    PUBLIC = "dist";
 
 //ejs
 gulp.task("ejs", function() {
     gulp.src(
-        [DEV + "/ejs/**/*.ejs",'!' + DEV + "/ejs/**/_*.ejs"]
+        [DEV + "/views/**/*.ejs",'!' + DEV + "/views/**/_*.ejs"]
     )
-        .pipe(ejs())
+        .pipe(plumber())
+        .pipe(ejs({ext:'.html'}))
         .pipe(gulp.dest(PUBLIC))
         .pipe(browser.reload({stream:true}));
 });
 
 //style
 gulp.task("style", function() {
-    gulp.src(DEV + "/sass/**/*.scss")
+    gulp.src(DEV + "/assets/styles/**/*.scss")
         .pipe(sass({
-            style:"nested",
+            style:"compressed",
             compass : true,
             "sourcemap=none": true
         }))
         .pipe(pleeease({
             fallbacks: {
-                autoprefixer: ["last 2 version", "ie 9"]
+                autoprefixer: ["last 2 version", "ie 11"]
             },
             minifier: false
         }))
-        .pipe(gulp.dest(PUBLIC + "/css"))
+        .pipe(gulp.dest(PUBLIC + "/assets/styles"))
         .pipe(browser.reload({stream:true}));
 });
 
 //copy
 gulp.task("js", function() {
-    return gulp.src(DEV + "/js/**/*.js")
-        .pipe(gulp.dest(PUBLIC + "/js"));
+    return gulp.src(DEV + "/assets/scripts/**/*.js")
+        .pipe(gulp.dest(PUBLIC + "/assets/scripts"));
 });
 
 //lib
-gulp.task("lib", function() {
-    return gulp.src(DEV + "/lib/**/*.js")
-        .pipe(gulp.dest(PUBLIC + "/lib"));
-});
-
-//lib
-gulp.task("images", function() {
-    return gulp.src(DEV + "/images/**/*")
-        .pipe(gulp.dest(PUBLIC + "/images"));
-});
+// gulp.task("lib", function() {
+//     return gulp.src(DEV + "/lib/**/*.js")
+//         .pipe(gulp.dest(PUBLIC + "/lib"));
+// });
 
 //browser sync
 gulp.task("server", function() {
@@ -64,11 +63,36 @@ gulp.task("server", function() {
     });
 });
 
+//images
+// gulp.task("images", function() {
+//     return gulp.src(DEV + "/assets/images/**/*")
+//         .pipe(gulp.dest(PUBLIC + "/assets/images"));
+// });
+
+gulp.task("images", function() {
+        gulp.src(DEV + "/assets/images/**/*.{png,jpg,gif,svg}")
+                .pipe(imagemin([
+                        pngquant({
+                                quality: '65-80',
+                                speed: 1,
+                                floyd: 0
+                        }),
+                        mozjpeg({
+                                quality: 85,
+                                progressive: true
+                        }),
+                        imagemin.svgo(),
+                        imagemin.optipng(),
+                        imagemin.gifsicle()
+                ])) // 画像の圧縮処理
+                .pipe(gulp.dest((PUBLIC + "/assets/images")));
+});
+
 //watch
-gulp.task("default",["ejs","style","js","lib","images","server"], function() {
-    gulp.watch(DEV + "/ejs/**/*.ejs",["ejs"]);
-    gulp.watch(DEV + "/sass/**/*.scss",["style"]);
-    gulp.watch(DEV + "js/**/*.js",["js"]);
-    gulp.watch(DEV + "lib/**/*.js",["lib"]);
-    gulp.watch(DEV + "images/**/*",["images"]);
+gulp.task("default",["ejs","style","js","images","server"], function() {
+    gulp.watch(DEV + "/views/**/*.ejs",["ejs"]);
+    gulp.watch(DEV + "/assets/styles/**/*.scss",["style"]);
+    gulp.watch(DEV + "/assets/scripts/**/*.js",["js"]);
+    // gulp.watch(DEV + "lib/**/*.js",["lib"]);
+    gulp.watch(DEV + "/assets/images/**/*",["images"]);
 });

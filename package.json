@@ -1,31 +1,22 @@
 {
-  "name": "demoSample",
+  "name": "template_fl",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seito2014/demo-sample.git"
-  },
-  "keywords": [
-    "gulp",
-    "demo",
-    "test"
-  ],
-  "author": "seito horiguchi",
-  "license": "mit",
-  "bugs": {
-    "url": "https://github.com/seito2014/demo-sample/issues"
-  },
-  "homepage": "https://github.com/seito2014/demo-sample",
+  "author": "kame",
+  "license": "ISC",
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "gulp": "^3.8.10",
     "gulp-ejs": "^1.0.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-pleeease": "^1.1.0",
-    "gulp-ruby-sass": "^0.7.1"
+    "gulp-plumber": "^1.2.1",
+    "gulp-ruby-sass": "^0.7.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0"
   }
 }
