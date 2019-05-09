@@ -1,13 +1,35 @@
-<%
-var absolutePath = filename.split('src\\')[filename.split('src\\').length -1].replace('.ejs','.html');
-var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
-var pageData = {
-  absolutePath: absolutePath,
-  relativePath: relativePath
-};
--%>
-<%- include(pageData.relativePath + 'common/_head', {path: pageData},{page: json['home']}); %>
-<%- include(pageData.relativePath + 'common/_header', {path: pageData}); %>
+views\index.html
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
+        <!-- <meta property='base_url' content='./' id="base_url"> -->
+        <link rel="stylesheet" href="/assets/styles/common.css">
+        <link rel="icon" href="/assets/images/favicons/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="/assets/images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/icon-192x192.png">
+        <!-- build:js js/init.min.js -->
+        <!-- <script src="lib/modernizer/modernizr.js"></script> -->
+        <!-- <script src="/assets/scripts/load.js"></script> -->
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="wrapper" id="js_wrapper">
+
+            <header class="header">
+                <div class="header_inner">
+                    <div class="header_logo"></div>
+                    <div class="header_module"></div>
+                    <div class="header_module"></div>
+                    <div class="header_module"></div>
+                </div>
+            </header>
 
             <!-- start contents -->
             <div class="main_visual">
@@ -25,5 +47,14 @@ var pageData = {
             </div>
             <!-- end contents -->
 
-<%- include(pageData.relativePath + 'common/_footer', {path: pageData}); %>
-<%- include(pageData.relativePath + 'common/_script', {path: pageData}); %>
+            <footer class="footer">
+                <div class="footer_inner">
+                    <small>copyright</small>
+                </div>
+            </footer>
+        </div>
+        <!-- end wrapper -->
+        <script src="/assets/scripts/jquery.js"></script>
+        <script src="/assets/scripts/common.js"></script>
+    </body>
+</html>

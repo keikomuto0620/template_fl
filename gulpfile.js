@@ -1,18 +1,45 @@
 var gulp = require("gulp");
 
-var ejs = require("gulp-ejs"),
-    fs = require("fs"),
-    sass = require("gulp-sass"),
-    // sass = require("gulp-ruby-sass"),
-    pleeease = require("gulp-pleeease"),
-    plumber = require('gulp-plumber'),
-    imagemin = require("gulp-imagemin"),
-    pngquant = require('imagemin-pngquant'),
-    mozjpeg = require('imagemin-mozjpeg'),
-    browser = require("browser-sync");
+var ejs = require("gulp-ejs");
+var efs = require("fs");
+var edata = require("gulp-data");
+var esass = require("gulp-sass");
+var epleeease = require("gulp-pleeease");
+var eplumber = require('gulp-plumber');
+var eimagemin = require("gulp-imagemin");
+var epngquant = require('imagemin-pngquant');
+var emozjpeg = require('imagemin-mozjpeg');
+var browserSync = require("browser-sync");
+
+let $ = require('gulp-load-plugins')();
 
 var DEV = "src",
     PUBLIC = "dist";
+
+//browser sync
+gulp.task('browserSync', () => {
+    return browserSync.init({
+        server: {
+            baseDir: PUBLIC
+        },
+        port: 5000,
+        reloadOnRestart: true
+    });
+});
+// gulp.task("server", function() {
+//     browser({
+//         server: {
+//             baseDir: PUBLIC
+//         },
+//         port: 5000
+//     });
+// });
+
+// reload
+gulp.task("reload", (done) => {
+    browserSync.reload();
+    done();
+});
 
 //ejs
 gulp.task("ejs", function() {
@@ -20,10 +47,15 @@ gulp.task("ejs", function() {
     return gulp.src(
         [DEV + "/views/**/*.ejs",'!' + DEV + "/views/**/_*.ejs"]
     )
-        .pipe(plumber())
-        .pipe(ejs({json},{},{ext:'.html'}))
+        .pipe($.plumber())
+        .pipe($.data(file => {
+            return {
+              'filename': file.path
+          }
+          }))
+        .pipe($.ejs({json},{},{ext:'.html'}))
         .pipe(gulp.dest(PUBLIC))
-        .pipe(browser.reload({stream:true}));
+        // .pipe(browser.reload({stream:true}));
 });
 
 //style
@@ -41,22 +73,6 @@ gulp.task("style", function() {
       .pipe(gulp.dest(PUBLIC + "/assets/styles"))
   );
 });
-// gulp.task("style", function() {
-//     return gulp.src(DEV + "/assets/styles/**/*.scss")
-//         .pipe(sass({
-//             style:"compressed",
-//             compass : true,
-//             "sourcemap=none": true
-//         }))
-//         .pipe(pleeease({
-//             fallbacks: {
-//                 autoprefixer: ["last 2 version", "ie 11"]
-//             },
-//             minifier: false
-//         }))
-//         .pipe(gulp.dest(PUBLIC + "/assets/styles"))
-//         .pipe(browser.reload({stream:true}));
-// });
 
 //copy
 gulp.task("js", function() {
@@ -64,53 +80,32 @@ gulp.task("js", function() {
         .pipe(gulp.dest(PUBLIC + "/assets/scripts"));
 });
 
-//lib
-// gulp.task("lib", function() {
-//     return gulp.src(DEV + "/lib/**/*.js")
-//         .pipe(gulp.dest(PUBLIC + "/lib"));
-// });
-
-//browser sync
-gulp.task("server", function() {
-    browser({
-        server: {
-            baseDir: PUBLIC
-        },
-        port: 5000
-    });
-});
-
 //images
-// gulp.task("images", function() {
-//     return gulp.src(DEV + "/assets/images/**/*")
-//         .pipe(gulp.dest(PUBLIC + "/assets/images"));
-// });
-
 gulp.task("images", function() {
-        return gulp.src(DEV + "/assets/images/**/*.{png,jpg,gif,svg}")
-                .pipe(imagemin([
-                        pngquant({
-                                quality: [ 0.65, 0.8 ],
-                                speed: 1,
-                                floyd: 0
-                        }),
-                        mozjpeg({
-                                quality: 85,
-                                progressive: true
-                        }),
-                        imagemin.svgo(),
-                        imagemin.optipng(),
-                        imagemin.gifsicle()
+    return gulp.src(DEV + "/assets/images/**/*.{png,jpg,gif,svg}")
+    .pipe(imagemin([
+        pngquant({
+            quality: [ 0.65, 0.8 ],
+            speed: 1,
+            floyd: 0
+        }),
+        mozjpeg({
+            quality: 85,
+            progressive: true
+        }),
+        imagemin.svgo(),
+        imagemin.optipng(),
+        imagemin.gifsicle()
                 ])) // 画像の圧縮処理
-                .pipe(gulp.dest((PUBLIC + "/assets/images")));
+    .pipe(gulp.dest((PUBLIC + "/assets/images")));
 });
 
 //watch
-gulp.task("default", gulp.series( gulp.parallel("ejs","style","js","images"), "server", function() {
-    // ,["ejs","style","js","images","server"], function() {
+gulp.task("default", gulp.series(
+    gulp.parallel("ejs","style","js","images"),
+    "server", function() {
     gulp.watch(DEV + "/views/**/*.ejs",gulp.task("ejs"));
     gulp.watch(DEV + "/assets/styles/**/*.scss",gulp.task("style"));
     gulp.watch(DEV + "/assets/scripts/**/*.js",gulp.task("js"));
-    // gulp.watch(DEV + "lib/**/*.js",gulp.task("lib"));
     gulp.watch(DEV + "/assets/images/**/*",gulp.task("images"));
 }));
