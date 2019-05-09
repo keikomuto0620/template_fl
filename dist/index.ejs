@@ -6,7 +6,7 @@ var pageData = {
   relativePath: relativePath
 };
 -%>
-
+<%- include(pageData.relativePath + 'common/_head', {path: pageData},{page: json['home']}); %>
 <%- include(pageData.relativePath + 'common/_header', {path: pageData}); %>
 
             <!-- start contents -->

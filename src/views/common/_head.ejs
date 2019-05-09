@@ -1,23 +1,27 @@
+<%
+  var _default = json['default'];
+  for ( var key in _default ) {
+    if ( typeof page[key] === 'undefined' ) {
+      page[key] = _default[key];
+    }
+  }
+-%>
 <!DOCTYPE html>
-<!--[if lt IE 9]>
-<html lang="ja" class="no-js lt-ie9" prefix="og: http://ogp.me/ns#">
-<![endif]-->
-<!--[if gt IE 9]><!-->
-<html lang="ja" class="no-js" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
-
     <head>
         <meta charset="UTF-8">
-        <title>EJS DEMO PAGE...</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        <title><%= page['title'] %></title>
+        <meta name="description" content="<%= page['description'] %>">
+        <meta name="keywords" content="<%= page['keywords'] %>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport"
-              content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
-        <meta property='base_url' content='./' id="base_url">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
+        <!-- <meta property='base_url' content='./' id="base_url"> -->
         <link rel="stylesheet" href="/assets/styles/common.css">
-
+        <link rel="icon" href="/assets/images/favicons/favicon.ico">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="/assets/images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/icon-192x192.png">
         <!-- build:js js/init.min.js -->
         <!-- <script src="lib/modernizer/modernizr.js"></script> -->
-        <script src="/assets/scripts/load.js"></script>
+        <!-- <script src="/assets/scripts/load.js"></script> -->
         <!-- endbuild -->
     </head>

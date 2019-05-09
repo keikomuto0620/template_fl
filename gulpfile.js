@@ -1,7 +1,9 @@
 var gulp = require("gulp");
 
 var ejs = require("gulp-ejs"),
-    sass = require("gulp-ruby-sass"),
+    fs = require("fs"),
+    sass = require("gulp-sass"),
+    // sass = require("gulp-ruby-sass"),
     pleeease = require("gulp-pleeease"),
     plumber = require('gulp-plumber'),
     imagemin = require("gulp-imagemin"),
@@ -14,32 +16,47 @@ var DEV = "src",
 
 //ejs
 gulp.task("ejs", function() {
-    gulp.src(
+    var json = JSON.parse(fs.readFileSync('src/views/common/meta.json'));
+    return gulp.src(
         [DEV + "/views/**/*.ejs",'!' + DEV + "/views/**/_*.ejs"]
     )
         .pipe(plumber())
-        .pipe(ejs({ext:'.html'}))
+        .pipe(ejs({json},{},{ext:'.html'}))
         .pipe(gulp.dest(PUBLIC))
         .pipe(browser.reload({stream:true}));
 });
 
 //style
 gulp.task("style", function() {
+  return (
     gulp.src(DEV + "/assets/styles/**/*.scss")
-        .pipe(sass({
-            style:"compressed",
-            compass : true,
-            "sourcemap=none": true
-        }))
+        .pipe(plumber())
+        .pipe(sass({outputStyle: "compressed"}))
         .pipe(pleeease({
             fallbacks: {
                 autoprefixer: ["last 2 version", "ie 11"]
             },
             minifier: false
         }))
-        .pipe(gulp.dest(PUBLIC + "/assets/styles"))
-        .pipe(browser.reload({stream:true}));
+      .pipe(gulp.dest(PUBLIC + "/assets/styles"))
+  );
 });
+// gulp.task("style", function() {
+//     return gulp.src(DEV + "/assets/styles/**/*.scss")
+//         .pipe(sass({
+//             style:"compressed",
+//             compass : true,
+//             "sourcemap=none": true
+//         }))
+//         .pipe(pleeease({
+//             fallbacks: {
+//                 autoprefixer: ["last 2 version", "ie 11"]
+//             },
+//             minifier: false
+//         }))
+//         .pipe(gulp.dest(PUBLIC + "/assets/styles"))
+//         .pipe(browser.reload({stream:true}));
+// });
 
 //copy
 gulp.task("js", function() {
@@ -70,10 +87,10 @@ gulp.task("server", function() {
 // });
 
 gulp.task("images", function() {
-        gulp.src(DEV + "/assets/images/**/*.{png,jpg,gif,svg}")
+        return gulp.src(DEV + "/assets/images/**/*.{png,jpg,gif,svg}")
                 .pipe(imagemin([
                         pngquant({
-                                quality: '65-80',
+                                quality: [ 0.65, 0.8 ],
                                 speed: 1,
                                 floyd: 0
                         }),
@@ -89,10 +106,11 @@ gulp.task("images", function() {
 });
 
 //watch
-gulp.task("default",["ejs","style","js","images","server"], function() {
-    gulp.watch(DEV + "/views/**/*.ejs",["ejs"]);
-    gulp.watch(DEV + "/assets/styles/**/*.scss",["style"]);
-    gulp.watch(DEV + "/assets/scripts/**/*.js",["js"]);
-    // gulp.watch(DEV + "lib/**/*.js",["lib"]);
-    gulp.watch(DEV + "/assets/images/**/*",["images"]);
-});
+gulp.task("default", gulp.series( gulp.parallel("ejs","style","js","images"), "server", function() {
+    // ,["ejs","style","js","images","server"], function() {
+    gulp.watch(DEV + "/views/**/*.ejs",gulp.task("ejs"));
+    gulp.watch(DEV + "/assets/styles/**/*.scss",gulp.task("style"));
+    gulp.watch(DEV + "/assets/scripts/**/*.js",gulp.task("js"));
+    // gulp.watch(DEV + "lib/**/*.js",gulp.task("lib"));
+    gulp.watch(DEV + "/assets/images/**/*",gulp.task("images"));
+}));

@@ -1,0 +1,19 @@
+{
+  "default": {
+    "title": "default title",
+    "description": "default description",
+    "keywords": "default keywords"
+  },
+
+  "home": {
+    "title": "sitename",
+    "description": "home description",
+    "keywords": "keywords for home"
+  },
+
+  "about": {
+    "title": "about - sitename",
+    "description": "page description",
+    "keywords": "keywords for about"
+  }
+}
