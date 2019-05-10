@@ -13,6 +13,8 @@ const fs = require('fs');
 const data = require('gulp-data');
 const rename = require('gulp-rename');
 
+const uglify = require('gulp-uglify');
+
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
@@ -38,7 +40,9 @@ gulp.task('style', () => {
 
 //js
 gulp.task('js', function() {
-    return gulp.src(DEV + '/assets/scripts/**/*.js')
+    return gulp.src(DEV + '/assets/scripts/**/*.js','!/assets/scripts/**/*.min.js')
+        .pipe(uglify())
+        .pipe(rename({extname: '.min.js'}))
         .pipe(gulp.dest(PUBLIC + '/assets/scripts'));
 });
 

@@ -1,25 +1,26 @@
 {
   "default": {
-    "title": "default title",
+    "title": "",
     "description": "default description",
-    "keywords": "default keywords"
+    "keywords": "default keywords",
+    "parent": ""
   },
 
   "home": {
-    "title": "サイト名",
     "description": "home description",
     "keywords": "keywords for home"
   },
 
   "about": {
-    "title": "about - サイト名",
+    "title": "about",
     "description": "about description",
     "keywords": "keywords for about"
   },
 
   "about-third": {
-    "title": "about-third - サイト名",
+    "title": "about-third",
     "description": "about-third description",
-    "keywords": "keywords for about-third"
+    "keywords": "keywords for about-third",
+    "parent": "about"
   }
 }

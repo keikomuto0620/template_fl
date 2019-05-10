@@ -5,10 +5,17 @@
 	  page[key] = _default[key];
 	}
   }
+  var sitename = 'サイト名';
 -%><!DOCTYPE html>
 	<head>
 		<meta charset="UTF-8">
-		<title><%= page['title'] %></title>
+		<% if (page == json['home']) { %>
+		<title><%= sitename %></title>
+		<% } else if(page['parent'] != "") { %>
+		<title><%= page['title'] %> | <%= page['parent'] %> | <%= sitename %></title>
+		<% } else { %>
+		<title><%= page['title'] %> | <%= sitename %></title>
+		<% } %>
 		<meta name="description" content="<%= page['description'] %>">
 		<meta name="keywords" content="<%= page['keywords'] %>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
