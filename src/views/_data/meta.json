@@ -6,13 +6,13 @@
   },
 
   "home": {
-    "title": "sitename",
+    "title": "サイト名",
     "description": "home description",
     "keywords": "keywords for home"
   },
 
   "about": {
-    "title": "about - sitename",
+    "title": "about - サイト名",
     "description": "page description",
     "keywords": "keywords for about"
   }

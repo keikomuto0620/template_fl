@@ -1,12 +1,12 @@
 const gulp = require('gulp');
 
 const plumber = require('gulp-plumber');
+const browserSync = require('browser-sync');
+const watch = require('gulp-watch');
+const del = require('del');
 
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-
-const browserSync = require('browser-sync');
-const watch = require('gulp-watch');
 
 const ejs = require('gulp-ejs');
 const fs = require('fs');
@@ -17,7 +17,12 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
 
-let $ = require('gulp-load-plugins')();
+// const $ = require('gulp-load-plugins')();
+const $ = require('gulp-load-plugins')({
+  pattern: ['del'],        // del パッケージを読み込む
+  overridePattern: false,  // デフォルトのパターン ('gulp-*', 'gulp.*', '@*/gulp{-,.}*') を残す
+  maintainScope: false     // スコープパッケージを階層化しない
+});
 
 const DEV = 'src',
     PUBLIC = 'dist';
@@ -59,7 +64,7 @@ gulp.task('images', function() {
 
 //ejs
 gulp.task('ejs', () => {
-    var json = JSON.parse(fs.readFileSync(DEV +'/views/common/meta.json'));
+    var json = JSON.parse(fs.readFileSync(DEV +'/views/_data/meta.json','utf-8'));
     return gulp.src(
         [DEV + '/views/**/*.ejs','!' + DEV + '/views/**/_*.ejs']
     )
@@ -69,13 +74,37 @@ gulp.task('ejs', () => {
               'filename': file.path
           }
           }))
-        .pipe($.ejs())
+        .pipe($.ejs({json:json}))
         .pipe(rename({extname: '.html'}))
         .pipe(gulp.dest(PUBLIC))
 });
 
+
+
+// clean
+gulp.task('cleanIMG', (done) => {
+    del(PUBLIC + '/assets/images/**/*');
+    done();
+});
+gulp.task('cleanJS', (done) => {
+    del(PUBLIC + '/assets/scripts/**/*.js');
+    done();
+});
+gulp.task('cleanCSS', (done) => {
+    del(PUBLIC + '/assets/styles/**/*.css');
+    done();
+});
+
+
+gulp.task('initialize', (done) => {
+    del(PUBLIC + '/**/*');
+    done();
+});
+
+gulp.task('build', gulp.parallel('ejs','style','js','images'));
+
 // sever
-gulp.task('browser-sync', () => {
+gulp.task('server', () => {
     browserSync({
         server: {
             baseDir: PUBLIC
@@ -84,13 +113,14 @@ gulp.task('browser-sync', () => {
         // startPath: `${BASE_PATH}`,
         // ghostMode: false
     });
+    // watch([DEV + '/**/*'], gulp.series('build', browserSync.reload));
+    // watch([DEV + '/views/**/*.ejs'], gulp.series('cleanHTML','ejs', browserSync.reload));
     watch([DEV + '/views/**/*.ejs'], gulp.series('ejs', browserSync.reload));
-    watch([DEV + '/assets/styles/**/*.scss'], gulp.series('style', browserSync.reload));
-    watch([DEV + '/assets/scripts/**/*.js'], gulp.series('js', browserSync.reload));
-    watch([DEV + '/assets/images/**/*.js'], gulp.series('images', browserSync.reload));
+    watch([DEV + '/assets/styles/**/*.scss'], gulp.series('cleanCSS','style', browserSync.reload));
+    watch([DEV + '/assets/scripts/**/*.js'], gulp.series('cleanJS','js', browserSync.reload));
+    watch([DEV + '/assets/images/**/*'], gulp.series('cleanIMG','images', browserSync.reload));
 });
-gulp.task('server', gulp.series('browser-sync'));
+
 
 // default
-gulp.task('build', gulp.parallel('ejs','style','js','images'));
-gulp.task('default', gulp.series('build', 'server'));
+gulp.task('default', gulp.series('initialize','build', 'server'));

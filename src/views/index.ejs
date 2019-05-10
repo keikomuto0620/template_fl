@@ -1,29 +1,17 @@
-<%
-var absolutePath = filename.split('src\\')[filename.split('src\\').length -1].replace('.ejs','.html');
-var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
-var pageData = {
-  absolutePath: absolutePath,
-  relativePath: relativePath
-};
--%>
-<%- include(pageData.relativePath + 'common/_head', {page: pageData}); %>
-<%- include(pageData.relativePath + 'common/_header', {page: pageData}); %>
+<%- include('_common/_head', {page:json['home']}); %>
+<%- include('_common/_header'); %>
 
-            <!-- start contents -->
             <div class="main_visual">
                 <div class="main_visual_inner">
                     <img src="http://placehold.it/980x520" height="520" width="980" alt="">
                 </div>
             </div>
 
-            <!-- start contents -->
             <div class="contents">
                 <div class="contents_inner">
                     <div class="main"></div>
                     <aside class="side"></aside>
                 </div>
             </div>
-            <!-- end contents -->
 
-<%- include(pageData.relativePath + 'common/_footer', {page: pageData}); %>
-<%- include(pageData.relativePath + 'common/_script', {page: pageData}); %>
+<%- include('_common/_footer'); %>
