@@ -15,5 +15,11 @@
     "title": "about - サイト名",
     "description": "about description",
     "keywords": "keywords for about"
+  },
+
+  "about-third": {
+    "title": "about-third - サイト名",
+    "description": "about-third description",
+    "keywords": "keywords for about-third"
   }
 }

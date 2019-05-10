@@ -1,31 +1,35 @@
 <%
   var _default = json['default'];
   for ( var key in _default ) {
-    if ( typeof page[key] === 'undefined' ) {
-      page[key] = _default[key];
-    }
+	if ( typeof page[key] === 'undefined' ) {
+	  page[key] = _default[key];
+	}
   }
 -%><!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <title><%= page['title'] %></title>
-        <meta name="description" content="<%= page['description'] %>">
-        <meta name="keywords" content="<%= page['keywords'] %>">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
-        <link rel="stylesheet" href="/assets/styles/common.css">
-        <link rel="icon" href="/assets/images/favicons/favicon.ico">
-        <link rel="icon" type="image/vnd.microsoft.icon" href="/assets/images/favicons/favicon.ico">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/icon-192x192.png">
-    </head>
-    <body>
-    <div class="wrapper" id="js_wrapper">
-        <header class="header">
-            <div class="header_inner">
-                <div class="header_logo"></div>
-                <div class="header_module"></div>
-                <div class="header_module"></div>
-                <div class="header_module"></div>
-            </div>
-        </header>
+	<head>
+		<meta charset="UTF-8">
+		<title><%= page['title'] %></title>
+		<meta name="description" content="<%= page['description'] %>">
+		<meta name="keywords" content="<%= page['keywords'] %>">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
+		<link rel="stylesheet" href="/assets/styles/common.css">
+		<link rel="icon" href="/assets/images/favicons/favicon.ico">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="/assets/images/favicons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/icon-192x192.png">
+	</head>
+	<body>
+	<div class="wrapper" id="js_wrapper">
+		<header class="header">
+			<div class="header_inner">
+				<% if (page == json['home']) { %>
+				<h1 class="header_logo"><%= page['title'] %></h1>
+				<% } else { %>
+				<div class="header_logo"><%= page['title'] %></div>
+				<% } %>
+				<div class="header_module"></div>
+				<div class="header_module"></div>
+				<div class="header_module"></div>
+			</div>
+		</header>
