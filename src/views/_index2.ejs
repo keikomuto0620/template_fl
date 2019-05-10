@@ -5,8 +5,7 @@ var pathData = {
   absolutePath: absolutePath,
   relativePath: relativePath
 }; %>
-<%include(pathData.relativePath + '_common/_head', {path: pathData,page:json['home']}); %>
-<%include(pathData.relativePath + '_common/_header', {path: pathData}); %>
+<%include(pathData.relativePath + '_inc/_header', {path: pathData,page:json['home']}); %>
 
             <div class="main_visual">
                 <div class="main_visual_inner">
@@ -21,4 +20,4 @@ var pathData = {
                 </div>
             </div>
 
-<%- include(pathData.relativePath + '_common/_footer', {path: pathData}); %>
+<%- include(pathData.relativePath + '_inc/_footer', {path: pathData}); %>

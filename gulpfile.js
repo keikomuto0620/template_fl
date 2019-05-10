@@ -102,7 +102,7 @@ gulp.task('clean', (done) => {
     done();
 });
 
-gulp.task('build', gulp.parallel('ejs','style','js','images'));
+gulp.task('build', gulp.series('ejs','style','js','images'));
 
 // sever
 gulp.task('server', () => {

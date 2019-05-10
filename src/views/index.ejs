@@ -4,8 +4,7 @@ var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
 var pathData = {
   absolutePath: absolutePath,
   relativePath: relativePath
-}; %><%- include(pathData.relativePath + '_common/_head', {page:json['home']},{path: pathData}); %>
-<%- include(pathData.relativePath + '_common/_header',{path: pathData}); %>
+}; %><%- include(pathData.relativePath + '_inc/_header', {page:json['home']},{path: pathData}); %>
 
             <div class="main_visual">
                 <div class="main_visual_inner">
@@ -20,4 +19,4 @@ var pathData = {
                 </div>
             </div>
 
-<%- include(pathData.relativePath + '_common/_footer',{path: pathData}); %>
+<%- include(pathData.relativePath + '_inc/_footer',{path: pathData}); %>
