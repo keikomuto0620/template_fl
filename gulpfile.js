@@ -62,6 +62,7 @@ gulp.task('images', function() {
     .pipe(gulp.dest((PUBLIC + '/assets/images')));
 });
 
+
 //ejs
 gulp.task('ejs', () => {
     var json = JSON.parse(fs.readFileSync(DEV +'/views/_data/meta.json','utf-8'));
@@ -96,7 +97,7 @@ gulp.task('cleanCSS', (done) => {
 });
 
 
-gulp.task('initialize', (done) => {
+gulp.task('clean', (done) => {
     del(PUBLIC + '/**/*');
     done();
 });
@@ -123,4 +124,4 @@ gulp.task('server', () => {
 
 
 // default
-gulp.task('default', gulp.series('initialize','build', 'server'));
+gulp.task('default', gulp.series('clean','build', 'server'));
