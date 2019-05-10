@@ -3,6 +3,7 @@
     "title": "",
     "description": "default description",
     "keywords": "default keywords",
+    "directory": "",
     "parent": ""
   },
 
@@ -12,15 +13,16 @@
   },
 
   "about": {
-    "title": "about",
-    "description": "about description",
-    "keywords": "keywords for about"
+    "title": "会社概要",
+    "description": "会社概要 description",
+    "keywords": "keywords for 会社概要"
   },
 
   "about-third": {
-    "title": "about-third",
-    "description": "about-third description",
-    "keywords": "keywords for about-third",
-    "parent": "about"
+    "title": "会社概要-第三階層",
+    "description": "会社概要-第三階層 description",
+    "keywords": "keywords for 会社概要-第三階層",
+    "parent": "会社概要",
+    "parentdir": "about"
   }
 }
