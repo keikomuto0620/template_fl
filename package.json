@@ -16,15 +16,20 @@
     "gulp": "^4.0.2",
     "gulp-data": "^1.3.1",
     "gulp-ejs": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^7.0.0"
+    "imagemin-pngquant": "^7.0.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0"
   },
   "dependencies": {
     "gulp-autoprefixer": "^6.1.0"

@@ -7,11 +7,14 @@ const del = require('del');
 
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const stylelint = require('gulp-stylelint');
+const sourcemaps = require('gulp-sourcemaps');
 
 const ejs = require('gulp-ejs');
 const fs = require('fs');
 const data = require('gulp-data');
 const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
 
 const uglify = require('gulp-uglify');
 
@@ -20,11 +23,11 @@ const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
 
 // const $ = require('gulp-load-plugins')();
-const $ = require('gulp-load-plugins')({
-  pattern: ['del'],        // del パッケージを読み込む
-  overridePattern: false,  // デフォルトのパターン ('gulp-*', 'gulp.*', '@*/gulp{-,.}*') を残す
-  maintainScope: false     // スコープパッケージを階層化しない
-});
+// const $ = require('gulp-load-plugins')({
+//   pattern: ['del'],        // del パッケージを読み込む
+//   overridePattern: false,  // デフォルトのパターン ('gulp-*', 'gulp.*', '@*/gulp{-,.}*') を残す
+//   maintainScope: false     // スコープパッケージを階層化しない
+// });
 
 const DEV = 'src',
     PUBLIC = 'dist';
@@ -33,8 +36,14 @@ const DEV = 'src',
 gulp.task('style', () => {
     return gulp.src(DEV + '/assets/styles/**/*.scss')
     .pipe(plumber())
-    .pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError)
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'extended'})).on('error', sass.logError)
     .pipe(autoprefixer({browsers: ['last 2 versions', 'ie >= 11']}))
+    .pipe(stylelint({
+      reporters: [{formatter: 'verbose', console: true}],
+      fix: true
+    }))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PUBLIC + '/assets/styles'))
 });
 
@@ -66,25 +75,23 @@ gulp.task('images', function() {
     .pipe(gulp.dest((PUBLIC + '/assets/images')));
 });
 
-
 //ejs
 gulp.task('ejs', () => {
     var json = JSON.parse(fs.readFileSync(DEV +'/views/_data/meta.json','utf-8'));
     return gulp.src(
         [DEV + '/views/**/*.ejs','!' + DEV + '/views/**/_*.ejs']
     )
-        .pipe($.plumber())
-        .pipe($.data(file => {
+        .pipe(plumber())
+        .pipe(data(file => {
             return {
               'filename': file.path
           }
           }))
-        .pipe($.ejs({json:json}))
+        .pipe(ejs({json:json}))
+        .pipe(htmlmin({collapseWhitespace : true,removeComments : true}))
         .pipe(rename({extname: '.html'}))
         .pipe(gulp.dest(PUBLIC))
 });
-
-
 
 // clean
 gulp.task('cleanIMG', (done) => {
@@ -99,8 +106,6 @@ gulp.task('cleanCSS', (done) => {
     del(PUBLIC + '/assets/styles/**/*.css');
     done();
 });
-
-
 gulp.task('clean', (done) => {
     del(PUBLIC + '/**/*');
     done();
