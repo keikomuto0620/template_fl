@@ -1,15 +1,9 @@
-@charset "UTF-8";
-*{
-	box-sizing: border-box;
-}
+/* base */
 html{
 	font-size: 62.5%;
   min-height: 100%;
 }
 body {
-	font-size: 14px;
+	@include rem(16)
 	line-height: 1;
-}
-.wrapper{
-  width: 100%;
 }

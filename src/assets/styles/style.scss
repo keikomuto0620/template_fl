@@ -1,6 +1,6 @@
-// ==========================================================================
-// Foundation
-// ==========================================================================
+/* ==========================================================================
+Foundation
+========================================================================== */
 
 @import "foundation/_setting";
 @import "foundation/_mixin";
@@ -8,9 +8,9 @@
 @import "foundation/_reset";
 @import "foundation/_base";
 
-// ==========================================================================
-// Layout
-// ==========================================================================
+/* ==========================================================================
+Layout
+========================================================================== */
 
 @import "layout/_header";
 @import "layout/_footer";
@@ -18,35 +18,35 @@
 @import "layout/_main";
 @import "layout/_sidebar";
 
-// ==========================================================================
-// Object
-// ==========================================================================
+/* ==========================================================================
+Object
+========================================================================== */
 
-// -----------------------------------------------------------------
-// Component
-// -----------------------------------------------------------------
+/* -----------------------------------------------------------------
+Component
+----------------------------------------------------------------- */
 
-@import "object/component/_button";
-@import "object/component/_dialog";
-@import "object/component/_grid";
+// @import "object/component/_button";
+// @import "object/component/_dialog";
+// @import "object/component/_grid";
 @import "object/component/_media";
 
-// -----------------------------------------------------------------
-// Project
-// -----------------------------------------------------------------
+/* -----------------------------------------------------------------
+Project
+----------------------------------------------------------------- */
 
-@import "object/project/_articles";
-@import "object/project/_comments";
-@import "object/project/_gallery";
-@import "object/project/_profile";
+// @import "object/project/_articles";
+// @import "object/project/_comments";
+// @import "object/project/_gallery";
+// @import "object/project/_profile";
 
-// -----------------------------------------------------------------
-// Utility
-// -----------------------------------------------------------------
+/* -----------------------------------------------------------------
+Utility
+----------------------------------------------------------------- */
 
-@import "object/utility/_align";
-@import "object/utility/_clearfix";
+// @import "object/utility/_align";
+// @import "object/utility/_clearfix";
 @import "object/utility/_margin";
-@import "object/utility/_position";
-@import "object/utility/_size";
-@import "object/utility/_text";
+// @import "object/utility/_position";
+// @import "object/utility/_size";
+// @import "object/utility/_text";

@@ -1,21 +1,23 @@
-.header{
+/* header */
+.l-header{
     width: 100%;
 }
-.header_inner{
+.l-header_inner{
     width: $size_max; //setting.scssに記述
     height: 80px;
     margin: 0 auto;
     background: #eee;
     padding: 10px;
-    @extend %clearfix;
+    overflow: hidden;
+    // @extend %clearfix;
 }
-.header_logo{
+.l-header_logo{
     float: left;
     width: 200px;
     height: 60px;
     background: #fff;
 }
-.header_module{
+.l-header_module{
     float: right;
     width: 150px;
     height: 60px;

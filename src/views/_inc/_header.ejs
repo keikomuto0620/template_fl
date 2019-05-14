@@ -21,27 +21,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,initial-scale=1.0">
 		<link rel="stylesheet" href="/assets/styles/style.css">
-		<link rel="stylesheet" href="/assets/styles/index.css">
 		<link rel="icon" href="/assets/images/favicons/favicon.ico">
 		<link rel="icon" type="image/vnd.microsoft.icon" href="/assets/images/favicons/favicon.ico">
 		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
 		<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/icon-192x192.png">
 	</head>
 	<body>
-	<div class="wrapper" id="js-wrapper">
-		<header class="header">
-			<div class="header_inner">
+		<header class="l-header">
+			<div class="l-header_inner">
 				<% if (page == json['home']) { %>
-				<h1 class="header_logo"><%= sitename %></h1>
+				<h1 class="l-header_logo"><%= sitename %></h1>
 				<% } else { %>
-				<div class="header_logo"><%= sitename %></div>
+				<div class="l-header_logo"><%= sitename %></div>
 				<% } %>
-				<div class="header_module"></div>
-				<div class="header_module"></div>
-				<div class="header_module"></div>
+				<div class="l-header_module"></div>
+				<div class="l-header_module"></div>
+				<div class="l-header_module"></div>
 			</div>
 			<% if (page !== json['home']) { %>
-			<ul class="breadcrumbs">
+			<ul class="p-breadcrumbs">
 				<li><a href="">ホーム</a></li>
 			<% if(page['parent'] != "") { %>
 				<li><a href="/<%= page['parentdir'] %>/"><%= page['parent'] %></a></li>

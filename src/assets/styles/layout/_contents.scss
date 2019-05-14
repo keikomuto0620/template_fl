@@ -1,9 +1,11 @@
-.contents{
+/* contents */
+.l-contents{
     width: 100%;
     margin: 30px 0;
 }
-.contents_inner{
+.l-contents_inner{
     width: $size_max; //setting.scssに記述
     margin: 0 auto;
-    @extend %clearfix;
+    overflow: hidden;
+    // @extend %clearfix;
 }
