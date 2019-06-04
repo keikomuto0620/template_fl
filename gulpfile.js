@@ -38,7 +38,7 @@ gulp.task('style', () => {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'extended'})).on('error', sass.logError)
-    .pipe(autoprefixer({browsers: ['last 2 versions', 'ie >= 11']}))
+    .pipe(autoprefixer({overrideBrowserslist: ['last 1 versions', 'ie >= 11']}))
     .pipe(stylelint({
       reporters: [{formatter: 'verbose', console: true}],
       fix: true
@@ -120,6 +120,7 @@ gulp.task('server', () => {
             baseDir: PUBLIC
         },
         port: 5000,
+        open: 'external'
         // startPath: `${BASE_PATH}`,
         // ghostMode: false
     });
