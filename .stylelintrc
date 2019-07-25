@@ -1,14 +1,44 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+    "./src/assets/styles/foundation/_reset.scss",
+  ],
   "rules": {
-    "at-rule-no-unknown": [ true, {
-      ignoreAtRules: [
-        'extend', 'at-root', 'debug',
-        'warn', 'error', 'if', 'else',
-        'for', 'each', 'while', 'mixin',
-        'include', 'content', 'return', 'function'
-      ]
-    }],
-    "no-invalid-double-slash-comments": null
+    "no-duplicate-selectors": null,
+    "at-rule-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "number-leading-zero": null,
+    "function-whitespace-after": null,
+    "font-family-no-duplicate-names": null,
+    "declaration-empty-line-before": null,
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+          "ignoreAtRules": [
+          "extend",
+          "at-root",
+          "debug",
+          "warn",
+          "error",
+          "if",
+          "else",
+          "for",
+          "each",
+          "while",
+          "mixin",
+          "include",
+          "content",
+          "return",
+          "function",
+          "tailwind",
+          "apply",
+          "responsive",
+          "variants",
+          "screen",
+        ],
+      },
+    ],
   }
 }

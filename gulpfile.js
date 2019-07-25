@@ -50,8 +50,8 @@ gulp.task('style', () => {
 //js
 gulp.task('js', function() {
     return gulp.src(DEV + '/assets/scripts/**/*.js','!/assets/scripts/**/*.min.js')
-        .pipe(uglify())
-        .pipe(rename({extname: '.min.js'}))
+        // .pipe(uglify())
+        // .pipe(rename({extname: '.min.js'}))
         .pipe(gulp.dest(PUBLIC + '/assets/scripts'));
 });
 
@@ -88,7 +88,7 @@ gulp.task('ejs', () => {
           }
           }))
         .pipe(ejs({json:json}))
-        .pipe(htmlmin({collapseWhitespace : true,removeComments : true}))
+        // .pipe(htmlmin({collapseWhitespace : true,removeComments : true}))
         .pipe(rename({extname: '.html'}))
         .pipe(gulp.dest(PUBLIC))
 });
