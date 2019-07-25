@@ -1,0 +1,14 @@
+/* breadcrumbs
+----------------------------- */
+.p-breadcrumbs {
+	padding: 10px 0;
+	display: flex;
+}
+.p-breadcrumbs__item {
+	&+.p-breadcrumbs__item {
+		&:before {
+			content:' > ';
+			padding: 0 10px;
+		}
+	}
+}

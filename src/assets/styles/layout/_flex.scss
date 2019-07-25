@@ -3,19 +3,24 @@
   justify-content: center;
   align-items: center;
 }
+
 .l-flex--between {
   justify-content: space-between;
 }
+
 @include mq {
   .l-flex {
     display: flex;
   }
+
   .l-flex--reverse {
     flex-direction: row-reverse;
   }
+
   .l-flex--column {
     flex-direction: column;
   }
+
   .l-flex--column-reverse {
     flex-direction: column-reverse;
   }

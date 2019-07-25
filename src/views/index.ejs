@@ -2,23 +2,21 @@
 var absolutePath = filename.split('src\\')[filename.split('src\\').length -1].replace('.ejs','.html');
 var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
 var pathData = {
-  absolutePath: absolutePath,
-  relativePath: relativePath
+	absolutePath: absolutePath,
+	relativePath: relativePath
 }; %><%- include(pathData.relativePath + '_inc/_header', {page:json['home']},{path: pathData}); %>
 
-            <div class="main_visual">
-                <div class="main_visual_inner">
-                    <img src="http://placehold.it/980x520" height="520" width="980" alt="">
-                </div>
-            </div>
-
-            <div class="l-contents">
-                <div class="l-contents_inner">
-                    <div class="l-main">
-                        <p>text.</p>
-                    </div>
-                    <aside class="l-side"></aside>
-                </div>
-            </div>
+<div class="l-contents l-flex l-flex--between">
+	<div class="l-main">
+		<h2 class="c-title-lv2">c-title-lv2</h2>
+		<div class="p-entry__content">
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<h4>h4</h4>
+			<h5>h5</h5>
+		</div>
+	</div>
+	<aside class="l-side">l-side</aside>
+</div>
 
 <%- include(pathData.relativePath + '_inc/_footer',{path: pathData}); %>

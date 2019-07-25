@@ -10,16 +10,6 @@
   white-space: nowrap;
 }
 
-// %clearfix{
-//  zoom: 1;
-//  &:before,&:after{
-//    content: "";
-//    display: block;
-//  }
-//  &:after {//     clear: both;
-//  }
-// }
-
 %hover {
   transition: opacity ease 0.3s;
   &:hover {

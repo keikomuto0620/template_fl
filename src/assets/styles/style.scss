@@ -14,6 +14,7 @@ Layout
 @import "layout/_contents";
 @import "layout/_flex";
 @import "layout/_header";
+@import "layout/_gnav";
 @import "layout/_footer";
 @import "layout/_main";
 @import "layout/_sidebar";
@@ -36,6 +37,7 @@ Component
 Project
 ----------------------------------------------------------------- */
 
+@import "object/project/_breadcrumbs";
 @import "object/project/_frontpage";
 @import "object/project/_entry";
 @import "object/project/_widget";

@@ -24,5 +24,20 @@
     "keywords": "keywords for 会社概要-第三階層",
     "parent": "会社概要",
     "parentdir": "about"
+  },
+
+  "news": {
+    "title": "ニュース",
+    "description": "ニュース description",
+    "keywords": "keywords for ニュース"
+  },
+
+  "blog": {
+    "title": "ニュース-第三階層",
+    "description": "ニュース-第三階層 description",
+    "keywords": "keywords for ニュース-第三階層",
+    "parent": "ニュース",
+    "parentdir": "blog"
   }
+
 }

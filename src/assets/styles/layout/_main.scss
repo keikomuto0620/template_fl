@@ -1,11 +1,14 @@
 /* main */
 .l-main {
   position: relative;
+  background-color: #eee;
+
   @include mq {
     margin: 60px 0;
     width: 70%;
   }
 }
+
 .l-main--full {
   width: 100%;
 }

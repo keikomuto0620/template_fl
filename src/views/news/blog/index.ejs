@@ -2,13 +2,15 @@
 var absolutePath = filename.split('src\\')[filename.split('src\\').length -1].replace('.ejs','.html');
 var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
 var pathData = {
-  absolutePath: absolutePath,
-  relativePath: relativePath
-}; %><%- include(pathData.relativePath + '_inc/_header', {page:json['about']},{path: pathData}); %>
+	absolutePath: absolutePath,
+	relativePath: relativePath
+}; %><%- include(pathData.relativePath + '_inc/_header', {page:json['blog']},{path: pathData}); %>
 
 <div class="l-contents l-flex l-flex--between">
-    <div class="l-main">l-main</div>
-    <aside class="l-side">l-side</aside>
+	<div class="l-main">
+		<p>l-main</p>
+	</div>
+	<aside class="l-side">l-side</aside>
 </div>
 
 <%- include(pathData.relativePath + '_inc/_footer',{path: pathData}); %>
