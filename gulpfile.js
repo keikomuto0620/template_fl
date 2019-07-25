@@ -22,13 +22,6 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const mozjpeg = require('imagemin-mozjpeg');
 
-// const $ = require('gulp-load-plugins')();
-// const $ = require('gulp-load-plugins')({
-//   pattern: ['del'],        // del パッケージを読み込む
-//   overridePattern: false,  // デフォルトのパターン ('gulp-*', 'gulp.*', '@*/gulp{-,.}*') を残す
-//   maintainScope: false     // スコープパッケージを階層化しない
-// });
-
 const DEV = 'src',
     PUBLIC = 'dist';
 
@@ -94,24 +87,24 @@ gulp.task('ejs', () => {
 });
 
 // clean
-gulp.task('cleanIMG', (done) => {
-    del(PUBLIC + '/assets/images/**/*');
-    done();
-});
-gulp.task('cleanJS', (done) => {
-    del(PUBLIC + '/assets/scripts/**/*.js');
-    done();
-});
-gulp.task('cleanCSS', (done) => {
-    del(PUBLIC + '/assets/styles/**/*.css');
-    done();
-});
+// gulp.task('cleanIMG', (done) => {
+//     del(PUBLIC + '/assets/images/**/*');
+//     done();
+// });
+// gulp.task('cleanJS', (done) => {
+//     del(PUBLIC + '/assets/scripts/**/*.js');
+//     done();
+// });
+// gulp.task('cleanCSS', (done) => {
+//     del(PUBLIC + '/assets/styles/**/*.css');
+//     done();
+// });
 gulp.task('clean', (done) => {
     del(PUBLIC + '/**/*');
     done();
 });
 
-gulp.task('build', gulp.series('ejs','style','js','images'));
+gulp.task('build', gulp.series('style','js','images','ejs'));
 
 // sever
 gulp.task('server', () => {
@@ -125,13 +118,12 @@ gulp.task('server', () => {
         // ghostMode: false
     });
     // watch([DEV + '/**/*'], gulp.series('build', browserSync.reload));
-    // watch([DEV + '/views/**/*.ejs'], gulp.series('cleanHTML','ejs', browserSync.reload));
     watch([DEV + '/views/**/*.ejs'], gulp.series('ejs', browserSync.reload));
-    watch([DEV + '/assets/styles/**/*.scss'], gulp.series('cleanCSS','style', browserSync.reload));
-    watch([DEV + '/assets/scripts/**/*.js'], gulp.series('cleanJS','js', browserSync.reload));
-    watch([DEV + '/assets/images/**/*'], gulp.series('cleanIMG','images', browserSync.reload));
+    watch([DEV + '/assets/styles/**/*.scss'], gulp.series('style', browserSync.reload));
+    watch([DEV + '/assets/scripts/**/*.js'], gulp.series('js', browserSync.reload));
+    watch([DEV + '/assets/images/**/*'], gulp.series('images', browserSync.reload));
 });
 
 
 // default
-gulp.task('default', gulp.series('clean','build', 'server'));
+gulp.task('default', gulp.series('clean','build','server'));
