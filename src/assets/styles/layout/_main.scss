@@ -1,7 +1,11 @@
 /* main */
-.l-main{
-    float: left;
+.l-main {
+  position: relative;
+  @include mq {
+    margin: 60px 0;
     width: 70%;
-    background: #eee;
-    min-height: 600px;
+  }
+}
+.l-main--full {
+  width: 100%;
 }

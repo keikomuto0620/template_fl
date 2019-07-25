@@ -1,17 +1,34 @@
-
-@mixin util($multiple,$start:0,$end:14){
-	@if $multiple == def {
-		@for $i from 0 through 14 {
-			.u-mt#{$i * 5} { margin-top: 5px * $i !important; }
-			.u-mr#{$i * 5} { margin-right: 5px * $i !important; }
-			.u-mb#{$i * 5} { margin-bottom: 5px * $i !important; }
-			.u-ml#{$i * 5} { margin-left: 5px * $i !important; }
-			.u-pt#{$i * 5} { padding-top: 5px * $i !important; }
-			.u-pr#{$i * 5} { padding-right: 5px * $i !important; }
-			.u-pb#{$i * 5} { padding-bottom: 5px * $i !important; }
-			.u-pl#{$i * 5} { padding-left: 5px * $i !important; }
-		}
-	}
+//marggin, padding
+@mixin utilSP($multiple,$start:0,$end:10) {
+  @if $multiple == def {
+    @for $i from 0 through 10 {
+      .u-mt#{$i * 10}--sp { margin-top: 10px * $i !important; }
+      .u-mr#{$i * 10}--sp { margin-right: 10px * $i !important; }
+      .u-mb#{$i * 10}--sp { margin-bottom: 10px * $i !important; }
+      .u-ml#{$i * 10}--sp { margin-left: 10px * $i !important; }
+      .u-pt#{$i * 10}--sp { padding-top: 10px * $i !important; }
+      .u-pr#{$i * 10}--sp { padding-right: 10px * $i !important; }
+      .u-pb#{$i * 10}--sp { padding-bottom: 10px * $i !important; }
+      .u-pl#{$i * 10}--sp { padding-left: 10px * $i !important; }
+    }
+  }
 }
-
-@include util(def);
+@mixin util($multiple,$start:0,$end:10) {
+  @if $multiple == def {
+    @for $i from 0 through 10 {
+      .u-mt#{$i * 10} { margin-top: 10px * $i !important; }
+      .u-mr#{$i * 10} { margin-right: 10px * $i !important; }
+      .u-mb#{$i * 10} { margin-bottom: 10px * $i !important; }
+      .u-ml#{$i * 10} { margin-left: 10px * $i !important; }
+      .u-pt#{$i * 10} { padding-top: 10px * $i !important; }
+      .u-pr#{$i * 10} { padding-right: 10px * $i !important; }
+      .u-pb#{$i * 10} { padding-bottom: 10px * $i !important; }
+      .u-pl#{$i * 10} { padding-left: 10px * $i !important; }
+    }
+  }
+}
+/* marggin, padding */
+@include utilSP(def);
+@include mq {
+  @include util(def);
+}

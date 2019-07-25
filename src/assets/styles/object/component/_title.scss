@@ -1,0 +1,83 @@
+/* page-header */
+.c-page__header {
+  height: 120px;
+  // background-image:url(../images/aboutus/bg_mv.jpg);
+  background-position: 50%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mq {
+    height: 260px;
+  }
+}
+
+.c-page__title {
+  @include rem(15);
+  background-color: rgba($subColor, .6);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include mq {
+    @include rem(24);
+    width: 190px;
+    height: 190px;
+  }
+
+  &::after {
+    content: 'alphabet';
+    display: block;
+    @include en;
+    @include rem(14);
+    text-transform: capitalize;
+    @include mq {
+      @include rem(20);
+    }
+  }
+}
+
+.c-page__title--aboutus {
+  &::after {
+    content: 'about us';
+  }
+}
+
+/* common titles */
+.c-title-lv2 {
+  margin: 60px 0 40px;
+  text-align: center;
+  @include rem(24);
+
+  &::after {
+    display: block;
+    @include en;
+    @include rem(18);
+    margin-top: 20px;
+  }
+
+  @include mq {
+    margin: 100px 0 60px;
+  }
+}
+
+.c-title-lv2__inner {
+  position: relative;
+
+  &::before {
+    content: 'alphabet';
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: $subColor;
+    height: 3px;
+    width: 80%;
+  }
+}

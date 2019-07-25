@@ -1,0 +1,17 @@
+/* gmap */
+.c-gmap {
+  position: relative;
+  padding-bottom: 87%;
+  height: 0;
+  overflow: hidden;
+}
+
+.c-gmap iframe,
+.c-gmap object,
+.c-gmap embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

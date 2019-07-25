@@ -1,7 +1,7 @@
 /* side */
-.l-side{
-    float: right;
-    width: 25%;
-    background: #eee;
-    min-height: 600px;
+.l-side {
+  @include mq {
+    margin: 60px 0;
+    width: 27%;
+  }
 }

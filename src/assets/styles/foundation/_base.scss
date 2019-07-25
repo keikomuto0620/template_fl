@@ -1,10 +1,58 @@
 /* base */
-html{
-	font-size: 62.5%;
-  min-height: 100%;
-}
-body {
-	@include rem(16)
-	line-height: 1;
+html {
+  font-size: 62.5%;
 }
 
+body {
+  color: $textColor;
+  line-height: 1.8;
+  font-family: "游ゴシック", 'Yu Gothic', sans-serif;
+  font-weight: 500;
+  -webkit-text-size-adjust: 100%;
+  @include rem(16);
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.object-fit-img {
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+}
+
+textarea {
+  height: 100px;
+}

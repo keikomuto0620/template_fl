@@ -1,0 +1,17 @@
+/* list */
+.c-list01 {
+  @include lmCircle($subColor, 0, 6px, 25px, 50px);
+}
+
+.c-list01-item {
+  @include rem(20);
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  span {
+    @include rem(16);
+    display: block;
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}

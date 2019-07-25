@@ -1,11 +1,13 @@
-/* contents */
-.l-contents{
-    width: 100%;
-    margin: 30px 0;
+/* contents layout */
+.l-contents {
+  width: $contentWidthSP;
+  margin: 0 auto;
+  max-width: $contentWidth;
+  position: relative;
 }
-.l-contents_inner{
-    width: $size_max; //setting.scssに記述
-    margin: 0 auto;
-    overflow: hidden;
-    // @extend %clearfix;
+.l-contents_inner {
+  width: $contentWidth;
+  margin: 0 auto;
+  overflow: hidden;
 }
+

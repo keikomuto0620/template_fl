@@ -1,11 +1,48 @@
 @charset "UTF-8";
 
-// * 変数用scss
+// /*
+// #setting
+// ===============================================
+// - キーカラーの設定
+// - コンテンツ幅、ブレイクポイントの設定
+// - mixinの設定
+// - キーフレームアニメーションの設定
+// */
 
-// clum width
-$gutter: 0;
-$size_max: 980px;
-$size_min: 320px;
+//colors
+$mainColor:#999;
+$subColor:#ccc;
 
-// scale (sprite生成で使用)
-$default-scale:1;
+$textColor:#000;
+$linkColor:#000;
+$linkColor02:#000;
+
+$gnavBg:$mainColor;
+$gnavSubBg:#f2f2f2;
+$footerBg:#000;
+$footerTextColor:#fff;
+
+//content width
+$bk01:768px;
+// $bk02:768px;
+$contentWidth:1080px;
+$contentWidthSP:94%;
+
+//media query
+@mixin mq {
+  @media only screen and (min-width: $bk01) {
+    @content;
+  }
+}
+
+// @mixin mq_pc {
+//     @media only screen and (min-width: $bk02) {
+//         @content;
+//     }
+// }
+
+@mixin mq_pcl {
+  @media only screen and (min-width: $contentWidth) {
+    @content;
+  }
+}
