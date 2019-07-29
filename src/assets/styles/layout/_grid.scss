@@ -1,0 +1,42 @@
+/* grid layout */
+.l-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&.demo {
+		& > * {
+			background-color: #000;
+			color: #fff;
+			margin-bottom: 10px;
+			padding: 10px;
+			text-align: center;
+			&[class*="--md"] {
+				background-color: blue;
+			}
+			&[class*="--lg"] {
+				background-color: red;
+			}
+			&[class*="--xl"] {
+				background-color: green;
+			}
+		}
+	}
+}
+
+
+@mixin col($column-count,$column-margin,$name) {
+	$margin-size : #{$column-margin * ($column-count - 1)};
+	.l-grid__col#{$column-count}#{$name} {
+		width: calc((100% - #{$margin-size}) / #{$column-count});
+	}
+}
+.l-grid__col1 {
+	width: 100%;
+}
+@for $value from 2 through 4 {
+	@include col($value,20px,'');
+	@include mq {
+		//768px~
+		@include col($value,20px,--md);
+	}
+}

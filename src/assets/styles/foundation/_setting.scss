@@ -23,26 +23,31 @@ $footerBg:#000;
 $footerTextColor:#fff;
 
 //content width
-$bk01:768px;
-// $bk02:768px;
-$contentWidth:1080px;
+$bk_xs:480px;
+$bk_md:768px;
+$bk_lg:1000px;
+$bk_xl:1200px;
+$contentWidth:$bk_lg;
 $contentWidthSP:94%;
 
 //media query
-@mixin mq {
-  @media only screen and (min-width: $bk01) {
-    @content;
-  }
+@mixin mq_xs {
+	@media only screen and (min-width: $bk_xs) {
+		@content;
+	}
 }
-
-// @mixin mq_pc {
-//     @media only screen and (min-width: $bk02) {
-//         @content;
-//     }
-// }
-
-@mixin mq_pcl {
-  @media only screen and (min-width: $contentWidth) {
-    @content;
-  }
+@mixin mq {
+	@media only screen and (min-width: $bk_md) {
+		@content;
+	}
+}
+@mixin mq_lg {
+	@media only screen and (min-width: $bk_lg) {
+		@content;
+	}
+}
+@mixin mq_xl {
+	@media only screen and (min-width: $bk_xl) {
+		@content;
+	}
 }

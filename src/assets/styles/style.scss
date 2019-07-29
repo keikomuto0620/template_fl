@@ -3,7 +3,7 @@ Foundation
 ========================================================================== */
 @import "foundation/_setting";
 @import "foundation/_mixin";
-@import "foundation/_define";
+// @import "foundation/_define";
 @import "foundation/_reset";
 @import "foundation/_base";
 
@@ -13,6 +13,7 @@ Layout
 
 @import "layout/_contents";
 @import "layout/_flex";
+@import "layout/_grid";
 @import "layout/_header";
 @import "layout/_gnav";
 @import "layout/_footer";
