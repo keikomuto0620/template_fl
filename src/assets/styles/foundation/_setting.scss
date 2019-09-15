@@ -1,13 +1,8 @@
 @charset "UTF-8";
-
-
-// #setting
-// ===============================================
-// - キーカラーの設定
-// - コンテンツ幅、ブレイクポイントの設定
-// - mixinの設定
+// - キーカラー
+// - コンテンツ幅、ブレイクポイント
+// - media query
 // - キーフレームアニメーションの設定
-
 
 //colors
 $mainColor:#999;
@@ -23,7 +18,7 @@ $footerBg:#000;
 $footerTextColor:#fff;
 
 //content width
-$bk_xs:480px;
+$bk_sm:480px;
 $bk_md:768px;
 $bk_lg:1000px;
 $bk_xl:1200px;
@@ -31,8 +26,8 @@ $contentWidth:$bk_lg;
 $contentWidthSP:94%;
 
 //media query
-@mixin mq_xs {
-	@media only screen and (min-width: $bk_xs) {
+@mixin mq_sm {
+	@media only screen and (min-width: $bk_sm) {
 		@content;
 	}
 }
