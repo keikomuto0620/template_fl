@@ -4,7 +4,6 @@
   font-family: "游明朝", YuMincho, serif;
   font-weight: 500;
 }
-
 @mixin sans {
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
@@ -17,6 +16,13 @@
 @mixin rem($size,$base:10) {
   font-size: $size + px;
   font-size: ($size / $base) + rem;
+}
+@mixin rfs($fs,$fs-l,$vp,$vp-l) {
+  font-size: calc(#{$fs} + ((1vw - ( #{num($vp)} / 100)* 1px ) * 100 * ( #{num($fs-l)} - #{num($fs)} ) / ( #{num($vp-l)} - #{num($vp)} ) ));
+}
+//  strip units helper function
+@function num($input){
+  @return $input/($input * 0 + 1);
 }
 
 //border-radius

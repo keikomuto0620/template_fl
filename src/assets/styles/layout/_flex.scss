@@ -1,27 +1,36 @@
 /* flex layout */
+.l-flex {
+    display: flex;
+}
+
 .l-flex--center {
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-flex--end {
+    justify-content: flex-end;
 }
 
 .l-flex--between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 @include mq {
-  .l-flex {
+  .l-flex-pc {
     display: flex;
   }
 
-  .l-flex--reverse {
-    flex-direction: row-reverse;
+  .l-flex-pc--center {
+    justify-content: center;
+    align-items: center;
   }
 
-  .l-flex--column {
-    flex-direction: column;
+  .l-flex-pc--end {
+    justify-content: flex-end;
   }
 
-  .l-flex--column-reverse {
-    flex-direction: column-reverse;
+  .l-flex-pc--between {
+    justify-content: space-between;
   }
 }

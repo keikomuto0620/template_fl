@@ -6,7 +6,7 @@ html {
 body {
   color: $textColor;
   line-height: 1.8;
-  font-family: "游ゴシック", 'Yu Gothic', sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   font-weight: 500;
   -webkit-text-size-adjust: 100%;
   @include rem(16);
