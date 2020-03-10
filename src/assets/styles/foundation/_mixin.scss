@@ -18,7 +18,7 @@
   font-size: ($size / $base) + rem;
 }
 @mixin rfs($fs,$fs-l,$vp,$vp-l) {
-  font-size: calc(#{$fs} + ((1vw - ( #{num($vp)} / 100)* 1px ) * 100 * ( #{num($fs-l)} - #{num($fs)} ) / ( #{num($vp-l)} - #{num($vp)} ) ));
+  font-size: calc(#{$fs} + ((100vw - #{$vp} ) * ( #{num($fs-l)} - #{num($fs)} ) / ( #{num($vp-l)} - #{num($vp)} ) ));
 }
 //  strip units helper function
 @function num($input){
