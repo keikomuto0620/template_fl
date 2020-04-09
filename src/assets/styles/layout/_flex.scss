@@ -3,16 +3,16 @@
     display: flex;
 }
 
-.l-flex--center {
+.l-flex-center {
     justify-content: center;
     align-items: center;
 }
 
-.l-flex--end {
+.l-flex-end {
     justify-content: flex-end;
 }
 
-.l-flex--between {
+.l-flex-between {
     justify-content: space-between;
 }
 
@@ -21,16 +21,16 @@
     display: flex;
   }
 
-  .l-flex-pc--center {
+  .l-flex-center--pc {
     justify-content: center;
     align-items: center;
   }
 
-  .l-flex-pc--end {
+  .l-flex-end--pc {
     justify-content: flex-end;
   }
 
-  .l-flex-pc--between {
+  .l-flex-between--pc {
     justify-content: space-between;
   }
 }

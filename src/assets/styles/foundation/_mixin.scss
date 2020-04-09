@@ -24,7 +24,13 @@
 @function num($input){
   @return $input/($input * 0 + 1);
 }
-
+//state
+// ===============================================
+@mixin is-confirm {
+  .is-confirm & {
+    @content;
+  }
+}
 //border-radius
 // ===============================================
 @mixin radius($radius) {

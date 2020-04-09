@@ -22,7 +22,10 @@ img {
   height: auto;
   vertical-align: top;
 }
-
+ul,
+ol {
+  list-style-type: none;
+}
 .object-fit-img {
   object-fit: cover;
   font-family: 'object-fit: cover;';
@@ -38,11 +41,19 @@ img {
   white-space: nowrap;
   border: 0;
 }
-
-ul,
-ol {
-  list-style-type: none;
+.is-pc {
+  display: none;
+  @include mq {
+    display: block;
+  }
 }
+.is-sp {
+  display: block;
+  @include mq {
+    display: none;
+  }
+}
+
 
 input[type=text],
 input[type=email],
