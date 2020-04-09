@@ -1,12 +1,21 @@
-/* align */
+/* alignment */
 .u-tac {
-  text-align: center;
+	text-align: center;
 }
-
 .u-tal {
-  text-align-last: auto;
+	text-align: left;
 }
-
 .u-tar {
-  text-align: right;
+	text-align: right;
+}
+@include mq {
+	.u-tac--pc {
+		text-align: center;
+	}
+	.u-tal--pc {
+		text-align: left;
+	}
+	.u-tar--pc {
+		text-align: right;
+	}
 }
