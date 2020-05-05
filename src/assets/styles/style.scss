@@ -28,11 +28,13 @@ Object
 Component
 ----------------------------------------------------------------- */
 
+@import "object/component/_title";
+@import "object/component/_text";
 @import "object/component/_button";
+@import "object/component/_list";
 @import "object/component/_gmap";
 @import "object/component/_table";
-@import "object/component/_title";
-@import "object/component/_list";
+
 
 /* -----------------------------------------------------------------
 Project
@@ -51,4 +53,3 @@ Utility
 @import "object/utility/_align";
 @import "object/utility/_margin";
 @import "object/utility/_size";
-// @import "object/utility/_text";

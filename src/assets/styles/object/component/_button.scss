@@ -16,21 +16,3 @@
     opacity: .5;
   }
 }
-
-.c-btn--yellow {
-  text-transform: uppercase;
-  color: #000;
-  background-color: $subColor;
-  margin: 50px auto;
-
-  @include mq {
-    margin: 70px auto 170px;
-  }
-}
-
-.c-btn__inner {
-  background-image: url(../images/ico_mail.svg);
-  padding-left: 50px;
-  background-size: 32px 18px;
-  height: 18px;
-}

@@ -1,21 +1,35 @@
 /* alignment */
+.u-fwn {
+	font-weight: normal!important;
+}
+.u-fwb {
+	font-weight: bold!important;
+}
+@include mq {
+	.u-fwn--pc {
+		font-weight: normal!important;
+	}
+	.u-fwb--pc {
+		font-weight: bold!important;
+	}
+}
 .u-tac {
-	text-align: center;
+	text-align: center!important;
 }
 .u-tal {
-	text-align: left;
+	text-align: left!important;
 }
 .u-tar {
-	text-align: right;
+	text-align: right!important;
 }
 @include mq {
 	.u-tac--pc {
-		text-align: center;
+		text-align: center!important;
 	}
 	.u-tal--pc {
-		text-align: left;
+		text-align: left!important;
 	}
 	.u-tar--pc {
-		text-align: right;
+		text-align: right!important;
 	}
 }

@@ -1,0 +1,10 @@
+/* text */
+.c-txt-small {
+	text-indent: -1em;
+	margin: 0 0 5px 1em;
+	@include rem(10);
+	line-height: 1.2;
+	&::before {
+		content:'※';
+	}
+}

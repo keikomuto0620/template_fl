@@ -1,6 +1,6 @@
 /* list */
 .c-list01 {
-  @include lmCircle($subColor, 0, 6px, 25px, 50px);
+  @include lmCircle(#000, 0, .8em, 3px, 10px);
 }
 
 .c-list01-item {

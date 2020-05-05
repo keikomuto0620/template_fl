@@ -1,50 +1,78 @@
 /* table */
+.c-caption {
+    @include rem(16);
+    color: #FFF;
+    background-color: $mainColor;
+}
+
 .c-table {
-  border: solid #666;
-  border-width: 1px 0;
-  border-collapse: collapse;
-  width: 100%;
-
-  th,
-  td {
-    padding: 10px;
-    display: block;
-  }
-
-  th {
-    padding: 10px 10px 0;
-    text-align: left;
-  }
-
-  @include mq {
-
+    width: 100%;
+    border-collapse: collapse;
     th,
     td {
-      border-bottom: 1px dashed #666;
-      padding: 10px;
-      display: table-cell;
+        padding: 5px;
+        // word-break: break-all;
+        border-bottom: 1px solid;
+        @include mq {
+            padding: 10px 0;
+        }
     }
-
     th {
-      padding: 10px 10px 10px 50px;
-      width: 20%;
+        text-align: left;
+        font-weight: normal;
+        background-color: #ccc;
+        @include mq {
+            vertical-align: top;
+            white-space:nowrap;
+            padding-right: 10px;
+        }
     }
-  }
-
-  tr:nth-child(odd) {
-
+}
+.c-table--resp {
     th,
     td {
-      background-color: #f2f2f2;
+        display: block;
     }
-  }
+    @include mq {
+        th,
+        td {
+            display: table-cell;
+        }
+    }
+}
+.c-table__wrap {
+ overflow-x: auto;
+ white-space: nowrap;
+ @include mq {
+     white-space: normal;
+ }
+ @include mq {
+     overflow-x: hidden;
+ }
+ &::-webkit-scrollbar{
+     height: 10px;
+ }
+ &::-webkit-scrollbar-track{
+     background: lighten($mainColor,40%);
+ }
+ &::-webkit-scrollbar-thumb {
+     background: $mainColor;
+ }
+ &>.c-table {
+     margin-bottom: 20px;
+     @include mq {
+         margin: 0;
+     }
+ }
+}
 
-  dt {
+.required {
+    background-color: #ef0000;
+    color: #fff;
+    margin-left: 5px;
+    border-radius: 3px;
+    padding: 0 5px;
+    @include rem(13);
     display: inline-block;
-    width: 6em;
-  }
-
-  dd {
-    display: inline-block;
-  }
+    font-family: sans-serif;
 }
