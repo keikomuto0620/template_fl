@@ -8,6 +8,172 @@ var pathData = {
 
 <div class="l-contents l-flex l-flex-between">
 	<div class="l-main">
+
+
+  <h2 class="c-title-lv2">コーディングルール</h2>
+  <p>README.me参照</p>
+  <h2 class="c-title-lv2">ユーティリティクラス</h2>
+  <p><small>※**は数字</small></p>
+  <p><small>※末尾に--pcをつけるとpcのみで有効</small></p>
+  <ul class="u-mt30">
+    <li>.u-mt** 上マージン 10px刻み 0~100px</li>
+    <li>.u-mr** 右マージン</li>
+    <li>.u-mb** 下マージン</li>
+    <li>.u-ml** 左マージン</li>
+  </ul>
+  <ul class="u-mt30">
+    <li>.u-pt** 上余白 10px刻み 0~100px</li>
+    <li>.u-pr** 右余白</li>
+    <li>.u-pb** 下余白</li>
+    <li>.u-pl** 左余白</li>
+  </ul>
+  <ul class="u-mt30">
+    <li>.u-w** ブロック要素の横幅 5%刻み 5~100%</li>
+  </ul>
+  <ul class="u-mt30">
+    <li>.u-fs** フォントサイズ 1px刻み 10~30px</li>
+  </ul>
+  <ul class="u-mt30">
+    <li class="u-fwn">細字 u-fwn</li>
+    <li class="u-fwb">太字 u-fwb</li>
+  </ul>
+  <ul class="u-mt30">
+    <li class="u-tal">左寄せ u-tal</li>
+    <li class="u-tac">中央寄せ u-tac</li>
+    <li class="u-tar">右寄せ u-tar</li>
+  </ul>
+
+  <h2 class="c-title-lv2 u-mt100">見出し</h2>
+  <p class="c-title-lv2">c-title-lv2</p>
+
+  <h2 class="c-title-lv2 u-mt100">テキスト装飾</h2>
+  <p class="c-txt-small">注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き注意書き</p>
+
+  <h2 class="c-title-lv2 u-mt100">ボタン</h2>
+  <a href="" class="c-btn">c-btn</a>
+
+  <h2 class="c-title-lv2 u-mt100">リスト</h2>
+  <ul class="c-list01">
+    <li class="c-list01-item">リスト</li>
+    <li class="c-list01-item">リスト</li>
+    <li class="c-list01-item">リスト</li>
+  </ul>
+
+  <h2 class="c-title-lv2 u-mt100">google map</h2>
+  <div class="c-gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.9771703133642!2d137.16797361562013!3d34.95718088036956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bd2f357ae6b5%3A0x9e366b6ae3f9ce51!2z44CSNDQ0LTAwMzgg5oSb55-l55yM5bKh5bSO5biC5Lyd6aas6YCa77yS5LiB55uu77yR77yX!5e0!3m2!1sja!2sjp!4v1587605940406!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+  <h2 class="c-title-lv2 u-mt100">テーブル</h2>
+  <table class="c-table u-mb50">
+    <caption class="c-caption">c-table</caption>
+    <tr>
+      <th>th</th>
+      <td>td</td>
+    </tr>
+    <tr>
+      <th>th</th>
+      <td>td</td>
+    </tr>
+  </table>
+  <div class="c-table--resp">
+    <table class="c-table c-table--border u-mb50">
+      <caption class="c-caption">c-table--resp</caption>
+      <tr>
+        <th>th</th>
+        <td>スマホ表示時にセルがblock表示になるテーブル</td>
+      </tr>
+      <tr>
+        <th>th</th>
+        <td>td</td>
+      </tr>
+    </table>
+  </div>
+  <div class="c-table__wrap">
+    <table class="c-table">
+      <caption class="c-caption">c-table__wrap</caption>
+      <tr>
+        <th>横スクロールするテーブル </th>
+        <td>c-table__wrapでテーブル要素を囲む</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+      </tr>
+      <tr>
+        <th>th</th>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+        <td>td</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2 class="c-title-lv2 u-mt100">ボックス要素のアラインメント</h2>
+  <div class="l-flex l-flex-center"><div>中央寄せ l-flex-center</div></div>
+  <div class="l-flex l-flex-end"><div>右寄せ l-flex-end</div></div>
+
+  <h2 class="c-title-lv2 u-mt100">flexレイアウト</h2>
+  <ul class="l-flex u-mb50">
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex--pc u-mb50">
+    <li>PCのみ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex l-flex-center u-mb50">
+    <li>上下左右中央寄せ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex--pc l-flex-center--pc u-mb50">
+    <li>上下左右中央寄せ PCのみ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex l-flex-end u-mb50">
+    <li>右寄せ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex--pc l-flex-end--pc u-mb50">
+    <li>右寄せ PCのみ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex l-flex-between u-mb50">
+    <li>均等割り付け</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+  <ul class="l-flex--pc l-flex-between--pc u-mb50">
+    <li>均等割り付け PCのみ</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+    <li>flexアイテム</li>
+  </ul>
+
+
 		<h2 class="c-title-lv2">c-title-lv2</h2>
 		<div class="p-entry__content">
 			<h2>h2</h2>
