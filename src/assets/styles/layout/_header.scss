@@ -53,10 +53,7 @@
     width: auto;
     height: auto;
     padding: 0 20px 0 40px;
-    @include en;
-    letter-spacing: .08em;
     line-height: 46px;
-    @include rem(24);
   }
 
   span {
@@ -75,6 +72,7 @@
   background-color: $mainColor;
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 200;
 
   @include mq {
@@ -122,20 +120,3 @@
   }
 }
 
-// .l-header__menu.is-open {
-//   &::after {
-//     content: 'close';
-//   }
-
-//   .l-header__menu-item:nth-of-type(1) {
-//     transform: translateY(10px) rotate(-45deg);
-//   }
-
-//   .l-header__menu-item:nth-of-type(2) {
-//     opacity: 0;
-//   }
-
-//   .l-header__menu-item:nth-of-type(3) {
-//     transform: translateY(-10px) rotate(45deg);
-//   }
-// }

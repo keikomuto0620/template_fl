@@ -1,20 +1,16 @@
 /* page-header */
 .c-page__header {
   height: 120px;
-  background-position: 50%;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.c-page__title {
-  @include rem(15);
-}
+.c-page__title {}
 
 /* common titles */
 .c-title-lv2 {
   margin: 60px 0 40px;
   border-bottom: 1px solid;
-  @include rem(24);
 }

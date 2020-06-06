@@ -1,18 +1,22 @@
 /* button */
 .c-btn {
-  display: block;
+  display: flex;
+  align-items:center;
+  justify-content: center;
   width: 100%;
   max-width: 350px;
-  line-height: 60px;
-  text-transform: capitalize;
+  height: 60px;
   color: #fff;
   background-color: $mainColor;
-  text-align: center;
-  @include rem(18);
-  @include en;
-  transition: .5s;
-
-  &:hover {
-    opacity: .5;
+  @include mq {
+    transition: .5s;
+    &:hover {
+      opacity: .5;
+    }
+  }
+  input {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

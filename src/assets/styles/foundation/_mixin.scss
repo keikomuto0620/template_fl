@@ -31,6 +31,73 @@
     @content;
   }
 }
+// arrow
+// ===============================================
+@mixin arrow-rr($color, $posnum:90%, $w:10px, $border:1px) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $posnum;
+    margin: auto;
+    width: $w;
+    height: $w;
+    border-top: $border solid $color;
+    border-right: $border solid $color;
+    transform: rotate(45deg);
+  }
+}
+@mixin arrow-rd($color, $posnum:90%, $w:10px, $border:1px) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $posnum;
+    margin: auto;
+    width: $w;
+    height: $w;
+    border-top: $border solid $color;
+    border-right: $border solid $color;
+    transform: rotate(135deg);
+  }
+}
+
+@mixin arrow-lr($color, $posnum:10%, $w:10px, $border:1px) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $posnum;
+    margin: auto;
+    width: $w;
+    height: $w;
+    border-top: $border solid $color;
+    border-right: $border solid $color;
+    transform: rotate(45deg);
+  }
+}
+@mixin arrow-ll($color, $posnum:10%, $w:10px, $border:1px) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $posnum;
+    margin: auto;
+    width: $w;
+    height: $w;
+    border-top: $border solid $color;
+    border-right: $border solid $color;
+    transform: rotate(-135deg);
+  }
+}
 //border-radius
 // ===============================================
 @mixin radius($radius) {

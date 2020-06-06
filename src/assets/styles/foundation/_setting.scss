@@ -10,19 +10,22 @@ $subColor:#ccc;
 
 $textColor:#000;
 $linkColor:#000;
-$linkColor02:#000;
+$linkColor02:#0d80ec;
+
+$error:#FF0101;
+
+$bdrColor:#ccc;
 
 $gnavBg:$mainColor;
 $gnavSubBg:#f2f2f2;
-$footerBg:#000;
-$footerTextColor:#fff;
+
 
 //content width
 $bk_sm:480px;
 $bk_md:768px;
 $bk_lg:1000px;
 $bk_xl:1200px;
-$contentWidth:$bk_lg;
+$contentWidth:$bk_xl;
 $contentWidthSP:94%;
 
 //media query

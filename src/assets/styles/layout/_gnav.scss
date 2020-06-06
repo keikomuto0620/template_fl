@@ -19,10 +19,6 @@
 
 .gnav__item {
   border-bottom: 1px solid #fff;
-  text-transform: capitalize;
-  @include en;
-  letter-spacing: .08em;
-  @include rem(18);
 
   @include mq {
     padding: 0;

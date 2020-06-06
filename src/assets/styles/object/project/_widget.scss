@@ -24,8 +24,6 @@
 .p-widget__title {
   position: relative;
   padding-top: 20px;
-  @include en;
-
   &::after {
     content: '';
     display: block;
@@ -55,7 +53,6 @@
 }
 
 .p-widget__title-rp {
-  font-weight: normal;
   margin-top: 10px;
   line-height: 1.3;
 }
@@ -63,6 +60,4 @@
 .p-widget__date-rp {
   margin-bottom: 30px;
   display: block;
-  @include rem(14);
-  @include en;
 }

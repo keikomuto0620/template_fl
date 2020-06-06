@@ -1,6 +1,5 @@
 /* table */
 .c-caption {
-    @include rem(16);
     color: #FFF;
     background-color: $mainColor;
 }
@@ -19,7 +18,6 @@
     }
     th {
         text-align: left;
-        font-weight: normal;
         background-color: #ccc;
         @include mq {
             vertical-align: top;
@@ -66,13 +64,3 @@
  }
 }
 
-.required {
-    background-color: #ef0000;
-    color: #fff;
-    margin-left: 5px;
-    border-radius: 3px;
-    padding: 0 5px;
-    @include rem(13);
-    display: inline-block;
-    font-family: sans-serif;
-}

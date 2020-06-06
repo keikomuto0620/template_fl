@@ -53,10 +53,22 @@ var pathData = {
   <a href="" class="c-btn">c-btn</a>
 
   <h2 class="c-title-lv2 u-mt100">リスト</h2>
-  <ul class="c-list01">
-    <li class="c-list01-item">リスト</li>
-    <li class="c-list01-item">リスト</li>
-    <li class="c-list01-item">リスト</li>
+  <ul class="c-list">
+    <li class="c-list__item">リスト</li>
+    <li class="c-list__item">c-list__item</li>
+    <li class="c-list__item">c-list__item</li>
+  </ul>
+
+  <ul class="c-list-num">
+    <li class="c-list-num__item">番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト番号付きリスト</li>
+    <li class="c-list-num__item">c-list-num__item</li>
+    <li class="c-list-num__item">c-list-num__item</li>
+  </ul>
+
+  <h2 class="u-fwb u-mt50 u-mb20" style="border-bottom:1px solid;">カラーアセット</h2>
+  <ul>
+    <li style="background-color: #999;">$mainColor:#999;</li>
+    <li style="background-color: #ccc;">$subColor:#ccc;</li>
   </ul>
 
   <h2 class="c-title-lv2 u-mt100">google map</h2>
@@ -110,6 +122,58 @@ var pathData = {
       </tr>
     </table>
   </div>
+
+  <h2 class="c-title-lv2 u-mt100">フォーム</h2>
+  <p class="c-form-error__msg">エラーメッセージ</p>
+  <table class="c-table c-form u-mb50">
+    <tr>
+      <th><label for="input01">text<span class="c-form-required">必須</span></label></th>
+      <td><input type="text" id="input01" placeholder="placeholder"></td>
+    </tr>
+    <tr class="c-form-error">
+      <th><label for="input02">email</label></th>
+      <td><input type="email" id="input02" placeholder="placeholder"></td>
+    </tr>
+    <tr>
+      <th><label for="input03">password</label></th>
+      <td><input type="password" id="input03" placeholder="placeholder"></td>
+    </tr>
+    <tr>
+      <th><label for="input04">ラベル</label></th>
+      <td><textarea id="input04" placeholder="placeholder"></textarea></td>
+    </tr>
+    <tr>
+      <th><label for="input05">ラベル</label></th>
+      <td>
+        <select id="input05">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+      <th>ラベル</th>
+      <td>
+        <label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span class="c-form__label">チェックボックス1</span></label>
+        <label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span class="c-form__label">チェックボックス2</span></label>
+      </td>
+    </tr>
+    <tr>
+      <th>ラベル</th>
+      <td>
+        <label><input type="radio" class="c-form__check" name="radio"><span class="c-form__label c-form__label--radio" value="ラジオボタン1">ラジオボタン1</span></label>
+        <label><input type="radio" class="c-form__check" name="radio"><span class="c-form__label c-form__label--radio" value="ラジオボタン2">ラジオボタン2</span></label>
+      </td>
+    </tr>
+  </table>
+  <ul class="c-form-btnlist">
+    <li class="c-form-btnlist__item c-form-btnlist__item--back c-btn"><input type="button" value="戻る"></li>
+    <li class="c-form-btnlist__item c-btn"><input type="button" value="送信"></li>
+  </ul>
 
   <h2 class="c-title-lv2 u-mt100">ボックス要素のアラインメント</h2>
   <div class="l-flex l-flex-center"><div>中央寄せ l-flex-center</div></div>
@@ -173,57 +237,16 @@ var pathData = {
     <li>flexアイテム</li>
   </ul>
 
+<!--   <h2 class="c-title-lv2 u-mt100">CSS grid</h2>
+<div class="l-cgrid">
+  <header>header</header>
+  <aside>aside</aside>
+  <main>main</main>
+  <footer>footer</footer>
+</div> -->
 
-		<h2 class="c-title-lv2">c-title-lv2</h2>
-		<div class="p-entry__content">
-			<h2>h2</h2>
-			<h3>h3</h3>
-			<h4>h4</h4>
-			<h5>h5</h5>
-		</div>
 
-		<h2 class="c-title-lv2">flex equal grid</h2>
-		<div class="l-egrid demo">
-			<div class="l-egrid__col2">l-egrid__col2</div>
-			<div class="l-egrid__col2">l-egrid__col2</div>
-		</div>
-		<div class="l-egrid demo">
-			<div class="l-egrid__col1 l-egrid__col2--md">l-egrid__col1 l-egrid__col2--md</div>
-			<div class="l-egrid__col1 l-egrid__col2--md">l-egrid__col1 l-egrid__col2--md</div>
-		</div>
-		<div class="l-egrid demo">
-			<div class="l-egrid__col3">l-egrid__col3</div>
-			<div class="l-egrid__col3">l-egrid__col3</div>
-			<div class="l-egrid__col3">l-egrid__col3</div>
-		</div>
-		<div class="l-egrid demo">
-			<div class="l-egrid__col4">l-egrid__col4</div>
-			<div class="l-egrid__col4">l-egrid__col4</div>
-			<div class="l-egrid__col4">l-egrid__col4</div>
-			<div class="l-egrid__col4">l-egrid__col4</div>
-		</div>
-		<div class="l-egrid demo">
-			<div class="l-egrid__col2">l-egrid__col2</div>
-			<div class="l-egrid__col4">l-egrid__col4</div>
-			<div class="l-egrid__col4">l-egrid__col4</div>
-		</div>
-		<h2 class="c-title-lv2">flex grid</h2>
-		<div class="l-grid demo">
-			<div class="l-grid__col12 l-grid__col1--md">l-grid__col12 l-grid__col1--md</div>
-			<div class="l-grid__col12 l-grid__col2--md">l-grid__col12 l-grid__col2--md</div>
-			<div class="l-grid__col12 l-grid__col3--md">l-grid__col12 l-grid__col3--md</div>
-			<div class="l-grid__col12 l-grid__col4--md">l-grid__col12 l-grid__col4--md</div>
-			<div class="l-grid__col12 l-grid__col5--md">l-grid__col12 l-grid__col5--md</div>
-			<div class="l-grid__col12 l-grid__col6--md">l-grid__col12 l-grid__col6--md</div>
-			<div class="l-grid__col12 l-grid__col7--md">l-grid__col12 l-grid__col7--md</div>
-			<div class="l-grid__col12 l-grid__col8--md">l-grid__col12 l-grid__col8--md</div>
-			<div class="l-grid__col12 l-grid__col9--md">l-grid__col12 l-grid__col9--md</div>
-			<div class="l-grid__col12 l-grid__col10--md">l-grid__col12 l-grid__col10--md</div>
-			<div class="l-grid__col12 l-grid__col11--md">l-grid__col12 l-grid__col11--md</div>
-			<div class="l-grid__col12 l-grid__col12--md">l-grid__col12 l-grid__col12--md</div>
-		</div>
-
-	</div>
+  </div>
 	<aside class="l-side">l-side</aside>
 </div>
 

@@ -1,17 +1,19 @@
 /* list */
-.c-list01 {
+.c-list {
   @include lmCircle(#000, 0, .8em, 3px, 10px);
 }
-
-.c-list01-item {
-  @include rem(20);
-  font-weight: bold;
+.c-list__item {
   margin-bottom: 10px;
+}
 
-  span {
-    @include rem(16);
-    display: block;
-    font-weight: normal;
-    margin-left: 20px;
+.c-list-num {
+  counter-reset: ol_li;
+}
+.c-list-num__item {
+  margin: 0 0 1em 1.5em;
+  &::before {
+    counter-increment: ol_li;
+    content: counter(ol_li)'.';
+    margin: 0 .5em 0 -1.5em;
   }
 }

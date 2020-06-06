@@ -1,16 +1,6 @@
 /* entry
 ----------------------------- */
-.p-entry__archive-title {
-  @include rem(18);
-  @include en;
-  font-weight: normal;
-  text-transform: capitalize;
-
-  @include mq {
-    position: absolute;
-    top: -30px;
-  }
-}
+.p-entry__archive-title {}
 
 .p-entry__header {
   text-align: center;
@@ -35,9 +25,7 @@
   }
 }
 
-.p-entry__date {
-  @include en;
-}
+.p-entry__date {}
 
 .p-entry__content {
 
@@ -120,7 +108,6 @@
 }
 
 .p-entry__read-more {
-  text-transform: uppercase;
   border: 1px solid;
   padding: 10px;
   display: block;
