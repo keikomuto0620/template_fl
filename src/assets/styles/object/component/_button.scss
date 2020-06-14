@@ -8,6 +8,8 @@
   height: 60px;
   color: #fff;
   background-color: $mainColor;
+  @include arrow;
+  @include arrow-rr;
   @include mq {
     transition: .5s;
     &:hover {

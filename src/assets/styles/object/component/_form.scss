@@ -80,13 +80,14 @@
 .c-form-btnlist__item {
 	margin: 0 10px;
 	width: 140px;
-	@include arrow-rr(#fff,85%);
+  @include arrow;
+	@include arrow-rr(85%);
 }
 .c-form-btnlist__item--back {
 	background-color: $subColor;
-	@include arrow-ll(#fff);
+  @include arrow;
+	@include arrow-ll;
 }
-
 .c-form-required {
     background-color: $error;
     color: #fff;
