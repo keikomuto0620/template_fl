@@ -27,7 +27,7 @@ const DEV = 'src',
 
 //style
 gulp.task('style', () => {
-    return gulp.src(DEV + '/assets/styles/**/*.scss')
+    return gulp.src(DEV + '/assets/scss/**/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'expanded'})).on('error', sass.logError)
@@ -37,15 +37,15 @@ gulp.task('style', () => {
       fix: true
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(PUBLIC + '/assets/styles'))
+    .pipe(gulp.dest(PUBLIC + '/assets/css'))
 });
 
 //js
 gulp.task('js', function() {
-    return gulp.src(DEV + '/assets/scripts/**/*.js','!/assets/scripts/**/*.min.js')
+    return gulp.src(DEV + '/assets/js/**/*.js','!/assets/js/**/*.min.js')
         // .pipe(uglify())
         // .pipe(rename({extname: '.min.js'}))
-        .pipe(gulp.dest(PUBLIC + '/assets/scripts'));
+        .pipe(gulp.dest(PUBLIC + '/assets/js'));
 });
 
 //fonts
@@ -98,11 +98,11 @@ gulp.task('ejs', () => {
 //     done();
 // });
 // gulp.task('cleanJS', (done) => {
-//     del(PUBLIC + '/assets/scripts/**/*.js');
+//     del(PUBLIC + '/assets/js/**/*.js');
 //     done();
 // });
 // gulp.task('cleanCSS', (done) => {
-//     del(PUBLIC + '/assets/styles/**/*.css');
+//     del(PUBLIC + '/assets/css/**/*.css');
 //     done();
 // });
 gulp.task('clean', (done) => {
@@ -126,8 +126,8 @@ gulp.task('server', () => {
     });
     // watch([DEV + '/**/*'], gulp.series('build', browserSync.reload));
     watch([DEV + '/views/**/*.ejs'], gulp.series('ejs', browserSync.reload));
-    watch([DEV + '/assets/styles/**/*.scss'], gulp.series('style', browserSync.reload));
-    watch([DEV + '/assets/scripts/**/*.js'], gulp.series('js', browserSync.reload));
+    watch([DEV + '/assets/scss/**/*.scss'], gulp.series('style', browserSync.reload));
+    watch([DEV + '/assets/js/**/*.js'], gulp.series('js', browserSync.reload));
     watch([DEV + '/assets/images/**/*'], gulp.series('images', browserSync.reload));
 });
 
