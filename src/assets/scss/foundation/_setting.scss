@@ -5,20 +5,15 @@
 // - キーフレームアニメーションの設定
 
 //colors
-$mainColor: #0d80ec;
-$subColor: palegreen;
+$mainColor: #2b8dbb; //blue
+$subColor: #62af2b; //green
+$bgColor: #f3f3f3; //gray
+$bdrColor: #dbdbdb; //gray
 
 $textColor: #000;
 $linkColor: $textColor;
 $linkColor02: $mainColor;
 $error: #ff0101;
-
-$bdrColor: #ccc;
-
-$bgColor: #ccc;
-
-// $bgColor: $mainColor;
-// $bgColor: #f2f2f2;
 
 //content width
 $bk_sm: 480px;

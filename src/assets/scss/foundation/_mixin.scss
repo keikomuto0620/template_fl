@@ -1,7 +1,7 @@
 //font-family
 // ===============================================
 @mixin serif {
-  font-family: "游明朝", YuMincho, serif;
+  font-family: YuMincho, "Yu Mincho", serif;
   font-weight: 500;
 }
 @mixin sans {
@@ -13,8 +13,8 @@
 
 //font-size
 // ===============================================
-@mixin rem($size, $base: 10) {
-  font-size: $size + px;
+@mixin rem($size, $base: 16) {
+  // font-size: $size + px;
   font-size: ($size / $base) + rem;
 }
 @mixin rfs($fs, $fs-l, $vp, $vp-l) {
