@@ -1,5 +1,21 @@
 /* media */
-// .c-media {
-// 	padding: 10px;
-// 	box-shadow: 1px 1px 3px rgba(0,0,0,.1),-1px -1px 3px rgba(0,0,0,.1);
-// }
+.c-media {
+	border: 1px solid  #ccc;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+	width: 100%;
+}
+
+.c-ofi__wrap {
+  position: relative;
+  padding-top: 75%;
+}
+.c-ofi {
+  object-fit: contain;
+  font-family: 'object-fit: contain;';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
