@@ -23,7 +23,6 @@
 			color: #999;
 		}
 	}
-
 	// select {
 	// 	width: 5em;
 	// }
@@ -59,7 +58,7 @@
 	left: 5px;
 	width: 15px;
 	height: 15px;
-	border: 1px solid  $bdrColor;
+	border: 1px solid $bdrColor;
 }
 .c-form__label--radio::before,
 .c-form__check:checked + .c-form__label--radio::after{
@@ -80,14 +79,15 @@
 .c-form-btnlist__item {
 	margin: 0 10px;
 	width: 140px;
-  @include arrow;
+	@include arrow;
 	@include arrow-rr(85%);
 }
 .c-form-btnlist__item--back {
 	background-color: $subColor;
-  @include arrow;
+	@include arrow;
 	@include arrow-ll;
 }
+
 .c-form-required {
     background-color: $error;
     color: #fff;

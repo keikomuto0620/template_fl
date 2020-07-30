@@ -8,20 +8,23 @@
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 @mixin en {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 //font-size
 // ===============================================
-@mixin rem($size,$base:10) {
+@mixin rem($size, $base: 10) {
   font-size: $size + px;
   font-size: ($size / $base) + rem;
 }
-@mixin rfs($fs,$fs-l,$vp,$vp-l) {
-  font-size: calc(#{$fs} + ((100vw - #{$vp} ) * ( #{num($fs-l)} - #{num($fs)} ) / ( #{num($vp-l)} - #{num($vp)} ) ));
+@mixin rfs($fs, $fs-l, $vp, $vp-l) {
+  font-size: calc(
+    #{$fs} + ((100vw - #{$vp}) * (#{num($fs-l)} - #{num($fs)}) /
+          (#{num($vp-l)} - #{num($vp)}))
+  );
 }
 //  strip units helper function
-@function num($input){
+@function num($input) {
   @return $input/($input * 0 + 1);
 }
 //state
@@ -33,10 +36,10 @@
 }
 // arrow
 // ===============================================
-@mixin arrow($color:#000, $w:10px, $border:1px) {
+@mixin arrow($color: #000, $w: 10px, $border: 1px) {
   position: relative;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -48,28 +51,28 @@
     z-index: 1;
   }
 }
-@mixin arrow-rr($posnum:90%) {
+@mixin arrow-rr($posnum: 15px) {
   &::after {
-    left:$posnum;
+    right: $posnum;
     transform: rotate(45deg);
   }
 }
-@mixin arrow-rd($posnum:90%) {
+@mixin arrow-rd($posnum: 15px) {
   &::after {
-    left:$posnum;
+    right: $posnum;
     transform: rotate(135deg);
   }
 }
 
-@mixin arrow-lr($posnum:10%) {
+@mixin arrow-lr($posnum: 15px) {
   &::after {
-    left:$posnum;
+    left: $posnum;
     transform: rotate(45deg);
   }
 }
-@mixin arrow-ll($posnum:10%) {
+@mixin arrow-ll($posnum: 15px) {
   &::after {
-    left:$posnum;
+    left: $posnum;
     transform: rotate(-135deg);
   }
 }
@@ -98,8 +101,8 @@
 
 //box-shadow
 // ===============================================
-@mixin shadow($len1:0, $len2:2px, $len3:2px) {
-  box-shadow: $len1 $len2 $len3 rgba(#ccc, .5);
+@mixin shadow($len1: 0, $len2: 2px, $len3: 2px) {
+  box-shadow: $len1 $len2 $len3 rgba(#ccc, 0.5);
 }
 
 //hover effect
@@ -108,19 +111,19 @@
   a {
     text-decoration: none;
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }
 
 //list
 // ===============================================
-@mixin lmCircle($collor:#ccc,$left:0,$top:8px,$w:10px,$pl:27px) {
+@mixin lmCircle($collor: #ccc, $left: 0, $top: 8px, $w: 10px, $pl: 27px) {
   li {
     position: relative;
     padding-left: $pl;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: $left;
       top: $top;
@@ -141,7 +144,7 @@
         // color: #694d37;
         // font-weight: bold;
         counter-increment: ol_li;
-        content: counter(ol_li)'.';
+        content: counter(ol_li) ".";
         display: inline-block;
         margin: 3px 9px 0 -23px;
       }
@@ -167,7 +170,7 @@
     @include columns($gridColumns / 3 * 2);
   }
   .col_#{$name}_one_thirds_offset {
-    @include offset($gridColumns /3 );
+    @include offset($gridColumns / 3);
   }
   .col_#{$name}_two_thirds_offset {
     @include offset($gridColumns / 3 * 2);

@@ -1,14 +1,14 @@
 /* gnav */
 .gnav {
   position: relative;
-  background-color: $gnavBg;
+  background-color: $bgColor;
 }
 
 .gnav__list {
   width: 100%;
   position: absolute;
   display: none;
-  background-color: $gnavBg;
+  background-color: $bgColor;
   z-index: 100;
 
   @include mq {
@@ -48,8 +48,8 @@
     position: relative;
 
     &::after {
-      transition: .5s;
-      content: '';
+      transition: 0.5s;
+      content: "";
       display: block;
       position: absolute;
       width: 100%;
@@ -60,21 +60,21 @@
 
     &:hover {
       &::after {
-        background-color: rgba($subColor, .6);
+        background-color: rgba($subColor, 0.6);
       }
     }
   }
 }
 
 .gnav__link--current {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 0.5);
 
   @include mq {
     background-color: inherit;
   }
 
   &::after {
-    background-color: rgba($subColor, .6);
+    background-color: rgba($subColor, 0.6);
   }
 }
 
@@ -84,7 +84,7 @@
     width: 100%;
     visibility: hidden;
     opacity: 0;
-    transition: .2s;
+    transition: 0.2s;
   }
 }
 
@@ -100,8 +100,8 @@
 
   @include mq {
     padding: 0;
-    background-color: $gnavSubBg;
-    transition: .5s;
+    background-color: $bgColor;
+    transition: 0.5s;
   }
 
   &:hover {
@@ -111,7 +111,7 @@
   }
 }
 .gnav__sublink--current {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 0.5);
 
   @include mq {
     background-color: $subColor;

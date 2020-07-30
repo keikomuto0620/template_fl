@@ -6,7 +6,8 @@ html {
 body {
   color: $textColor;
   line-height: 1.8;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    sans-serif;
   font-weight: 500;
   -webkit-text-size-adjust: 100%;
   @include rem(16);
@@ -26,21 +27,6 @@ ul,
 ol {
   list-style-type: none;
 }
-.object-fit-img {
-  object-fit: cover;
-  font-family: 'object-fit: cover;';
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 .is-pc {
   display: none;
   @include mq {
@@ -53,4 +39,3 @@ ol {
     display: none;
   }
 }
-

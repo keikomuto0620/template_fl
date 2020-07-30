@@ -1,13 +1,14 @@
 /* page-header */
-.c-page__header {
-  height: 120px;
-  background-size: cover;
+.c-page-title {
+  background-color: $subColor;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  @include rem(18);
+  font-weight: bold;
+  height: 135px;
 }
-
-.c-page__title {}
 
 /* common titles */
 .c-title-lv2 {

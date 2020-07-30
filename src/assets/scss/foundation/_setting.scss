@@ -5,47 +5,47 @@
 // - キーフレームアニメーションの設定
 
 //colors
-$mainColor:#999;
-$subColor:#ccc;
+$mainColor: #0d80ec;
+$subColor: palegreen;
 
-$textColor:#000;
-$linkColor:#000;
-$linkColor02:#0d80ec;
+$textColor: #000;
+$linkColor: $textColor;
+$linkColor02: $mainColor;
+$error: #ff0101;
 
-$error:#FF0101;
+$bdrColor: #ccc;
 
-$bdrColor:#ccc;
+$bgColor: #ccc;
 
-$gnavBg:$mainColor;
-$gnavSubBg:#f2f2f2;
-
+// $bgColor: $mainColor;
+// $bgColor: #f2f2f2;
 
 //content width
-$bk_sm:480px;
-$bk_md:768px;
-$bk_lg:1000px;
-$bk_xl:1200px;
-$contentWidth:$bk_xl;
-$contentWidthSP:94%;
+$bk_sm: 480px;
+$bk_md: 768px;
+$bk_lg: 1000px;
+$bk_xl: 1200px;
+$contentWidth: $bk_xl;
+$contentWidthSP: 94%;
 
 //media query
 @mixin mq_sm {
-	@media only screen and (min-width: $bk_sm) {
-		@content;
-	}
+  @media only screen and (min-width: $bk_sm) {
+    @content;
+  }
 }
 @mixin mq {
-	@media only screen and (min-width: $bk_md) {
-		@content;
-	}
+  @media only screen and (min-width: $bk_md) {
+    @content;
+  }
 }
 @mixin mq_lg {
-	@media only screen and (min-width: $bk_lg) {
-		@content;
-	}
+  @media only screen and (min-width: $bk_lg) {
+    @content;
+  }
 }
 @mixin mq_xl {
-	@media only screen and (min-width: $bk_xl) {
-		@content;
-	}
+  @media only screen and (min-width: $bk_xl) {
+    @content;
+  }
 }
