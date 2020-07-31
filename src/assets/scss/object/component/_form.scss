@@ -3,22 +3,22 @@
   input[type="text"],
   input[type="email"],
   input[type="password"],
+  input[type="tel"],
   select,
   textarea {
     border: 1px solid $bdrColor;
     background-color: #fff;
     padding: 10px;
     width: 100%;
-    // &.c-form__input-l {
-    // 	width: 60%;
-    // 	margin-left: 20px;
-    // }
-    // &.c-form__input-m {
-    // 	width: 10em;
-    // }
-    // &.c-form__input-s {
-    // 	width: 5em;
-    // }
+    &.c-form__input-l {
+      width: 15em;
+    }
+    &.c-form__input-m {
+      width: 10em;
+    }
+    &.c-form__input-s {
+      width: 5em;
+    }
     &::placeholder {
       color: #999;
     }
@@ -47,7 +47,7 @@
   clip: rect(0, 0, 0, 0);
   &:focus {
     + .c-form__label:before {
-      box-shadow: 0 0 3px rgba($color: $mainColor, 0.3);
+      box-shadow: 0 0 5px rgba($mainColor, 0.5);
     }
   }
 }
@@ -109,10 +109,15 @@
   font-family: sans-serif;
 }
 
+.c-form-note {
+  @include rem(14);
+}
+
 .c-form-error {
   input[type="text"],
   input[type="email"],
   input[type="password"],
+  input[type="tel"],
   select,
   textarea {
     border: 1px solid $error;
