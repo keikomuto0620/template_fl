@@ -1,0 +1,84 @@
+/* list */
+.c-list {
+	display: flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+	// margin-bottom: 20px;
+}
+.c-list__item {
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	border: 1px solid rgba(0,0,0,.2);
+	background-color: #fff;
+	padding: 5px;
+	// margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	line-height: 1.5;
+	@include mq {
+		width: 32%;
+		padding: 10px;
+	}
+	// @include mq {
+	// 	&:hover {
+	// 		background-color: #F9F9F9;
+	// 	}
+	// }
+}
+.c-list__status {
+	position: absolute;
+	top: 5px;
+	left: -55px;
+	width: 13em;
+	padding: 2px 0;
+	transform: rotate(-45deg);
+	color: #fff;
+	background-color: $subColor;
+	@include rem(11);
+	text-align: center;
+	@include mq {
+		top: 15px;
+		left: -100px;
+		padding: 5px 0;
+		@include rem(20);
+	}
+}
+
+.c-list__body {
+	padding: 10px 0 20px;
+	@include mq_lg {
+		padding: 20px;
+	}
+}
+.c-list__title {
+	font-weight: bold;
+	@include rem(14);
+	margin-bottom: 5px;
+	@include mq {
+		@include rem(20);
+		margin-bottom: 15px;
+		// line-height: 1.5;
+	}
+}
+.c-list__cat {
+	color: #fff;
+	width: 80px;
+	height: 20px;
+	margin: 5px 0;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	@include mq {
+		width: 100px;
+		height: 30px;
+		margin: 10px 0;
+	}
+}
+.c-list__cat--01 {
+	background-color: $mainColor;
+}
+.c-list__cat--02 {
+	background-color: $error;
+}
+.c-list__cat--03 {
+	background-color: $subColor;
+}

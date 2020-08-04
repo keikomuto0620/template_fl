@@ -36,7 +36,7 @@
 }
 // arrow
 // ===============================================
-@mixin arrow($color: #000, $w: 10px, $border: 1px) {
+@mixin arrow($color: #fff, $w: 10px, $border: 1px) {
   position: relative;
   &::after {
     content: "";

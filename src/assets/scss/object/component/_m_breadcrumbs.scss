@@ -1,0 +1,29 @@
+/* breadcrumbs*/
+.c-breadcrumbs {
+	padding: 15px 0;
+	display: flex;
+	align-items:center;
+	&::before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f015";
+		font-weight: bold;
+		margin-right: 10px;
+		color: $mainColor;
+		@include rem(22);
+	}
+}
+.c-breadcrumbs__item {
+	line-height: 1.2;
+	&+.c-breadcrumbs__item {
+		&:before {
+			content:'>';
+			padding: 0 10px;
+		}
+	}
+}
+.c-breadcrumbs__link {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,39 @@
+.c-pagenavi {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+.c-pagenavi__link {
+	color: #fff;
+	background-color: #000;
+	width: 38px;
+	height: 38px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	margin: 0 5px;
+	transition: .5s;
+	border-radius: 50%;
+	&.is-current,
+	&:hover {
+		color: #fff;
+		background-color: $mainColor;
+	}
+}
+.c-pagenavi__arrow {
+	width: 28px;
+	height: 38px;
+	display: block;
+	position: relative;
+	background-color: transparent;
+	@include arrow($mainColor, 13px, 3px);
+	@include arrow-ll(0);
+}
+.c-pagenavi__arrow--next {
+	margin: 0;
+	&::after {
+		transform: rotate(45deg);
+		right: 0;
+		left: inherit;
+	}
+}

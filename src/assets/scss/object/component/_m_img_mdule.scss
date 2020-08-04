@@ -1,0 +1,37 @@
+/* image module */
+.c-img-module {
+	margin-bottom: 30px;
+	@include mq {
+		display: flex;
+		justify-content:space-between;
+	}
+	img {
+		width: 100%;
+	}
+}
+.c-img-module--02 {
+	@include mq {
+		flex-direction: row-reverse;
+	}
+}
+
+.c-img-module__col--01 {
+	width: 100%;
+}
+.c-img-module__col--02 {
+	margin-bottom: 20px;
+	@include mq {
+		width: 48%;
+	}
+}
+.c-img-module__col--03 {
+	margin-bottom: 20px;
+	@include mq {
+		width: 32%;
+	}
+}
+
+.c-img-module__caption {
+		padding: 10px 0;
+		line-height: 1.2;
+}

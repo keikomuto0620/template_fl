@@ -36,14 +36,16 @@ Component
 @import "object/component/_form";
 @import "object/component/_media";
 
+@import "object/component/_m_breadcrumbs";
+@import "object/component/_m_img_mdule";
+@import "object/component/_m_list";
+@import "object/component/_m_pagenavi";
 /* -----------------------------------------------------------------
 Project
 ----------------------------------------------------------------- */
-
-@import "object/project/_frontpage";
-@import "object/project/_entry";
-@import "object/project/_widget";
-@import "object/project/_pagenavi";
+// @import "object/project/_about";
+@import "object/project/_news";
+@import "object/project/_top";
 
 /* -----------------------------------------------------------------
 Utility
