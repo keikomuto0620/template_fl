@@ -27,7 +27,9 @@
 
 		if (location.pathname != "/") {
 			$(
-				'.gnav__item > a[href^="/' + location.pathname.split("/")[1] + '/"]'
+				'.gnav__item > a[href^="/' +
+					location.pathname.split("/")[1] +
+					'/"]'
 			).addClass("gnav__link--current");
 		} else {
 			$(".gnav__item > a:eq(0)").addClass("gnav__link--current");
@@ -63,11 +65,17 @@
 
 		menuBtn.clickToggle(
 			function () {
-				menuBtn.attr("aria-expanded", "true");
+				menuBtn.attr({
+					"aria-expanded": "true",
+					"aria-label": "メニューを閉じる",
+				});
 				menuPanel.attr("aria-hidden", "false");
 			},
 			function () {
-				menuBtn.attr("aria-expanded", "false");
+				menuBtn.attr({
+					"aria-expanded": "false",
+					"aria-label": "メニューを開く",
+				});
 				menuPanel.attr("aria-hidden", "true");
 			}
 		);
@@ -77,9 +85,15 @@
 
 		$("#js-confirm").click(function () {
 			if ($(this).prop("checked") == false) {
-				submit.attr("disabled", "disabled").parent().addClass('c-btn--disabled');
+				submit
+					.attr("disabled", "disabled")
+					.parent()
+					.addClass("c-btn--disabled");
 			} else {
-				submit.removeAttr("disabled").parent().removeClass('c-btn--disabled');
+				submit
+					.removeAttr("disabled")
+					.parent()
+					.removeClass("c-btn--disabled");
 			}
 		});
 		//sticky display

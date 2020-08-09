@@ -1,10 +1,9 @@
-<%
-var absolutePath = filename.split('src\\')[filename.split('src\\').length -1].replace('.ejs','.html');
-var relativePath = '../'.repeat([absolutePath.split('\\').length -2]);
-var pathData = {
-  absolutePath: absolutePath,
-  relativePath: relativePath
-}; %><%- include(pathData.relativePath + '_inc/_header', {page:json['about']},{path: pathData}); %>
+<% var absolutePath = filename.split('src\\')[filename.split('src\\').length
+-1].replace('.ejs','.html'); var relativePath =
+'../'.repeat([absolutePath.split('\\').length -2]); var pathData = {
+absolutePath: absolutePath, relativePath: relativePath }; %><%-
+include(pathData.relativePath + '_inc/_header', {page:json['about']},{path:
+pathData}); %>
 
 <div class="l-contents l-flex l-flex-between">
 	<div class="l-main">
@@ -72,7 +71,9 @@ var pathData = {
 			ビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキスト
 		</p>
 		<p>
-			<a href="tel:0000000" class="c-txt-tel">電話番号 000-000-0000(スマホのみリンク有効)</a>
+			<a href="tel:0000000" class="c-txt-tel"
+				>電話番号 000-000-0000(スマホのみリンク有効)</a
+			>
 		</p>
 		<p class="sr-only">sr-onlyスクリーンリーダー用テキスト</p>
 
@@ -102,7 +103,11 @@ var pathData = {
 				<p>表示比率4:3</p>
 				<figure class="u-mb30">
 					<div class="c-ofi__wrap">
-						<img src="/assets/images/_dummy/dummy_v.jpg" alt="" class="c-ofi" />
+						<img
+							src="/assets/images/_dummy/dummy_v.jpg"
+							alt=""
+							class="c-ofi"
+						/>
 					</div>
 				</figure>
 			</div>
@@ -110,7 +115,11 @@ var pathData = {
 				<p>白枠付</p>
 				<figure class="c-media u-mb30">
 					<div class="c-ofi__wrap">
-						<img src="/assets/images/_dummy/dummy_v.jpg" alt="" class="c-ofi" />
+						<img
+							src="/assets/images/_dummy/dummy_v.jpg"
+							alt=""
+							class="c-ofi"
+						/>
 					</div>
 				</figure>
 			</div>
@@ -120,8 +129,14 @@ var pathData = {
 		<div class="c-gobject c-gobject--gmap">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.9771703133642!2d137.16797361562013!3d34.95718088036956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bd2f357ae6b5%3A0x9e366b6ae3f9ce51!2z44CSNDQ0LTAwMzgg5oSb55-l55yM5bKh5bSO5biC5Lyd6aas6YCa77yS5LiB55uu77yR77yX!5e0!3m2!1sja!2sjp!4v1587605940406!5m2!1sja!2sjp"
-				width="600" height="450" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false"
-				tabindex="0"></iframe>
+				width="600"
+				height="450"
+				frameborder="0"
+				style="border: 0;"
+				allowfullscreen=""
+				aria-hidden="false"
+				tabindex="0"
+			></iframe>
 		</div>
 
 		<h2 class="c-title-lv2 u-mt100">テーブル</h2>
@@ -195,36 +210,82 @@ var pathData = {
 			<li class="c-form-step__item">確認</li>
 			<li class="c-form-step__item is-current">完了</li>
 		</ol>
-		<p class="c-form-error__msg u-mb30">入力に誤りがあります。恐れ入りますがエラーメッセージが表示されている入力項目をもう一度ご確認ください。</p>
+		<p class="c-form-error__msg u-mb30">
+			入力に誤りがあります。恐れ入りますがエラーメッセージが表示されている入力項目をもう一度ご確認ください。
+		</p>
 		<div class="c-table c-table--resp c-form u-mb50">
 			<dl>
-				<dt><label for="input01">text<span class="c-form-required">必須</span></label></dt>
-				<dd><input type="text" id="input01" placeholder="placeholder" aria-required="true"></dd>
+				<dt>
+					<label for="input01"
+						>text<span class="c-form-required">必須</span></label
+					>
+				</dt>
+				<dd>
+					<input
+						type="text"
+						id="input01"
+						placeholder="placeholder"
+						aria-required="true"
+					/>
+				</dd>
 			</dl>
 			<dl class="c-form-error">
 				<dt><label for="input02">email</label></dt>
-				<dd><input type="email" id="input02" placeholder="placeholder"></dd>
+				<dd>
+					<input
+						type="email"
+						id="input02"
+						placeholder="placeholder"
+					/>
+				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input03">password</label></dt>
 				<dd>
-					<input type="password" id="input03" placeholder="placeholder" aria-describedby="input03-note">
-					<p id="input03-note" class="c-form-note"><small>半角英数字5文字以上</small></p>
+					<input
+						type="password"
+						id="input03"
+						placeholder="placeholder"
+						aria-describedby="input03-note"
+					/>
+					<p id="input03-note" class="c-form-note">
+						<small>半角英数字5文字以上</small>
+					</p>
 				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input04" id="tel">tel</label></dt>
 				<dd aria-labelledby="tel">
 					<div role="group">
-						<input type="tel" id="input04" class="c-form__input-s" placeholder="000" title="市外局番"> -
-						<input type="tel" class="c-form__input-m" placeholder="000" title="市内局番"> -
-						<input type="tel" class="c-form__input-l" placeholder="000" title="加入者番号">
+						<input
+							type="tel"
+							id="input04"
+							class="c-form__input-s"
+							placeholder="000"
+							title="市外局番"
+						/>
+						-
+						<input
+							type="tel"
+							class="c-form__input-m"
+							placeholder="000"
+							title="市内局番"
+						/>
+						-
+						<input
+							type="tel"
+							class="c-form__input-l"
+							placeholder="000"
+							title="加入者番号"
+						/>
 					</div>
 				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input05">textarea</label></dt>
-				<dd><textarea id="input05" placeholder="placeholder"></textarea></dd>
+				<dd>
+					<textarea id="input05" placeholder="placeholder"></textarea>
+				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input06">select</label></dt>
@@ -243,10 +304,26 @@ var pathData = {
 				<dt id="checkbox">checkbox</dt>
 				<dd aria-labelledby="checkbox">
 					<div role="group">
-						<label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span
-								class="c-form__label">チェックボックス1</span></label>
-						<label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span
-								class="c-form__label">チェックボックス2</span></label>
+						<label
+							><input
+								type="checkbox"
+								class="c-form__check"
+								name="check"
+								value="チェックボックス1"
+							/><span class="c-form__label"
+								>チェックボックス1</span
+							></label
+						>
+						<label
+							><input
+								type="checkbox"
+								class="c-form__check"
+								name="check"
+								value="チェックボックス1"
+							/><span class="c-form__label"
+								>チェックボックス2</span
+							></label
+						>
 					</div>
 				</dd>
 			</dl>
@@ -257,22 +334,51 @@ var pathData = {
 				<dt id="radio">radio</dt>
 				<dd aria-labelledby="radio">
 					<div role="group">
-						<label><input type="radio" class="c-form__check" name="radio" value="ラジオボタン1"><span
-								class="c-form__label c-form__label--radio">ラジオボタン1</span></label>
-						<label><input type="radio" class="c-form__check" name="radio" value="ラジオボタン2"><span
-								class="c-form__label c-form__label--radio">ラジオボタン2</span></label>
+						<label
+							><input
+								type="radio"
+								class="c-form__check"
+								name="radio"
+								value="ラジオボタン1"
+							/><span class="c-form__label c-form__label--radio"
+								>ラジオボタン1</span
+							></label
+						>
+						<label
+							><input
+								type="radio"
+								class="c-form__check"
+								name="radio"
+								value="ラジオボタン2"
+							/><span class="c-form__label c-form__label--radio"
+								>ラジオボタン2</span
+							></label
+						>
 					</div>
 				</dd>
 			</dl>
 		</div>
 		<p class="c-form-btnlist">
-			<label class="c-form__confirm"><input type="checkbox" id="js-confirm" class="c-form__check" /><span
-					class="c-form__label">プライバシーポリシーに同意する</span></label>
+			<label class="c-form__confirm"
+				><input
+					type="checkbox"
+					id="js-confirm"
+					class="c-form__check"
+				/><span class="c-form__label"
+					>プライバシーポリシーに同意する</span
+				></label
+			>
 		</p>
 
 		<div class="c-form-btnlist">
 			<div class="c-btn c-btn--disabled">
-				<input type="submit" id="js-submit" name="" value="確認する" disabled />
+				<input
+					type="submit"
+					id="js-submit"
+					name=""
+					value="確認する"
+					disabled
+				/>
 			</div>
 		</div>
 
@@ -281,7 +387,7 @@ var pathData = {
 				<input type="button" value="戻る" />
 			</div>
 			<div class="c-form-btnlist__item c-btn">
-				<input type="button" value="送信" />
+				<input type="submit" value="送信" />
 			</div>
 		</div>
 		<h2 class="c-title-lv2 u-mt100">ボックス要素のアラインメント</h2>
