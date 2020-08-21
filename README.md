@@ -25,7 +25,6 @@
 - FLOCCS + BEM
 	- https://github.com/hiloki/flocss
 	- https://qiita.com/Takuan_Oishii/items/0f0d2c5dc33a9b2d9cb1
-- id属性はスタイリングに使用しない
 
 ## SCSSファイル構成
 - ブレイクポイント、共通カラーコードはassets/scss/\_setting\.scss参照
@@ -37,8 +36,9 @@
 
 # class 命名規則
 ## スタイリング用class名
-- レイヤー接頭辞（l,c,p,u）-ページ固有接頭辞（ディレクトリ名）-block名\_\_element--modifier (例:p-news-card__body--a)
-- 単語の区切りはハイフンつなぎ
+- レイヤー接頭辞（l,c,p,u）- ページ固有接頭辞（newsなどディレクトリ名）- blockName\_\_elementName--modifierName (例:p-news-card__body--a)
+- 単語の区切りはローワーキャメルケース
+- idセレクタはスタイリングに使用しない
 - 大文字は使わない
 
 ## js用class名
@@ -77,4 +77,3 @@
 2. npm iでパッケージをインストール
 3. gulpfile.jsがあるディレクトリでターミナル起動
 4. コマンド： gulp
-
