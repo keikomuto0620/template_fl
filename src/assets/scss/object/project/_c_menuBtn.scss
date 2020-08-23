@@ -1,0 +1,57 @@
+/* menu button
+----------------------------- */
+
+.p-menuBtn {
+	height: 50px;
+	width: 50px;
+	margin-left: 10px;
+	background-color: $mainColor;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 200;
+
+	@include mq {
+		display: none;
+	}
+	&.is-open {
+		.p-menuBtn__item {
+			background-color: transparent;
+
+			&::before {
+				transform: translateY(8px) rotate(-45deg);
+			}
+
+			&::after {
+				transform: translateY(-8px) rotate(45deg);
+			}
+		}
+	}
+}
+
+.p-menuBtn__item {
+	position: relative;
+	width: 30px;
+	height: 2px;
+	background-color: #000;
+	transition: 0.5s;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 30px;
+		height: 2px;
+		transition: 0.5s;
+		background-color: #000;
+	}
+
+	&::before {
+		top: -8px;
+	}
+
+	&::after {
+		bottom: -8px;
+	}
+}

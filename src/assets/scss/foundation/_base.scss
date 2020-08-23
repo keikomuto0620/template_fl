@@ -4,38 +4,26 @@
 // }
 
 body {
-  color: $textColor;
-  line-height: 1.8;
-  font-family: YuGothic, "Yu Gothic", sans-serif;
-  // font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 500;
-  -webkit-text-size-adjust: 100%;
-  @include rem(16);
+	color: $textColor;
+	line-height: 1.8;
+	font-family: YuGothic, "Yu Gothic", sans-serif;
+	// font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 500;
+	-webkit-text-size-adjust: 100%;
+	@include rem(16);
 }
 
 a {
-  color: $linkColor;
-  text-decoration: none;
+	color: $linkColor;
+	text-decoration: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: top;
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
 }
 ul,
 ol {
-  list-style-type: none;
-}
-.is-pc {
-  display: none;
-  @include mq {
-    display: block;
-  }
-}
-.is-sp {
-  display: block;
-  @include mq {
-    display: none;
-  }
+	list-style-type: none;
 }

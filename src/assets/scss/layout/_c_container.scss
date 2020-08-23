@@ -1,0 +1,16 @@
+/* contents layout */
+.l-container {
+	// width: $contentWidthSP;
+	margin: 0 auto;
+	max-width: calc(#{$contentWidth} + 20px);
+	// position: relative;
+	padding: 0 3%;
+	@include mq {
+		padding: 0 10px;
+	}
+}
+// .l-container__inner {
+//   width: $contentWidth;
+//   margin: 0 auto;
+//   overflow: hidden;
+// }

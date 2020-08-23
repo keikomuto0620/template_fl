@@ -1,51 +1,55 @@
 // width
-@mixin widthSP($multiple,$start:1,$end:20) {
-  @if $multiple == def {
-    @for $i from 1 through 20 {
-      .u-w#{$i * 5} { width: 5% * $i !important; }
-    }
-  }
+@mixin widthSP($multiple, $start: 1, $end: 20) {
+	@if $multiple == def {
+		@for $i from 1 through 20 {
+			.u-w#{$i * 5} {
+				width: 5% * $i !important;
+			}
+		}
+	}
 }
 
-@mixin width($multiple,$start:1,$end:20) {
-  @if $multiple == def {
-    @for $i from 1 through 20 {
-      .u-w#{$i * 5}--pc { width: 5% * $i !important; }
-    }
-  }
+@mixin width($multiple, $start: 1, $end: 20) {
+	@if $multiple == def {
+		@for $i from 1 through 20 {
+			.u-w#{$i * 5}--pc {
+				width: 5% * $i !important;
+			}
+		}
+	}
 }
 
 /* width */
 @include widthSP(def);
 @include mq {
-  @include width(def);
+	@include width(def);
 }
 
 // font-size
-@mixin fsSP($multiple,$start:10,$end:30) {
-  @if $multiple == def {
-    @for $i from 10 through 30 {
-      .u-fs#{$i} {
-        font-size: $i + px !important;
-        font-size: ($i / 10) + rem !important;
-      }
-    }
-  }
+@mixin fsSP($multiple, $start: 10, $end: 30) {
+	@if $multiple == def {
+		@for $i from 10 through 30 {
+			.u-fs#{$i} {
+				// font-size: $i + px !important;
+				font-size: ($i / 10) + rem !important;
+			}
+		}
+	}
 }
 
-@mixin fs($multiple,$start:10,$end:30) {
-  @if $multiple == def {
-    @for $i from 10 through 30 {
-      .u-fs#{$i}--pc {
-        font-size: $i + px !important;
-        font-size: ($i / 10) + rem !important;
-      }
-    }
-  }
+@mixin fs($multiple, $start: 10, $end: 30) {
+	@if $multiple == def {
+		@for $i from 10 through 30 {
+			.u-fs#{$i}--pc {
+				// font-size: $i + px !important;
+				font-size: ($i / 10) + rem !important;
+			}
+		}
+	}
 }
 
 /* font-size */
 @include fsSP(def);
 @include mq {
-  @include fs(def);
+	@include fs(def);
 }

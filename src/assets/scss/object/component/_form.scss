@@ -6,22 +6,22 @@
 	input[type="tel"],
 	select,
 	textarea {
-	  border: 1px solid $bdrColor;
-	  background-color: #fff;
-	  padding: 10px;
-	  width: 100%;
-	  &.c-form__input-l {
-		width: 15em;
-	  }
-	  &.c-form__input-m {
-		width: 10em;
-	  }
-	  &.c-form__input-s {
-		width: 5em;
-	  }
-	  &::placeholder {
-		color: #999;
-	  }
+		border: 1px solid $bdrColor;
+		background-color: #fff;
+		padding: 10px;
+		width: 100%;
+		&.c-form__input-l {
+			width: 15em;
+		}
+		&.c-form__input-m {
+			width: 10em;
+		}
+		&.c-form__input-s {
+			width: 5em;
+		}
+		&::placeholder {
+			color: #999;
+		}
 	}
 	// select {
 	// 	width: 5em;
@@ -34,9 +34,9 @@
 	// 	margin: 0 10px;
 	// 	vertical-align: middle;
 	// }
-  }
+}
 
-  .c-form__check {
+.c-form__check {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -46,23 +46,23 @@
 	padding: 0;
 	clip: rect(0, 0, 0, 0);
 	&:focus {
-	  + .c-form__label:before {
-		box-shadow: 0 0 5px rgba($mainColor, 0.5);
-	  }
+		+ .c-form__label:before {
+			box-shadow: 0 0 5px rgba($mainColor, 0.5);
+		}
 	}
-  }
-  .c-form__label {
+}
+.c-form__label {
 	padding: 0 30px;
 	position: relative;
 	&::before {
-	  background-color: #fff;
+		background-color: #fff;
 	}
-  }
-  .c-form__check:checked + .c-form__label::after {
+}
+.c-form__check:checked + .c-form__label::after {
 	background-color: $mainColor;
-  }
-  .c-form__label::before,
-  .c-form__check:checked + .c-form__label::after {
+}
+.c-form__label::before,
+.c-form__check:checked + .c-form__label::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -71,124 +71,125 @@
 	width: 15px;
 	height: 15px;
 	border: 1px solid $bdrColor;
-  }
-  .c-form__label--radio::before,
-  .c-form__check:checked + .c-form__label--radio::after {
+}
+.c-form__label--radio::before,
+.c-form__check:checked + .c-form__label--radio::after {
 	border-radius: 50%;
-  }
+}
 
-  // .c-form-list {
-  // 	display: flex;
-  // }
-  // .c-form-list__item {
-  // 	padding: 0 30px 0 15px;
-  // }
+// .c-form-list {
+// 	display: flex;
+// }
+// .c-form-list__item {
+// 	padding: 0 30px 0 15px;
+// }
 
-  .c-form-btnlist {
+.c-form-btnlist {
 	display: flex;
 	justify-content: center;
-  }
-  .c-form-btnlist__item {
+}
+.c-form-btnlist__item {
 	margin: 0 10px;
 	width: 140px;
 	@include arrow;
-	@include arrow-rr(85%);
-  }
-  .c-form-btnlist__item--back {
+	@include arrow-rr;
+}
+.c-form-btnlist__item--back {
 	background-color: $subColor;
-	@include arrow;
 	@include arrow-ll;
-  }
+	&::after {
+		right: inherit;
+	}
+}
 
-  .c-form-required {
+.c-form-required {
 	background-color: $error;
 	color: #fff;
 	margin-left: 5px;
 	padding: 0 5px;
 	display: inline-block;
 	font-family: sans-serif;
-  }
+}
 
-  .c-form-note {
+.c-form-note {
 	@include rem(14);
-  }
+}
 
-  .c-form-error {
+.c-form-error {
 	input[type="text"],
 	input[type="email"],
 	input[type="password"],
 	input[type="tel"],
 	select,
 	textarea {
-	  border: 1px solid $error;
+		border: 1px solid $error;
 	}
-  }
-  .c-form-error__msg {
+}
+.c-form-error__msg {
 	color: $error;
-  }
-  // .c-form-error__msg02 {
-  // 	color: $error;
-  // 	border: 1px solid  $error;
-  // 	background-color: #2C0101;
-  // 	padding: 10px 10px 10px 40px;
-  // 	background-image:url(../img/contact/ico_error.png);
-  // 	background-position:10px 15px;
-  // 	background-repeat:no-repeat;
-  // 	max-width: 950px;
-  // 	margin: 0 auto 20px;
-  // }
+}
+// .c-form-error__msg02 {
+// 	color: $error;
+// 	border: 1px solid  $error;
+// 	background-color: #2C0101;
+// 	padding: 10px 10px 10px 40px;
+// 	background-image:url(../img/contact/ico_error.png);
+// 	background-position:10px 15px;
+// 	background-repeat:no-repeat;
+// 	max-width: 950px;
+// 	margin: 0 auto 20px;
+// }
 
-
-  .c-form-step {
-	  margin: 30px 0;
-	  @include mq {
-		  margin: 80px 0;
-		  display: flex;
-	  }
-  }
-  .c-form-step__item {
-	  @include rem(16);
-	  font-weight: bold;
-	  border: 1px solid $error;
-	  position: relative;
-	  height: 40px;
-	  display: flex;
-	  align-items:center;
-	  justify-content: center;
-	  margin-top: -1px;
-	  @include mq {
-		  width: 33.333%;
-		  margin-top: 0;
-	  }
-	  &::after {
-		  content: '';
-		  position: absolute;
-		  border-top: 1px solid $error;
-		  border-right: 1px solid $error;
-		  background-color: #fff;
-		  z-index: 10;
-		  transform: rotate(135deg);
-		  width: 10px;
-		  height: 10px;
-		  bottom: -6px;
-		  @include mq {
-			  width: 28px;
-			  height: 28px;
-			  right: -15px;
-			  top: 0;
-			  bottom: 0;
-			  margin: auto;
-			  transform: rotate(45deg);
-		  }
-	  }
-	  &:last-child::after {
-		  display: none;
-	  }
-	  &.is-current {
-		  background-color: $error;
-		  color: #fff;
-		  &::after {
-			  background-color: $error;
-		  }
-	  }
-  }
+.c-form-step {
+	margin: 30px 0;
+	@include mq {
+		margin: 80px 0;
+		display: flex;
+	}
+}
+.c-form-step__item {
+	@include rem(16);
+	font-weight: bold;
+	border: 1px solid $error;
+	position: relative;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -1px;
+	@include mq {
+		width: 33.333%;
+		margin-top: 0;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		border-top: 1px solid $error;
+		border-right: 1px solid $error;
+		background-color: #fff;
+		z-index: 10;
+		transform: rotate(135deg);
+		width: 10px;
+		height: 10px;
+		bottom: -6px;
+		@include mq {
+			width: 28px;
+			height: 28px;
+			right: -15px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			transform: rotate(45deg);
+		}
+	}
+	&:last-child::after {
+		display: none;
+	}
+	&.is-current {
+		background-color: $error;
+		color: #fff;
+		&::after {
+			background-color: $error;
+		}
+	}
+}

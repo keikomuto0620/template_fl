@@ -1,94 +1,103 @@
 /* table */
 .c-caption {
-  color: #fff;
-  background-color: $mainColor;
+	color: #fff;
+	background-color: $mainColor;
 }
 
 .c-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: solid $bdrColor;
-  border-width: 1px 1px 0 0;
-  dl {
-    width: 100%;
-    @include mq {
-      display: flex;
-    }
-  }
-  th,
-  td,
-  dt,
-  dd {
-    padding: 5px;
-    // word-break: break-all;
-    border: 1px solid $bdrColor;
-    border-width: 0 0 1px 1px;
-    @include mq {
-      padding: 10px;
-    }
-  }
-  dt {
-    width: 30%;
-  }
-  dd {
-    width: 70%;
-  }
-  th,
-  dt {
-    text-align: left;
-    background-color: $bgColor;
-    @include mq {
-      vertical-align: top;
-      white-space: nowrap;
-    }
-  }
+	width: 100%;
+	border-collapse: collapse;
+	border: solid $bdrColor;
+	border-width: 1px 1px 0 0;
+	// -webkit-overflow-scrolling: touch;
+	dl {
+		width: 100%;
+		@include mq {
+			display: flex;
+		}
+	}
+	th,
+	td,
+	> dl dt,
+	> dl dd {
+		padding: 5px;
+		// word-break: break-all;
+		border: 1px solid $bdrColor;
+		border-width: 0 0 1px 1px;
+		@include mq {
+			padding: 10px;
+		}
+	}
+	> dl dt {
+		width: 30%;
+	}
+	> dl dd {
+		width: 70%;
+	}
+	th,
+	> dl dt {
+		text-align: left;
+		background-color: $bgColor;
+		@include mq {
+			vertical-align: top;
+			white-space: nowrap;
+		}
+	}
 }
 .c-table--resp {
-  th,
-  td {
-    display: block;
-  }
-  @include mq {
-    th,
-    td {
-      display: table-cell;
-    }
-  }
-  dt {
-    width: 100%;
-    @include mq {
-      width: 30%;
-    }
-  }
-  dd {
-    width: 100%;
-    @include mq {
-      width: 70%;
-    }
-  }
+	th,
+	td {
+		display: block;
+	}
+	@include mq {
+		th,
+		td {
+			display: table-cell;
+		}
+	}
+	> dl dt {
+		width: 100%;
+		@include mq {
+			width: 30%;
+		}
+	}
+	> dl dd {
+		width: 100%;
+		@include mq {
+			width: 70%;
+		}
+	}
 }
 .c-table__wrap {
-  overflow-x: auto;
-  white-space: nowrap;
-  @include mq {
-    white-space: normal;
-  }
-  @include mq {
-    overflow-x: hidden;
-  }
-  &::-webkit-scrollbar {
-    height: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background: lighten($mainColor, 40%);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $mainColor;
-  }
-  & > .c-table {
-    margin-bottom: 20px;
-    @include mq {
-      margin: 0;
-    }
-  }
+	overflow-x: auto;
+	white-space: nowrap;
+	@include mq {
+		white-space: normal;
+	}
+	@include mq {
+		overflow-x: hidden;
+	}
+	&::-webkit-scrollbar {
+		height: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		background: lighten($mainColor, 40%);
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $mainColor;
+	}
+	& > .c-table {
+		margin-bottom: 20px;
+		@include mq {
+			margin: 0;
+		}
+	}
+	.c-table__sticky {
+		position: sticky;
+		left: 0;
+		@include mq {
+			position: inherit;
+			left: inherit;
+		}
+	}
 }

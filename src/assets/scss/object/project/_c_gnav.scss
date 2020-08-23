@@ -1,0 +1,86 @@
+/* p-gnav */
+.p-gnav {
+	position: relative;
+
+	a {
+		display: block;
+		padding: 10px;
+		@include mq {
+			transition: 0.5s;
+		}
+	}
+}
+
+.p-gnav__list {
+	background-color: $bgColor;
+	width: 100%;
+	position: absolute;
+	display: none;
+	padding: 0;
+	z-index: 100;
+	@include mq {
+		position: relative;
+		display: flex;
+		padding: 0 10px;
+	}
+}
+
+.p-gnav__item {
+	border-bottom: 1px solid #fff;
+	@include mq {
+		position: relative;
+		flex: 1 1 auto;
+		text-align: center;
+		border: none;
+	}
+
+	&:hover {
+		.p-gnav-sub__list {
+			@include mq {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.p-gnav__link {
+	@include mq {
+		&:hover {
+			background-color: lighten($mainColor, 30%);
+		}
+	}
+}
+
+.p-gnav__link--current {
+	background-color: lighten($mainColor, 30%);
+}
+
+.p-gnav-sub__list {
+	@include mq {
+		position: absolute;
+		width: 100%;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.p-gnav-sub__item {
+}
+
+.p-gnav-sub__link {
+	padding-left: 20px !important;
+	@include mq {
+		padding-left: 10px;
+		background-color: $bgColor;
+	}
+
+	&:hover {
+		@include mq {
+			background-color: lighten($mainColor, 30%);
+		}
+	}
+}
+.p-gnav-sub__link--current {
+	background-color: lighten($mainColor, 30%);
+}

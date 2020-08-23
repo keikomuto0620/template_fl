@@ -52,10 +52,15 @@ Project
 @import "object/project/_c_gnav";
 @import "object/project/_c_footer";
 
+//wordpress parts
+@import "object/project/_w_widget";
+@import "object/project/_w_pagenavi";
+
 //individual pages
 // @import "object/project/_about";
 @import "object/project/_news";
 @import "object/project/_top";
+
 
 /* -----------------------------------------------------------------
 Utility

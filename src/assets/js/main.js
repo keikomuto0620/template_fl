@@ -96,6 +96,15 @@
 					.removeClass("c-btn--disabled");
 			}
 		});
+
+		//toggle panel
+		var toggleBtn = $(".js-toggle");
+		var togglePanel = $(".js-togglePanel");
+		toggleBtn.on("click", function () {
+			$(this).toggleClass("is-open");
+			$(this).next().slideToggle();
+		});
+
 		//sticky display
 		//----------------------------------------------------------------------
 		// var elem = document.querySelectorAll('.is-sticky');

@@ -1,13 +1,4 @@
-/* contents layout */
 .l-contents {
-  width: $contentWidthSP;
-  margin: 0 auto;
-  max-width: $contentWidth;
-  position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
-.l-contents_inner {
-  width: $contentWidth;
-  margin: 0 auto;
-  overflow: hidden;
-}
-

@@ -1,0 +1,23 @@
+/* toggle panel */
+.c-toggle {
+	background-color: $mainColor;
+	color: #fff;
+}
+.c-toggle__title {
+	text-align: center;
+	padding: 10px 20px;
+	display: block;
+	width: 100%;
+	// cursor: pointer;
+	@include arrow;
+	@include arrow-rd;
+	&.is-open {
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+.c-toggle__txt {
+	display: none;
+	padding: 10px;
+}

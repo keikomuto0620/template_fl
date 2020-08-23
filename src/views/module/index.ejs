@@ -5,14 +5,29 @@ absolutePath: absolutePath, relativePath: relativePath }; %><%-
 include(pathData.relativePath + '_inc/_header', {page:json['about']},{path:
 pathData}); %>
 
-<div class="l-contents l-flex l-flex-between">
-	<div class="l-main">
+<style>
+	.l-flex,
+	.l-flex--pc,
+	.l-grid,
+	.l-grid--pc,
+	.l-egrid {
+		margin-bottom: 50px;
+	}
+
+	.l-flex>*,
+	.l-flex--pc>*,
+	.l-grid>*,
+	.l-grid--pc>*,
+	.l-egrid>* {
+		border: 1px solid;
+	}
+</style>
+<main>
+	<div class="l-container l-contents">
 		<h2 class="c-title-lv2">コーディングルール</h2>
 		<p>README.me参照</p>
 
-		<h2 class="u-fwb u-mt50 u-mb20" style="border-bottom: 1px solid;">
-			カラーアセット
-		</h2>
+		<h2 class="c-title-lv2">カラーアセット</h2>
 		<ul>
 			<li class="u-mainColor">mainColor</li>
 			<li class="u-subColor">subColor</li>
@@ -57,32 +72,24 @@ pathData}); %>
 		<p class="is-pc">is-pc ブレイクポイント以上で表示</p>
 		<p class="is-sp">is-sp ブレイクポイント未満で表示</p>
 
-		<h2 class="c-title-lv2 u-mt100">見出し</h2>
+		<h2 class="c-title-lv2">見出し</h2>
 		<p class="c-title-lv2">c-title-lv2</p>
 
-		<h2 class="c-title-lv2 u-mt100">テキスト装飾</h2>
+		<h2 class="c-title-lv2">テキスト装飾</h2>
 		<p class="c-txt-link">リンクテキスト</p>
 		<p class="c-txt-ext">リンクテキスト（外部リンクアイコン）</p>
 		<p class="c-txt-strong">強調</p>
-		<p class="c-txt-small">
-			米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト
-		</p>
-		<p class="c-txt-dot">
-			ビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキスト
-		</p>
-		<p>
-			<a href="tel:0000000" class="c-txt-tel"
-				>電話番号 000-000-0000(スマホのみリンク有効)</a
-			>
-		</p>
-		<p class="sr-only">sr-onlyスクリーンリーダー用テキスト</p>
+		<p class="c-txt-small">米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト米印付テキスト</p>
+		<p class="c-txt-dot">ビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキストビュレット付テキスト</p>
+		<p><a href="tel:0000000" class="c-txt-tel">電話番号 000-000-0000(スマホのみリンク有効)</a></p>
+		<p class="c-txt-sr">c-txt-srスクリーンリーダー用テキスト</p>
 
-		<h2 class="c-title-lv2 u-mt100">ボタン</h2>
+		<h2 class="c-title-lv2">ボタン</h2>
 		<a href="" class="c-btn">c-btn</a>
 		<a href="" class="c-btn c-btn--full">c-btn--full 最大幅100%</a>
 		<a href="" class="c-btn c-btn--ext">c-btn--ext外部リンク</a>
 
-		<h2 class="c-title-lv2 u-mt100">リスト</h2>
+		<h2 class="c-title-lv2">リスト</h2>
 		<ul class="c-list">
 			<li class="c-list__item">リスト</li>
 			<li class="c-list__item">c-list__item</li>
@@ -97,53 +104,28 @@ pathData}); %>
 			<li class="c-list-num__item">c-list-num__item</li>
 		</ul>
 
-		<h2 class="c-title-lv2" style="border-bottom: 1px solid;">画像</h2>
+		<h2 class="c-title-lv2" style="border-bottom:1px solid;">画像</h2>
 		<div class="l-flex--pc l-flex-between--pc">
 			<div class="u-w45">
 				<p>表示比率4:3</p>
 				<figure class="u-mb30">
-					<div class="c-ofi__wrap">
-						<img
-							src="/assets/images/_dummy/dummy_v.jpg"
-							alt=""
-							class="c-ofi"
-						/>
-					</div>
+					<div class="c-ofi__wrap"><img src="/assets/images/_dummy/dummy_v.jpg" alt="" class="c-ofi"></div>
 				</figure>
 			</div>
 			<div class="u-w45">
 				<p>白枠付</p>
 				<figure class="c-media u-mb30">
-					<div class="c-ofi__wrap">
-						<img
-							src="/assets/images/_dummy/dummy_v.jpg"
-							alt=""
-							class="c-ofi"
-						/>
-					</div>
+					<div class="c-ofi__wrap"><img src="/assets/images/_dummy/dummy_v.jpg" alt="" class="c-ofi"></div>
 				</figure>
 			</div>
 		</div>
 
-		<h2 class="c-title-lv2 u-mt100">google map</h2>
-		<div class="c-gobject c-gobject--gmap">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.9771703133642!2d137.16797361562013!3d34.95718088036956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bd2f357ae6b5%3A0x9e366b6ae3f9ce51!2z44CSNDQ0LTAwMzgg5oSb55-l55yM5bKh5bSO5biC5Lyd6aas6YCa77yS5LiB55uu77yR77yX!5e0!3m2!1sja!2sjp!4v1587605940406!5m2!1sja!2sjp"
-				width="600"
-				height="450"
-				frameborder="0"
-				style="border: 0;"
-				allowfullscreen=""
-				aria-hidden="false"
-				tabindex="0"
-			></iframe>
-		</div>
+		<h2 class="c-title-lv2">google map</h2>
+		<div class="c-gobject c-gobject--gmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.9771703133642!2d137.16797361562013!3d34.95718088036956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bd2f357ae6b5%3A0x9e366b6ae3f9ce51!2z44CSNDQ0LTAwMzgg5oSb55-l55yM5bKh5bSO5biC5Lyd6aas6YCa77yS5LiB55uu77yR77yX!5e0!3m2!1sja!2sjp!4v1587605940406!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
 
-		<h2 class="c-title-lv2 u-mt100">テーブル</h2>
+		<h2 class="c-title-lv2">テーブル</h2>
 		<table class="c-table u-mb50">
-			<caption class="c-caption">
-				c-table
-			</caption>
+			<caption class="c-caption">c-table</caption>
 			<tr>
 				<th>th</th>
 				<td>td</td>
@@ -155,9 +137,7 @@ pathData}); %>
 		</table>
 		<div class="c-table--resp">
 			<table class="c-table c-table--border u-mb50">
-				<caption class="c-caption">
-					c-table--resp
-				</caption>
+				<caption class="c-caption">c-table--resp</caption>
 				<tr>
 					<th>th</th>
 					<td>スマホ表示時にセルがblock表示になるテーブル</td>
@@ -170,11 +150,18 @@ pathData}); %>
 		</div>
 		<div class="c-table__wrap">
 			<table class="c-table">
-				<caption class="c-caption">
-					c-table__wrap
-				</caption>
+				<caption class="c-caption">c-table__wrap</caption>
 				<tr>
-					<th>横スクロールするテーブル</th>
+					<th class="c-table__sticky">th</th>
+					<th>th</th>
+					<th>th</th>
+					<th>th</th>
+					<th>th</th>
+					<th>th</th>
+					<th>th</th>
+				</tr>
+				<tr>
+					<th class="c-table__sticky">横スクロールするテーブル </th>
 					<td>c-table__wrapでテーブル要素を囲む</td>
 					<td>td</td>
 					<td>td</td>
@@ -183,7 +170,7 @@ pathData}); %>
 					<td>td</td>
 				</tr>
 				<tr>
-					<th>th</th>
+					<th class="c-table__sticky">th</th>
 					<td>td</td>
 					<td>td</td>
 					<td>td</td>
@@ -194,7 +181,13 @@ pathData}); %>
 			</table>
 		</div>
 
-		<h2 class="c-title-lv2 u-mt100">フォーム</h2>
+		<h2 class="c-title-lv2">トグルパネル</h2>
+		<div class="c-toggle">
+			<button class="c-toggle__title js-toggle">トグルパネル</button>
+			<div class="c-toggle__txt">この要素を含めなければ、トグル機能のないボタンになる</div>
+		</div>
+
+		<h2 class="c-title-lv2">フォーム</h2>
 		<ol class="c-form-step">
 			<li class="c-form-step__item is-current">入力</li>
 			<li class="c-form-step__item">確認</li>
@@ -210,82 +203,34 @@ pathData}); %>
 			<li class="c-form-step__item">確認</li>
 			<li class="c-form-step__item is-current">完了</li>
 		</ol>
-		<p class="c-form-error__msg u-mb30">
-			入力に誤りがあります。恐れ入りますがエラーメッセージが表示されている入力項目をもう一度ご確認ください。
-		</p>
+		<p class="c-form-error__msg u-mb30">入力に誤りがあります。恐れ入りますがエラーメッセージが表示されている入力項目をもう一度ご確認ください。</p>
 		<div class="c-table c-table--resp c-form u-mb50">
 			<dl>
-				<dt>
-					<label for="input01"
-						>text<span class="c-form-required">必須</span></label
-					>
-				</dt>
-				<dd>
-					<input
-						type="text"
-						id="input01"
-						placeholder="placeholder"
-						aria-required="true"
-					/>
-				</dd>
+				<dt><label for="input01">text<span class="c-form-required">必須</span></label></dt>
+				<dd><input type="text" id="input01" placeholder="placeholder" aria-required="true"></dd>
 			</dl>
 			<dl class="c-form-error">
 				<dt><label for="input02">email</label></dt>
-				<dd>
-					<input
-						type="email"
-						id="input02"
-						placeholder="placeholder"
-					/>
-				</dd>
+				<dd><input type="email" id="input02" placeholder="placeholder"></dd>
 			</dl>
 			<dl>
 				<dt><label for="input03">password</label></dt>
 				<dd>
-					<input
-						type="password"
-						id="input03"
-						placeholder="placeholder"
-						aria-describedby="input03-note"
-					/>
-					<p id="input03-note" class="c-form-note">
-						<small>半角英数字5文字以上</small>
-					</p>
+					<input type="password" id="input03" placeholder="placeholder" aria-describedby="input03-note">
+					<p id="input03-note" class="c-form-note"><small>半角英数字5文字以上</small></p>
 				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input04" id="tel">tel</label></dt>
-				<dd aria-labelledby="tel">
-					<div role="group">
-						<input
-							type="tel"
-							id="input04"
-							class="c-form__input-s"
-							placeholder="000"
-							title="市外局番"
-						/>
-						-
-						<input
-							type="tel"
-							class="c-form__input-m"
-							placeholder="000"
-							title="市内局番"
-						/>
-						-
-						<input
-							type="tel"
-							class="c-form__input-l"
-							placeholder="000"
-							title="加入者番号"
-						/>
-					</div>
+				<dd aria-labelledby="tel" role="group">
+					<input type="tel" id="input04" class="c-form__input-s" placeholder="000" title="市外局番"> -
+					<input type="tel" class="c-form__input-m" placeholder="000" title="市内局番"> -
+					<input type="tel" class="c-form__input-l" placeholder="000" title="加入者番号">
 				</dd>
 			</dl>
 			<dl>
 				<dt><label for="input05">textarea</label></dt>
-				<dd>
-					<textarea id="input05" placeholder="placeholder"></textarea>
-				</dd>
+				<dd><textarea id="input05" placeholder="placeholder"></textarea></dd>
 			</dl>
 			<dl>
 				<dt><label for="input06">select</label></dt>
@@ -302,29 +247,9 @@ pathData}); %>
 			</dl>
 			<dl>
 				<dt id="checkbox">checkbox</dt>
-				<dd aria-labelledby="checkbox">
-					<div role="group">
-						<label
-							><input
-								type="checkbox"
-								class="c-form__check"
-								name="check"
-								value="チェックボックス1"
-							/><span class="c-form__label"
-								>チェックボックス1</span
-							></label
-						>
-						<label
-							><input
-								type="checkbox"
-								class="c-form__check"
-								name="check"
-								value="チェックボックス1"
-							/><span class="c-form__label"
-								>チェックボックス2</span
-							></label
-						>
-					</div>
+				<dd aria-labelledby="checkbox" role="group">
+					<label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span class="c-form__label">チェックボックス1</span></label>
+					<label><input type="checkbox" class="c-form__check" name="check" value="チェックボックス1"><span class="c-form__label">チェックボックス2</span></label>
 				</dd>
 			</dl>
 			<ul>
@@ -332,65 +257,31 @@ pathData}); %>
 			</ul>
 			<dl>
 				<dt id="radio">radio</dt>
-				<dd aria-labelledby="radio">
-					<div role="group">
-						<label
-							><input
-								type="radio"
-								class="c-form__check"
-								name="radio"
-								value="ラジオボタン1"
-							/><span class="c-form__label c-form__label--radio"
-								>ラジオボタン1</span
-							></label
-						>
-						<label
-							><input
-								type="radio"
-								class="c-form__check"
-								name="radio"
-								value="ラジオボタン2"
-							/><span class="c-form__label c-form__label--radio"
-								>ラジオボタン2</span
-							></label
-						>
-					</div>
+				<dd aria-labelledby="radio" role="group">
+					<label><input type="radio" class="c-form__check" name="radio" value="ラジオボタン1"><span class="c-form__label c-form__label--radio">ラジオボタン1</span></label>
+					<label><input type="radio" class="c-form__check" name="radio" value="ラジオボタン2"><span class="c-form__label c-form__label--radio">ラジオボタン2</span></label>
 				</dd>
 			</dl>
 		</div>
 		<p class="c-form-btnlist">
-			<label class="c-form__confirm"
-				><input
-					type="checkbox"
-					id="js-confirm"
-					class="c-form__check"
-				/><span class="c-form__label"
-					>プライバシーポリシーに同意する</span
-				></label
-			>
+			<label class="c-form__confirm"><input type="checkbox" id="js-confirm" class="c-form__check"><span class="c-form__label">プライバシーポリシーに同意する</span></label>
 		</p>
 
 		<div class="c-form-btnlist">
 			<div class="c-btn c-btn--disabled">
-				<input
-					type="submit"
-					id="js-submit"
-					name=""
-					value="確認する"
-					disabled
-				/>
+				<input type="submit" id="js-submit" value="確認する" disabled>
 			</div>
 		</div>
 
 		<div class="c-form-btnlist">
 			<div class="c-form-btnlist__item c-form-btnlist__item--back c-btn">
-				<input type="button" value="戻る" />
+				<input type="button" value="戻る">
 			</div>
 			<div class="c-form-btnlist__item c-btn">
-				<input type="submit" value="送信" />
+				<input type="submit" value="送信">
 			</div>
 		</div>
-		<h2 class="c-title-lv2 u-mt100">ボックス要素のアラインメント</h2>
+		<h2 class="c-title-lv2">ボックス要素のアラインメント</h2>
 		<div class="l-flex l-flex-center">
 			<div>中央寄せ l-flex-center</div>
 		</div>
@@ -398,57 +289,57 @@ pathData}); %>
 			<div>右寄せ l-flex-end</div>
 		</div>
 
-		<h2 class="c-title-lv2 u-mt100">flexレイアウト</h2>
-		<ul class="l-flex u-mb50">
+		<h2 class="c-title-lv2">flexレイアウト</h2>
+		<ul class="l-flex">
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex--pc u-mb50">
+		<ul class="l-flex--pc">
 			<li>PCのみ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex l-flex-center u-mb50">
+		<ul class="l-flex l-flex-center">
 			<li>上下左右中央寄せ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex--pc l-flex-center--pc u-mb50">
+		<ul class="l-flex--pc l-flex-center--pc">
 			<li>上下左右中央寄せ PCのみ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex l-flex-end u-mb50">
+		<ul class="l-flex l-flex-end">
 			<li>右寄せ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex--pc l-flex-end--pc u-mb50">
+		<ul class="l-flex--pc l-flex-end--pc">
 			<li>右寄せ PCのみ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex l-flex-between u-mb50">
+		<ul class="l-flex l-flex-between">
 			<li>均等割り付け</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
 		</ul>
-		<ul class="l-flex--pc l-flex-between--pc u-mb50">
+		<ul class="l-flex--pc l-flex-between--pc">
 			<li>均等割り付け PCのみ</li>
 			<li>flexアイテム</li>
 			<li>flexアイテム</li>
@@ -456,15 +347,60 @@ pathData}); %>
 			<li>flexアイテム</li>
 		</ul>
 
-		<!--   <h2 class="c-title-lv2 u-mt100">CSS grid</h2>
-<div class="l-cgrid">
-  <header>header</header>
-  <aside>aside</aside>
-  <main>main</main>
-  <footer>footer</footer>
-</div> -->
+		<h2 class="c-title-lv2">flex-grid</h2>
+		<ul class="l-egrid">
+			<li class="l-egrid__col2">l-egrid__col2</li>
+			<li class="l-egrid__col2">l-egrid__col2</li>
+			<li class="l-egrid__col3">l-egrid__col3</li>
+			<li class="l-egrid__col3">l-egrid__col3</li>
+			<li class="l-egrid__col3">l-egrid__col3</li>
+			<li class="l-egrid__col4">l-egrid__col4</li>
+			<li class="l-egrid__col4">l-egrid__col4</li>
+			<li class="l-egrid__col4">l-egrid__col4</li>
+			<li class="l-egrid__col4">l-egrid__col4</li>
+		</ul>
+		<ul class="l-egrid">
+			<li class="l-egrid__col2--pc">l-egrid__col2--pc</li>
+			<li class="l-egrid__col2--pc">l-egrid__col2--pc</li>
+			<li class="l-egrid__col3--pc">l-egrid__col3--pc</li>
+			<li class="l-egrid__col3--pc">l-egrid__col3--pc</li>
+			<li class="l-egrid__col3--pc">l-egrid__col3--pc</li>
+			<li class="l-egrid__col4--pc">l-egrid__col4--pc</li>
+			<li class="l-egrid__col4--pc">l-egrid__col4--pc</li>
+			<li class="l-egrid__col4--pc">l-egrid__col4--pc</li>
+			<li class="l-egrid__col4--pc">l-egrid__col4--pc</li>
+		</ul>
+		<ul class="l-grid">
+			<li class="l-grid__col6">l-grid__col6</li>
+			<li class="l-grid__col6">l-grid__col6</li>
+			<li class="l-grid__col5">l-grid__col5</li>
+			<li class="l-grid__col7">l-grid__col7</li>
+			<li class="l-grid__col4">l-grid__col4</li>
+			<li class="l-grid__col8">l-grid__col8</li>
+			<li class="l-grid__col3">l-grid__col3</li>
+			<li class="l-grid__col9">l-grid__col9</li>
+			<li class="l-grid__col2">l-grid__col2</li>
+			<li class="l-grid__col10">l-grid__col10</li>
+			<li class="l-grid__col1">l-grid__col1</li>
+			<li class="l-grid__col11">l-grid__col11</li>
+			<li class="l-grid__col12">l-grid__col12</li>
+		</ul>
+		<ul class="l-grid--pc">
+			<li class="l-grid__col6--pc">l-grid__col6</li>
+			<li class="l-grid__col6--pc">l-grid__col6</li>
+			<li class="l-grid__col5--pc">l-grid__col5</li>
+			<li class="l-grid__col7--pc">l-grid__col7</li>
+			<li class="l-grid__col4--pc">l-grid__col4</li>
+			<li class="l-grid__col8--pc">l-grid__col8</li>
+			<li class="l-grid__col3--pc">l-grid__col3</li>
+			<li class="l-grid__col9--pc">l-grid__col9</li>
+			<li class="l-grid__col2--pc">l-grid__col2</li>
+			<li class="l-grid__col10--pc">l-grid__col10</li>
+			<li class="l-grid__col1--pc">l-grid__col1</li>
+			<li class="l-grid__col11--pc">l-grid__col11</li>
+			<li class="l-grid__col12--pc">l-grid__col12</li>
+		</ul>
 	</div>
-	<aside class="l-side">l-side</aside>
-</div>
+</main>
 
 <%- include(pathData.relativePath + '_inc/_footer',{path: pathData}); %>

@@ -1,211 +1,214 @@
 //font-family
 // ===============================================
 @mixin serif {
-  font-family: YuMincho, "Yu Mincho", serif;
-  font-weight: 500;
+	font-family: YuMincho, "Yu Mincho", serif;
+	font-weight: 500;
 }
 @mixin sans {
-  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 @mixin en {
-  font-family: "Josefin Sans", sans-serif;
+	font-family: "Josefin Sans", sans-serif;
 }
 
 //font-size
 // ===============================================
 @mixin rem($size, $base: 16) {
-  // font-size: $size + px;
-  font-size: ($size / $base) + rem;
+	// font-size: $size + px;
+	font-size: ($size / $base) + rem;
 }
 @mixin rfs($fs, $fs-l, $vp, $vp-l) {
-  font-size: calc(
-    #{$fs} + ((100vw - #{$vp}) * (#{num($fs-l)} - #{num($fs)}) /
-          (#{num($vp-l)} - #{num($vp)}))
-  );
+	font-size: calc(
+		#{$fs} + ((100vw - #{$vp}) * (#{num($fs-l)} - #{num($fs)}) /
+					(#{num($vp-l)} - #{num($vp)}))
+	);
 }
 //  strip units helper function
 @function num($input) {
-  @return $input/($input * 0 + 1);
+	@return $input/($input * 0 + 1);
 }
 //state
 // ===============================================
 @mixin is-confirm {
-  .is-confirm & {
-    @content;
-  }
+	.is-confirm & {
+		@content;
+	}
 }
 // arrow
 // ===============================================
-@mixin arrow($color: #fff, $w: 10px, $border: 1px) {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: $w;
-    height: $w;
-    border: solid $color;
-    border-width: $border $border 0 0;
-    z-index: 1;
-  }
+@mixin arrow($color: #fff, $w: 10px, $border: 2px) {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: $w;
+		height: $w;
+		border: solid $color;
+		border-width: $border $border 0 0;
+		z-index: 1;
+		transition: 0.5s;
+	}
 }
 @mixin arrow-rr($posnum: 15px) {
-  &::after {
-    right: $posnum;
-    transform: rotate(45deg);
-  }
+	&::after {
+		right: $posnum;
+		transform: rotate(45deg);
+	}
 }
 @mixin arrow-rd($posnum: 15px) {
-  &::after {
-    right: $posnum;
-    transform: rotate(135deg);
-  }
+	&::after {
+		right: $posnum;
+		transform: rotate(135deg);
+	}
 }
 
 @mixin arrow-lr($posnum: 15px) {
-  &::after {
-    left: $posnum;
-    transform: rotate(45deg);
-  }
+	&::after {
+		left: $posnum;
+		transform: rotate(45deg);
+	}
 }
 @mixin arrow-ll($posnum: 15px) {
-  &::after {
-    left: $posnum;
-    transform: rotate(-135deg);
-  }
+	&::after {
+		left: $posnum;
+		transform: rotate(-135deg);
+	}
 }
 //border-radius
 // ===============================================
 @mixin radius($radius) {
-  border-radius: $radius;
+	border-radius: $radius;
 }
 
 // 記述方法 @include radius(4px);
 @mixin radius5 {
-  border-radius: 5px;
+	border-radius: 5px;
 }
 
 @mixin radius10 {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 @mixin radius15 {
-  border-radius: 15px;
+	border-radius: 15px;
 }
 
 @mixin radius20 {
-  border-radius: 20px;
+	border-radius: 20px;
 }
 
 //box-shadow
 // ===============================================
 @mixin shadow($len1: 0, $len2: 2px, $len3: 2px) {
-  box-shadow: $len1 $len2 $len3 rgba(#ccc, 0.5);
+	box-shadow: $len1 $len2 $len3 rgba(#ccc, 0.5);
 }
 
 //hover effect
 // ===============================================
 @mixin hovop {
-  a {
-    text-decoration: none;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+	a {
+		text-decoration: none;
+		transition: 0.5s;
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+		}
+	}
 }
 
 //list
 // ===============================================
 @mixin lmCircle($collor: #ccc, $left: 0, $top: 8px, $w: 10px, $pl: 27px) {
-  li {
-    position: relative;
-    padding-left: $pl;
-    &::before {
-      content: "";
-      position: absolute;
-      left: $left;
-      top: $top;
-      display: block;
-      width: $w;
-      height: $w;
-      border-radius: 50%;
-      background-color: $collor;
-    }
-  }
+	li {
+		position: relative;
+		padding-left: $pl;
+		&::before {
+			content: "";
+			position: absolute;
+			left: $left;
+			top: $top;
+			display: block;
+			width: $w;
+			height: $w;
+			border-radius: 50%;
+			background-color: $collor;
+		}
+	}
 }
 @mixin lmNum {
-  ol {
-    counter-reset: ol_li;
-    li {
-      margin-left: 26px;
-      &::before {
-        // color: #694d37;
-        // font-weight: bold;
-        counter-increment: ol_li;
-        content: counter(ol_li) ".";
-        display: inline-block;
-        margin: 3px 9px 0 -23px;
-      }
-    }
-  }
+	ol {
+		counter-reset: ol_li;
+		li {
+			margin-left: 26px;
+			&::before {
+				// color: #694d37;
+				// font-weight: bold;
+				counter-increment: ol_li;
+				content: counter(ol_li) ".";
+				display: inline-block;
+				margin: 3px 9px 0 -23px;
+			}
+		}
+	}
 }
 
 //grid
 // ===============================================
 @mixin grid($name) {
-  @for $n from 1 to $gridColumns + 1 {
-    .col_#{$name}_#{$n} {
-      @include columns($n);
-    }
-    .col_#{$name}_offset_#{$n} {
-      @include offset($n);
-    }
-  }
-  .col_#{$name}_one_thirds {
-    @include columns($gridColumns / 3);
-  }
-  .col_#{$name}_two_thirds {
-    @include columns($gridColumns / 3 * 2);
-  }
-  .col_#{$name}_one_thirds_offset {
-    @include offset($gridColumns / 3);
-  }
-  .col_#{$name}_two_thirds_offset {
-    @include offset($gridColumns / 3 * 2);
-  }
+	@for $n from 1 to $gridColumns + 1 {
+		.col_#{$name}_#{$n} {
+			@include columns($n);
+		}
+		.col_#{$name}_offset_#{$n} {
+			@include offset($n);
+		}
+	}
+	.col_#{$name}_one_thirds {
+		@include columns($gridColumns / 3);
+	}
+	.col_#{$name}_two_thirds {
+		@include columns($gridColumns / 3 * 2);
+	}
+	.col_#{$name}_one_thirds_offset {
+		@include offset($gridColumns / 3);
+	}
+	.col_#{$name}_two_thirds_offset {
+		@include offset($gridColumns / 3 * 2);
+	}
 }
 
 @mixin use-grid {
-  .row {
-    @include grid("xs");
-    @if $size-s != 0 {
-      // Mobile small
-      @media (min-width: $size-s) {
-        @include grid("s");
-      }
-    }
-    @if $size-md != 0 {
-      // Mobile middle
-      @media (min-width: $size-md) {
-        @include grid("md");
-      }
-    }
-    @if $size-l != 0 {
-      // Mobile large
-      @media (min-width: $size-l) {
-        @include grid("l");
-      }
-    }
-    @if $size-xl != 0 {
-      // Mobile xtra large
-      @media (min-width: $size-xl) {
-        @include grid("xl");
-      }
-    }
-    .right {
-      float: right;
-    }
-  }
+	.row {
+		@include grid("xs");
+		@if $size-s != 0 {
+			// Mobile small
+			@media (min-width: $size-s) {
+				@include grid("s");
+			}
+		}
+		@if $size-md != 0 {
+			// Mobile middle
+			@media (min-width: $size-md) {
+				@include grid("md");
+			}
+		}
+		@if $size-l != 0 {
+			// Mobile large
+			@media (min-width: $size-l) {
+				@include grid("l");
+			}
+		}
+		@if $size-xl != 0 {
+			// Mobile xtra large
+			@media (min-width: $size-xl) {
+				@include grid("xl");
+			}
+		}
+		.right {
+			float: right;
+		}
+	}
 }

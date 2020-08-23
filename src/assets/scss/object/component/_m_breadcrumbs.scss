@@ -1,8 +1,9 @@
 /* breadcrumbs*/
 .c-breadcrumbs {
-	padding: 15px 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	display: flex;
-	align-items:center;
+	align-items: center;
 	&::before {
 		font-family: "Font Awesome 5 Free";
 		content: "\f015";
@@ -14,9 +15,9 @@
 }
 .c-breadcrumbs__item {
 	line-height: 1.2;
-	&+.c-breadcrumbs__item {
+	& + .c-breadcrumbs__item {
 		&:before {
-			content:'>';
+			content: ">";
 			padding: 0 10px;
 		}
 	}
