@@ -1,13 +1,13 @@
 /* list */
-.c-list {
+.p-card {
 	display: flex;
-	justify-content:space-between;
-	flex-wrap:wrap;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	// margin-bottom: 20px;
 }
-.c-list__item {
-	box-shadow: 0 0 3px rgba(0,0,0,.2);
-	border: 1px solid rgba(0,0,0,.2);
+.p-card__item {
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	background-color: #fff;
 	padding: 5px;
 	// margin-bottom: 10px;
@@ -24,7 +24,7 @@
 	// 	}
 	// }
 }
-.c-list__status {
+.p-card__status {
 	position: absolute;
 	top: 5px;
 	left: -55px;
@@ -43,13 +43,13 @@
 	}
 }
 
-.c-list__body {
+.p-card__body {
 	padding: 10px 0 20px;
 	@include mq_lg {
 		padding: 20px;
 	}
 }
-.c-list__title {
+.p-card__title {
 	font-weight: bold;
 	@include rem(14);
 	margin-bottom: 5px;
@@ -59,13 +59,13 @@
 		// line-height: 1.5;
 	}
 }
-.c-list__cat {
+.p-card__cat {
 	color: #fff;
 	width: 80px;
 	height: 20px;
 	margin: 5px 0;
 	display: flex;
-	align-items:center;
+	align-items: center;
 	justify-content: center;
 	@include mq {
 		width: 100px;
@@ -73,12 +73,12 @@
 		margin: 10px 0;
 	}
 }
-.c-list__cat--01 {
+.p-card__cat--01 {
 	background-color: $mainColor;
 }
-.c-list__cat--02 {
+.p-card__cat--02 {
 	background-color: $error;
 }
-.c-list__cat--03 {
+.p-card__cat--03 {
 	background-color: $subColor;
 }

@@ -1,7 +1,9 @@
 /* p-gnav */
 .p-gnav {
 	position: relative;
-
+	@include mq {
+		background-color: $bgColor;
+	}
 	a {
 		display: block;
 		padding: 10px;

@@ -39,10 +39,8 @@ Component
 @import "object/component/_media";
 @import "object/component/_toggle";
 
-@import "object/component/_m_breadcrumbs";
-@import "object/component/_m_img_mdule";
-@import "object/component/_m_list";
-@import "object/component/_m_pagenavi";
+@import "object/component/_breadcrumbs";
+@import "object/component/_pagenavi";
 /* -----------------------------------------------------------------
 Project
 ----------------------------------------------------------------- */
@@ -51,6 +49,8 @@ Project
 @import "object/project/_c_menuBtn";
 @import "object/project/_c_gnav";
 @import "object/project/_c_footer";
+// @import "object/project/_c_img_mdule";
+// @import "object/project/_c_card";
 
 //individual pages
 // @import "object/project/_about";
