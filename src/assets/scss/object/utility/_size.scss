@@ -1,4 +1,7 @@
 // width
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 @mixin widthSP($multiple, $start: 1, $end: 20) {
 	@if $multiple == def {
 		@for $i from 1 through 20 {
@@ -21,7 +24,7 @@
 
 /* width */
 @include widthSP(def);
-@include mq {
+@include s.mq {
 	@include width(def);
 }
 
@@ -50,6 +53,6 @@
 
 /* font-size */
 @include fsSP(def);
-@include mq {
+@include s.mq {
 	@include fs(def);
 }

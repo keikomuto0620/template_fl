@@ -1,24 +1,27 @@
 /* base */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 // html {
 //   font-size: 62.5%;
 // }
 
 body {
-	color: $textColor;
+	color: s.$textColor;
 	line-height: 1.8;
 	font-family: YuGothic, "Yu Gothic", sans-serif;
 	// font-family: 'Noto Sans JP', sans-serif;
 	font-weight: 500;
 	-webkit-text-size-adjust: 100%;
-	@include rem(16);
+	@include m.rem(16);
 }
 _:lang(x)::-ms-backdrop,
 body {
 	font-family: "メイリオ", Meiryo, sans-serif;
 }
-
 a {
-	color: $linkColor;
+	color: s.$linkColor;
 	text-decoration: none;
 }
 
@@ -30,4 +33,7 @@ img {
 ul,
 ol {
 	list-style-type: none;
+}
+small {
+	font-size: 100%;
 }

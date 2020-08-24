@@ -1,4 +1,8 @@
 /* flex layout */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .l-flex {
 	display: flex;
 }
@@ -16,7 +20,7 @@
 	justify-content: space-between;
 }
 
-@include mq {
+@include s.mq {
 	.l-flex--pc {
 		display: flex;
 	}

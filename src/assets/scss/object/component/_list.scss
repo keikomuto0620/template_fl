@@ -1,19 +1,22 @@
 /* list */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-list {
-  @include lmCircle(#000, 0, .8em, 3px, 10px);
+	@include m.lmCircle(#000, 0, 0.8em, 3px, 10px);
 }
 .c-list__item {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .c-list-num {
-  counter-reset: ol_li;
+	counter-reset: ol_li;
 }
 .c-list-num__item {
-  margin: 0 0 1em 1.5em;
-  &::before {
-    counter-increment: ol_li;
-    content: counter(ol_li)'.';
-    margin: 0 .5em 0 -1.5em;
-  }
+	margin: 0 0 1em 1.5em;
+	&::before {
+		counter-increment: ol_li;
+		content: counter(ol_li) ".";
+		margin: 0 0.5em 0 -1.5em;
+	}
 }

@@ -1,4 +1,7 @@
 /* breadcrumbs*/
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-breadcrumbs {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -9,8 +12,8 @@
 		content: "\f015";
 		font-weight: bold;
 		margin-right: 10px;
-		color: $mainColor;
-		@include rem(22);
+		color: s.$mainColor;
+		@include m.rem(22);
 	}
 }
 .c-breadcrumbs__item {

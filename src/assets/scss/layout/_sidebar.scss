@@ -1,6 +1,10 @@
 /* side */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .l-side {
-	@include mq {
+	@include s.mq {
 		flex: 0 0 260px;
 	}
 }

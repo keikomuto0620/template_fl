@@ -1,26 +1,26 @@
 /* ==========================================================================
 Foundation
 ========================================================================== */
-@import "foundation/_setting";
-@import "foundation/_mixin";
-@import "foundation/_reset";
-@import "foundation/_base";
+// @use "foundation/_setting";
+// @use "foundation/_mixin";
+@use "foundation/_reset";
+@use "foundation/_base";
 
 /* ==========================================================================
 Layout
 ========================================================================== */
 //layout parts
-@import "layout/_c_container";
-@import "layout/_c_flex";
-@import "layout/_c_grid";
-// @import "layout/_c_css_grid";
+@use "layout/_c_container";
+@use "layout/_c_flex";
+@use "layout/_c_grid";
+// @use "layout/_c_css_grid";
 
 //common area
-@import "layout/_header";
-@import "layout/_contents";
-@import "layout/_main";
-@import "layout/_sidebar";
-@import "layout/_footer";
+@use "layout/_header";
+@use "layout/_contents";
+@use "layout/_main";
+@use "layout/_sidebar";
+@use "layout/_footer";
 
 /* ==========================================================================
 Object
@@ -29,40 +29,40 @@ Object
 /* -----------------------------------------------------------------
 Component
 ----------------------------------------------------------------- */
-@import "object/component/_title";
-@import "object/component/_text";
-@import "object/component/_button";
-@import "object/component/_list";
-@import "object/component/_gmap";
-@import "object/component/_table";
-@import "object/component/_form";
-@import "object/component/_media";
-@import "object/component/_toggle";
+@use "object/component/_title";
+@use "object/component/_text";
+@use "object/component/_button";
+@use "object/component/_list";
+@use "object/component/_gmap";
+@use "object/component/_table";
+@use "object/component/_form";
+@use "object/component/_media";
+@use "object/component/_toggle";
 
-@import "object/component/_breadcrumbs";
-@import "object/component/_pagenavi";
+@use "object/component/_breadcrumbs";
+@use "object/component/_pagenavi";
 /* -----------------------------------------------------------------
 Project
 ----------------------------------------------------------------- */
 //common area
-@import "object/project/_c_header";
-@import "object/project/_c_menuBtn";
-@import "object/project/_c_gnav";
-@import "object/project/_c_footer";
-// @import "object/project/_c_img_mdule";
-// @import "object/project/_c_card";
+@use "object/project/_c_header";
+@use "object/project/_c_menuBtn";
+@use "object/project/_c_gnav";
+@use "object/project/_c_footer";
+// @use "object/project/_c_img_mdule";
+// @use "object/project/_c_card";
 
 //individual pages
-// @import "object/project/_about";
-@import "object/project/_news";
-@import "object/project/_top";
+// @use "object/project/_about";
+// @use "object/project/_news";
+// @use "object/project/_top";
 
 /* -----------------------------------------------------------------
 Utility
 ----------------------------------------------------------------- */
 
-@import "object/utility/_align";
-@import "object/utility/_margin";
-@import "object/utility/_size";
-@import "object/utility/_color";
-@import "object/utility/_state";
+@use "object/utility/_align";
+@use "object/utility/_margin";
+@use "object/utility/_size";
+@use "object/utility/_color";
+@use "object/utility/_state";

@@ -1,36 +1,39 @@
 /* font-weight:  */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .u-fwn {
-	font-weight: normal!important;
+	font-weight: normal !important;
 }
 .u-fwb {
-	font-weight: bold!important;
+	font-weight: bold !important;
 }
-@include mq {
+@include s.mq {
 	.u-fwn--pc {
-		font-weight: normal!important;
+		font-weight: normal !important;
 	}
 	.u-fwb--pc {
-		font-weight: bold!important;
+		font-weight: bold !important;
 	}
 }
 /* alignment */
 .u-tac {
-	text-align: center!important;
+	text-align: center !important;
 }
 .u-tal {
-	text-align: left!important;
+	text-align: left !important;
 }
 .u-tar {
-	text-align: right!important;
+	text-align: right !important;
 }
-@include mq {
+@include s.mq {
 	.u-tac--pc {
-		text-align: center!important;
+		text-align: center !important;
 	}
 	.u-tal--pc {
-		text-align: left!important;
+		text-align: left !important;
 	}
 	.u-tar--pc {
-		text-align: right!important;
+		text-align: right !important;
 	}
 }

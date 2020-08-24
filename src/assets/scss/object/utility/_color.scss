@@ -1,26 +1,29 @@
 //colors
 // ===============================================
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .u-mainColor {
-  background-color: $mainColor;
+	background-color: s.$mainColor;
 }
 .u-subColor {
-  background-color: $subColor;
+	background-color: s.$subColor;
 }
 .u-textColor {
-  background-color: $textColor;
+	background-color: s.$textColor;
 }
 // .u-linkColor {
 //   background-color: $linkColor;
 // }
 // .u-linkColor02 {
-//   background-color: $linkColor02;
+//   background-color: s.$linkColor02;
 // }
 .u-error {
-  background-color: $error;
+	background-color: s.$error;
 }
 .u-bdrColor {
-  background-color: $bdrColor;
+	background-color: s.$bdrColor;
 }
 .u-bgColor {
-  background-color: $bgColor;
+	background-color: s.$bgColor;
 }

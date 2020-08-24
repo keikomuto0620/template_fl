@@ -1,7 +1,11 @@
 /* main */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .l-main {
 	margin-bottom: 30px;
-	@include mq {
+	@include s.mq {
 		margin: 0;
 		width: calc(100% - 2.5% - 260px);
 	}

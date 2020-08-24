@@ -1,4 +1,7 @@
 /* button */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-btn {
 	display: inline-block;
 	//   display: flex;
@@ -10,17 +13,17 @@
 	padding: 10px 20px;
 	border: 2px solid transparent;
 	color: #fff;
-	background-color: $mainColor;
+	background-color: s.$mainColor;
 	transition: 0.5s;
-	@include arrow;
-	@include arrow-rr;
-	@include mq {
+	@include m.arrow;
+	@include m.arrow-rr;
+	@include s.mq {
 		&:hover,
 		&:focus {
 			outline: none;
 			border-color: currentColor;
 			background-color: #fff;
-			color: $mainColor;
+			color: s.$mainColor;
 			&::after {
 				border-color: currentColor;
 			}

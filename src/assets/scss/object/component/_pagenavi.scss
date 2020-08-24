@@ -1,3 +1,6 @@
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-pagenavi {
 	display: flex;
 	justify-content: center;
@@ -9,15 +12,15 @@
 	width: 38px;
 	height: 38px;
 	display: flex;
-	align-items:center;
+	align-items: center;
 	justify-content: center;
 	margin: 0 5px;
-	transition: .5s;
+	transition: 0.5s;
 	border-radius: 50%;
 	&.is-current,
 	&:hover {
 		color: #fff;
-		background-color: $mainColor;
+		background-color: s.$mainColor;
 	}
 }
 .c-pagenavi__arrow {
@@ -26,8 +29,8 @@
 	display: block;
 	position: relative;
 	background-color: transparent;
-	@include arrow($mainColor, 13px, 3px);
-	@include arrow-ll(0);
+	@include m.arrow(s.$mainColor, 13px, 3px);
+	@include m.arrow-ll(0);
 }
 .c-pagenavi__arrow--next {
 	margin: 0;

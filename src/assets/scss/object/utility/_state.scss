@@ -1,12 +1,15 @@
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .is-pc {
 	display: none;
-	@include mq {
+	@include s.mq {
 		display: block;
 	}
 }
 .is-sp {
 	display: block;
-	@include mq {
+	@include s.mq {
 		display: none;
 	}
 }

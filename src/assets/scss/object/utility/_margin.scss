@@ -1,34 +1,69 @@
 //marggin, padding
-@mixin utilSP($multiple,$start:0,$end:10) {
-  @if $multiple == def {
-    @for $i from 0 through 10 {
-      .u-mt#{$i * 10} { margin-top: 10px * $i !important; }
-      .u-mr#{$i * 10} { margin-right: 10px * $i !important; }
-      .u-mb#{$i * 10} { margin-bottom: 10px * $i !important; }
-      .u-ml#{$i * 10} { margin-left: 10px * $i !important; }
-      .u-pt#{$i * 10} { padding-top: 10px * $i !important; }
-      .u-pr#{$i * 10} { padding-right: 10px * $i !important; }
-      .u-pb#{$i * 10} { padding-bottom: 10px * $i !important; }
-      .u-pl#{$i * 10} { padding-left: 10px * $i !important; }
-    }
-  }
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
+@mixin utilSP($multiple, $start: 0, $end: 10) {
+	@if $multiple == def {
+		@for $i from 0 through 10 {
+			.u-mt#{$i * 10} {
+				margin-top: 10px * $i !important;
+			}
+			.u-mr#{$i * 10} {
+				margin-right: 10px * $i !important;
+			}
+			.u-mb#{$i * 10} {
+				margin-bottom: 10px * $i !important;
+			}
+			.u-ml#{$i * 10} {
+				margin-left: 10px * $i !important;
+			}
+			.u-pt#{$i * 10} {
+				padding-top: 10px * $i !important;
+			}
+			.u-pr#{$i * 10} {
+				padding-right: 10px * $i !important;
+			}
+			.u-pb#{$i * 10} {
+				padding-bottom: 10px * $i !important;
+			}
+			.u-pl#{$i * 10} {
+				padding-left: 10px * $i !important;
+			}
+		}
+	}
 }
-@mixin util($multiple,$start:0,$end:10) {
-  @if $multiple == def {
-    @for $i from 0 through 10 {
-      .u-mt#{$i * 10}--pc { margin-top: 10px * $i !important; }
-      .u-mr#{$i * 10}--pc { margin-right: 10px * $i !important; }
-      .u-mb#{$i * 10}--pc { margin-bottom: 10px * $i !important; }
-      .u-ml#{$i * 10}--pc { margin-left: 10px * $i !important; }
-      .u-pt#{$i * 10}--pc { padding-top: 10px * $i !important; }
-      .u-pr#{$i * 10}--pc { padding-right: 10px * $i !important; }
-      .u-pb#{$i * 10}--pc { padding-bottom: 10px * $i !important; }
-      .u-pl#{$i * 10}--pc { padding-left: 10px * $i !important; }
-    }
-  }
+@mixin util($multiple, $start: 0, $end: 10) {
+	@if $multiple == def {
+		@for $i from 0 through 10 {
+			.u-mt#{$i * 10}--pc {
+				margin-top: 10px * $i !important;
+			}
+			.u-mr#{$i * 10}--pc {
+				margin-right: 10px * $i !important;
+			}
+			.u-mb#{$i * 10}--pc {
+				margin-bottom: 10px * $i !important;
+			}
+			.u-ml#{$i * 10}--pc {
+				margin-left: 10px * $i !important;
+			}
+			.u-pt#{$i * 10}--pc {
+				padding-top: 10px * $i !important;
+			}
+			.u-pr#{$i * 10}--pc {
+				padding-right: 10px * $i !important;
+			}
+			.u-pb#{$i * 10}--pc {
+				padding-bottom: 10px * $i !important;
+			}
+			.u-pl#{$i * 10}--pc {
+				padding-left: 10px * $i !important;
+			}
+		}
+	}
 }
 /* marggin, padding */
 @include utilSP(def);
-@include mq {
-  @include util(def);
+@include s.mq {
+	@include util(def);
 }

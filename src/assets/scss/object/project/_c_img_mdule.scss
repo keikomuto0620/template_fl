@@ -1,16 +1,19 @@
 /* image module */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-img-module {
 	margin-bottom: 30px;
-	@include mq {
+	@include s.mq {
 		display: flex;
-		justify-content:space-between;
+		justify-content: space-between;
 	}
 	img {
 		width: 100%;
 	}
 }
 .c-img-module--02 {
-	@include mq {
+	@include s.mq {
 		flex-direction: row-reverse;
 	}
 }
@@ -20,18 +23,18 @@
 }
 .c-img-module__col--02 {
 	margin-bottom: 20px;
-	@include mq {
+	@include s.mq {
 		width: 48%;
 	}
 }
 .c-img-module__col--03 {
 	margin-bottom: 20px;
-	@include mq {
+	@include s.mq {
 		width: 32%;
 	}
 }
 
 .c-img-module__caption {
-		padding: 10px 0;
-		line-height: 1.2;
+	padding: 10px 0;
+	line-height: 1.2;
 }

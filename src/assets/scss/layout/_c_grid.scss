@@ -1,5 +1,8 @@
 /* grid layout */
 
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 [class$="--pc"] {
 	width: 100%;
 }
@@ -31,7 +34,7 @@
 	// }
 }
 .l-egrid--pc {
-	@include mq {
+	@include s.mq {
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -51,7 +54,7 @@
 @for $colnum from 2 through 4 {
 	@include egrid($colnum, 20px, "");
 
-	@include mq {
+	@include s.mq {
 		//768px~
 		@include egrid($colnum, 20px, --pc);
 	}
@@ -87,7 +90,7 @@
 	// }
 }
 .l-grid--pc {
-	@include mq {
+	@include s.mq {
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -129,7 +132,7 @@
 	width: 100%;
 }
 
-@include mq {
+@include s.mq {
 	.l-grid__col1--pc {
 		width: 8.333333%;
 	}

@@ -1,26 +1,29 @@
 /* p-gnav */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .p-gnav {
 	position: relative;
-	@include mq {
-		background-color: $bgColor;
+	@include s.mq {
+		background-color: s.$bgColor;
 	}
 	a {
 		display: block;
 		padding: 10px;
-		@include mq {
+		@include s.mq {
 			transition: 0.5s;
 		}
 	}
 }
 
 .p-gnav__list {
-	background-color: $bgColor;
+	background-color: s.$bgColor;
 	width: 100%;
 	position: absolute;
 	display: none;
 	padding: 0;
 	z-index: 100;
-	@include mq {
+	@include s.mq {
 		position: relative;
 		display: flex;
 		padding: 0 10px;
@@ -29,7 +32,7 @@
 
 .p-gnav__item {
 	border-bottom: 1px solid #fff;
-	@include mq {
+	@include s.mq {
 		position: relative;
 		flex: 1 1 auto;
 		text-align: center;
@@ -38,7 +41,7 @@
 
 	&:hover {
 		.p-gnav-sub__list {
-			@include mq {
+			@include s.mq {
 				visibility: visible;
 				opacity: 1;
 			}
@@ -47,19 +50,19 @@
 }
 
 .p-gnav__link {
-	@include mq {
+	@include s.mq {
 		&:hover {
-			background-color: lighten($mainColor, 30%);
+			background-color: lighten(s.$mainColor, 30%);
 		}
 	}
 }
 
 .p-gnav__link--current {
-	background-color: lighten($mainColor, 30%);
+	background-color: lighten(s.$mainColor, 30%);
 }
 
 .p-gnav-sub__list {
-	@include mq {
+	@include s.mq {
 		position: absolute;
 		width: 100%;
 		visibility: hidden;
@@ -72,17 +75,17 @@
 
 .p-gnav-sub__link {
 	padding-left: 20px !important;
-	@include mq {
+	@include s.mq {
 		padding-left: 10px;
-		background-color: $bgColor;
+		background-color: s.$bgColor;
 	}
 
 	&:hover {
-		@include mq {
-			background-color: lighten($mainColor, 30%);
+		@include s.mq {
+			background-color: lighten(s.$mainColor, 30%);
 		}
 	}
 }
 .p-gnav-sub__link--current {
-	background-color: lighten($mainColor, 30%);
+	background-color: lighten(s.$mainColor, 30%);
 }

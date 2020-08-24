@@ -1,4 +1,7 @@
 /* form */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-form {
 	input[type="text"],
 	input[type="email"],
@@ -6,7 +9,7 @@
 	input[type="tel"],
 	select,
 	textarea {
-		border: 1px solid $bdrColor;
+		border: 1px solid s.$bdrColor;
 		background-color: #fff;
 		padding: 10px;
 		width: 100%;
@@ -47,7 +50,7 @@
 	clip: rect(0, 0, 0, 0);
 	&:focus {
 		+ .c-form__label:before {
-			box-shadow: 0 0 5px rgba($mainColor, 0.5);
+			box-shadow: 0 0 5px rgba(s.$mainColor, 0.5);
 		}
 	}
 }
@@ -59,7 +62,7 @@
 	}
 }
 .c-form__check:checked + .c-form__label::after {
-	background-color: $mainColor;
+	background-color: s.$mainColor;
 }
 .c-form__label::before,
 .c-form__check:checked + .c-form__label::after {
@@ -70,7 +73,7 @@
 	left: 5px;
 	width: 15px;
 	height: 15px;
-	border: 1px solid $bdrColor;
+	border: 1px solid s.$bdrColor;
 }
 .c-form__label--radio::before,
 .c-form__check:checked + .c-form__label--radio::after {
@@ -91,19 +94,19 @@
 .c-form-btnlist__item {
 	margin: 0 10px;
 	width: 140px;
-	@include arrow;
-	@include arrow-rr;
+	@include m.arrow;
+	@include m.arrow-rr;
 }
 .c-form-btnlist__item--back {
-	background-color: $subColor;
-	@include arrow-ll;
+	background-color: s.$subColor;
+	@include m.arrow-ll;
 	&::after {
 		right: inherit;
 	}
 }
 
 .c-form-required {
-	background-color: $error;
+	background-color: s.$error;
 	color: #fff;
 	margin-left: 5px;
 	padding: 0 5px;
@@ -112,7 +115,7 @@
 }
 
 .c-form-note {
-	@include rem(14);
+	@include m.rem(14);
 }
 
 .c-form-error {
@@ -122,15 +125,15 @@
 	input[type="tel"],
 	select,
 	textarea {
-		border: 1px solid $error;
+		border: 1px solid s.$error;
 	}
 }
 .c-form-error__msg {
-	color: $error;
+	color: s.$error;
 }
 // .c-form-error__msg02 {
-// 	color: $error;
-// 	border: 1px solid  $error;
+// 	color: s.$error;
+// 	border: 1px solid  s.$error;
 // 	background-color: #2C0101;
 // 	padding: 10px 10px 10px 40px;
 // 	background-image:url(../img/contact/ico_error.png);
@@ -142,37 +145,37 @@
 
 .c-form-step {
 	margin: 30px 0;
-	@include mq {
+	@include s.mq {
 		margin: 80px 0;
 		display: flex;
 	}
 }
 .c-form-step__item {
-	@include rem(16);
+	@include m.rem(16);
 	font-weight: bold;
-	border: 1px solid $error;
+	border: 1px solid s.$error;
 	position: relative;
 	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: -1px;
-	@include mq {
+	@include s.mq {
 		width: 33.333%;
 		margin-top: 0;
 	}
 	&::after {
 		content: "";
 		position: absolute;
-		border-top: 1px solid $error;
-		border-right: 1px solid $error;
+		border-top: 1px solid s.$error;
+		border-right: 1px solid s.$error;
 		background-color: #fff;
 		z-index: 10;
 		transform: rotate(135deg);
 		width: 10px;
 		height: 10px;
 		bottom: -6px;
-		@include mq {
+		@include s.mq {
 			width: 28px;
 			height: 28px;
 			right: -15px;
@@ -186,10 +189,10 @@
 		display: none;
 	}
 	&.is-current {
-		background-color: $error;
+		background-color: s.$error;
 		color: #fff;
 		&::after {
-			background-color: $error;
+			background-color: s.$error;
 		}
 	}
 }

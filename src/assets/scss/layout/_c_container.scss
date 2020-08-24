@@ -1,11 +1,15 @@
-/* contents layout */
+/* container */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .l-container {
 	// width: $contentWidthSP;
 	margin: 0 auto;
-	max-width: calc(#{$contentWidth} + 20px);
+	max-width: calc(#{s.$contentWidth} + 20px);
 	// position: relative;
 	padding: 0 3%;
-	@include mq {
+	@include s.mq {
 		padding: 0 10px;
 	}
 }

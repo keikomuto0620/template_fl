@@ -1,17 +1,19 @@
 /* menu button
 ----------------------------- */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
 
 .p-menuBtn {
 	height: 50px;
 	width: 50px;
 	margin-left: 10px;
-	background-color: $mainColor;
+	background-color: s.$mainColor;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	z-index: 200;
 
-	@include mq {
+	@include s.mq {
 		display: none;
 	}
 	&.is-open {

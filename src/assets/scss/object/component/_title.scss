@@ -1,11 +1,14 @@
 /* page-header */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-title-page {
-	background-color: $subColor;
+	background-color: s.$subColor;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	line-height: 1.2;
-	@include rem(18);
+	@include m.rem(18);
 	font-weight: bold;
 	height: 135px;
 }

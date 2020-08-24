@@ -9,6 +9,8 @@ const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const stylelint = require("gulp-stylelint");
 const sourcemaps = require("gulp-sourcemaps");
+const Fibers = require("fibers");
+sass.compiler = require("sass"); //dart-sassを指定
 
 const ejs = require("gulp-ejs");
 const fs = require("fs");
@@ -32,7 +34,12 @@ gulp.task("style", () => {
 			.src(DEV + "/assets/scss/**/*.scss")
 			.pipe(plumber())
 			.pipe(sourcemaps.init())
-			.pipe(sass({ outputStyle: "expanded" }))
+			.pipe(
+				sass({
+					fiber: Fibers,
+					outputStyle: "expanded",
+				})
+			)
 			.on("error", sass.logError)
 			.pipe(autoprefixer())
 			// .pipe(stylelint({

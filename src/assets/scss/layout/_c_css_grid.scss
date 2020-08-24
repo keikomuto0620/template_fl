@@ -1,4 +1,8 @@
 /* css grid */
+
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 // .l-cgrid {
 //   display: grid;
 //   gap: 5px;

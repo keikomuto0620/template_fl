@@ -1,6 +1,9 @@
 /* toggle panel */
+@use 'foundation/setting' as s;
+@use 'foundation/mixin' as m;
+
 .c-toggle {
-	background-color: $mainColor;
+	background-color: s.$mainColor;
 	color: #fff;
 }
 .c-toggle__title {
@@ -9,8 +12,8 @@
 	display: block;
 	width: 100%;
 	// cursor: pointer;
-	@include arrow;
-	@include arrow-rd;
+	@include m.arrow;
+	@include m.arrow-rd;
 	&.is-open {
 		&::after {
 			transform: rotate(-45deg);
