@@ -1,16 +1,14 @@
 const gulp = require("gulp");
-
-const plumber = require("gulp-plumber");
-const browserSync = require("browser-sync");
 const watch = require("gulp-watch");
-const del = require("del");
-
+const browserSync = require("browser-sync");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
-const stylelint = require("gulp-stylelint");
-const sourcemaps = require("gulp-sourcemaps");
+const plumber = require("gulp-plumber");
 const Fibers = require("fibers");
 sass.compiler = require("sass"); //dart-sassを指定
+const del = require("del");
+
+const stylelint = require("gulp-stylelint");
 
 const ejs = require("gulp-ejs");
 const fs = require("fs");
@@ -18,7 +16,7 @@ const data = require("gulp-data");
 const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 
-const uglify = require("gulp-uglify");
+// const uglify = require("gulp-uglify");
 
 const imagemin = require("gulp-imagemin");
 const pngquant = require("imagemin-pngquant");
@@ -27,13 +25,20 @@ const mozjpeg = require("imagemin-mozjpeg");
 const DEV = "src",
 	PUBLIC = "dist";
 
+const webpackStream = require("webpack-stream");
+const webpack = require("webpack");
+const webpackConfig = require("./webpack.config");
+
+gulp.task("bundle", function () {
+	return webpackStream(webpackConfig, webpack).pipe(gulp.dest("./dist/assets/js"));
+});
+
 //style
 gulp.task("style", () => {
 	return (
 		gulp
-			.src(DEV + "/assets/scss/**/*.scss")
+			.src(DEV + "/assets/scss/**/*.scss", { sourcemaps: true })
 			.pipe(plumber())
-			.pipe(sourcemaps.init())
 			.pipe(
 				sass({
 					fiber: Fibers,
@@ -46,21 +51,20 @@ gulp.task("style", () => {
 			//   reporters: [{formatter: 'verbose', console: true}],
 			//   fix: true
 			// }))
-			.pipe(sourcemaps.write("."))
-			.pipe(gulp.dest(PUBLIC + "/assets/css"))
+			.pipe(gulp.dest(PUBLIC + "/assets/css", { sourcemaps: '.' }))
 	);
 });
 
 //js
-gulp.task("js", function () {
-	return (
-		gulp
-			.src(DEV + "/assets/js/**/*.js", "!/assets/js/**/*.min.js")
-			// .pipe(uglify())
-			// .pipe(rename({extname: '.min.js'}))
-			.pipe(gulp.dest(PUBLIC + "/assets/js"))
-	);
-});
+// gulp.task("js", function () {
+// 	return (
+// 		gulp
+// 			.src(DEV + "/assets/js/**/*.js", "!/assets/js/**/*.min.js")
+// 			// .pipe(uglify())
+// 			// .pipe(rename({extname: '.min.js'}))
+// 			.pipe(gulp.dest(PUBLIC + "/assets/js"))
+// 	);
+// });
 
 //fonts
 gulp.task("fonts", function () {
@@ -133,7 +137,7 @@ gulp.task("clean", (done) => {
 	done();
 });
 
-gulp.task("build", gulp.series("style", "js", "images", "fonts", "ejs"));
+gulp.task("build", gulp.series("bundle", "style", "images", "fonts", "ejs"));
 // gulp.task('build', gulp.series('style','js','images','ejs'));
 
 // sever
@@ -153,7 +157,9 @@ gulp.task("server", () => {
 		[DEV + "/assets/scss/**/*.scss"],
 		gulp.series("style", browserSync.reload)
 	);
-	watch([DEV + "/assets/js/**/*.js"], gulp.series("js", browserSync.reload));
+	watch([DEV + "/assets/js/**/*.js"], gulp.series("bundle", browserSync.reload))
+
+	// watch([DEV + "/assets/js/**/*.js"], gulp.series("js", browserSync.reload));
 	watch(
 		[DEV + "/assets/images/**/*"],
 		gulp.series("images", browserSync.reload)
