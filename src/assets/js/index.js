@@ -3,6 +3,7 @@ import domContentLoaded from 'dom-content-loaded';
 import { addClass, removeClass, hasClass, fadeIn, fadeOut } from './lib/util';
 // import fonts from './fonts';
 import './jquery';
+import 'lazysizes';
 
 domContentLoaded(() => {
 	// global menu for SP
