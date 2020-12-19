@@ -1,7 +1,7 @@
 //colors
 // ===============================================
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .u-mainColor {
 	background-color: s.$mainColor;

@@ -1,7 +1,7 @@
-/* header */
+// /* header */
 
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+@use '../foundation/setting' as s;
+@use '../foundation/mixin' as m;
 
 .l-header {
 	line-height: 1;

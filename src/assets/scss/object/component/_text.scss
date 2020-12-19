@@ -1,6 +1,6 @@
-/* text */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* text */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .c-txt-link {
 	color: s.$mainColor;

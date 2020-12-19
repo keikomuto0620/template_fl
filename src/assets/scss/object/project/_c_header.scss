@@ -1,7 +1,7 @@
-/* header
------------------------------ */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* header
+// ----------------------------- */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .p-header__logo {
 	max-width: 50%;

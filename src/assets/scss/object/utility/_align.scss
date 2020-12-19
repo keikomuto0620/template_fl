@@ -1,6 +1,6 @@
-/* font-weight:  */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* font-weight:  */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .u-fwn {
 	font-weight: normal !important;
@@ -16,7 +16,7 @@
 		font-weight: bold !important;
 	}
 }
-/* alignment */
+// /* alignment */
 .u-tac {
 	text-align: center !important;
 }

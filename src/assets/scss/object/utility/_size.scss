@@ -1,6 +1,6 @@
 // width
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 @mixin widthSP($multiple, $start: 1, $end: 20) {
 	@if $multiple == def {

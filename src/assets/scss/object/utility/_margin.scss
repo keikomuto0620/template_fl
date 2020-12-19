@@ -1,6 +1,6 @@
 //marggin, padding
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 @mixin utilSP($multiple, $start: 0, $end: 10) {
 	@if $multiple == def {

@@ -1,7 +1,7 @@
-/* flex layout */
+// /* flex layout */
 
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+@use '../foundation/setting' as s;
+@use '../foundation/mixin' as m;
 
 .l-flex {
 	display: flex;

@@ -1,6 +1,6 @@
-/* page-header */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* page-header */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .c-title-page {
 	background-color: s.$subColor;

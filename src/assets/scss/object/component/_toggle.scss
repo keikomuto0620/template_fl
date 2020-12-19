@@ -1,6 +1,6 @@
-/* toggle panel */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* toggle panel */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .c-toggle {
 	background-color: s.$mainColor;

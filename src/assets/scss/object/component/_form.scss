@@ -1,6 +1,6 @@
-/* form */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* form */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .c-form {
 	input[type="text"],

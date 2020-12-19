@@ -1,6 +1,6 @@
-/* list */
-@use 'foundation/setting' as s;
-@use 'foundation/mixin' as m;
+// /* list */
+@use '../../foundation/setting' as s;
+@use '../../foundation/mixin' as m;
 
 .c-list {
 	@include m.lmCircle(#000, 0, 0.8em, 3px, 10px);
